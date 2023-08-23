@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		251552C52A963A1500BC88F6 /* paludoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251552C42A963A1500BC88F6 /* paludoView.swift */; };
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
 		54C9D8972A83D8750038968C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8962A83D8750038968C /* ContentView.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
@@ -15,7 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		251552C42A963A1500BC88F6 /* paludoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paludoView.swift; sourceTree = "<group>"; };
 		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		54C9D8962A83D8750038968C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,7 +35,6 @@
 		54C9D8882A83D8750038968C = {
 			isa = PBXGroup;
 			children = (
-				251552C42A963A1500BC88F6 /* paludoView.swift */,
 				54C9D8932A83D8750038968C /* Mini2 */,
 				54C9D8922A83D8750038968C /* Products */,
 			);
@@ -142,7 +139,6 @@
 			files = (
 				54C9D8972A83D8750038968C /* ContentView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
-				251552C52A963A1500BC88F6 /* paludoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
