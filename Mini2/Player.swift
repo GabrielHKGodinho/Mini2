@@ -10,5 +10,5 @@ import Foundation
 struct Player: Identifiable {
     let id = UUID()
     let icon: String
-    let name: String
+    var name: String
 }
