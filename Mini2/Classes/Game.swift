@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Game {
+class Game: Identifiable {
+    let id = UUID()
     var name: String
     var description: String
     var icon: String
     
-    let id = UUID()
     let instructions: [String]
     
     init(name: String, description: String, icon: String = "", instructions: [String]) {
