@@ -31,6 +31,7 @@ struct RulesAndInfoView: View {
                         .font(.title)
                 }
             }
+            .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
             
         }
         .preferredColorScheme(.dark)
@@ -64,6 +65,7 @@ struct Rules: View {
                 }
 
             }
+            .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
             HStack(spacing: 8) {
