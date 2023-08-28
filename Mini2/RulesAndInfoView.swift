@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RulesAndInfoView: View {
+    @State private var selection = 0
+    private let numberOfTabs = 5
+    var rules: [Color] = [.blue, .green, .red, .yellow, .orange]
     var body: some View {
         VStack {
             Text("Game Title Rules")
@@ -16,7 +19,40 @@ struct RulesAndInfoView: View {
                 .fontWeight(.semibold)
                 .padding(.vertical, 40)
             
-            Rules()
+            
+            VStack {
+                TabView(selection: $selection) {
+                    ForEach(rules.indices,id: \.self) {index in
+                        VStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(.white)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(rules[index])
+                                        .padding(20)
+                                        .tag(index)
+                                }
+                                .padding(.horizontal, 32)
+                                .padding(.bottom, 20)
+                        }
+                    }
+
+                }
+                .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                
+                HStack(spacing: 8) {
+                    ForEach(0..<numberOfTabs, id: \.self) { index in
+                        Circle()
+                            .frame(width: 15, height: 15)
+                            .foregroundColor(selection == index ? .white : .white.opacity(0.3))
+                            .animation(.easeInOut(duration: 0.2))
+                            .padding(.horizontal, 2)
+                    }
+                }
+            }
+            .preferredColorScheme(.dark)
+            
             
             Button {
                 
@@ -24,7 +60,7 @@ struct RulesAndInfoView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.white)
-                        .frame(height: 100)
+                        .frame(height: 70)
                         .padding(32)
                     
                     Text("Play")
@@ -37,48 +73,6 @@ struct RulesAndInfoView: View {
         .preferredColorScheme(.dark)
         .background(.gray)
         
-    }
-}
-
-struct Rules: View {
-    
-    @State private var selection = 0
-    private let numberOfTabs = 5
-    var rules: [Color] = [.blue, .green, .red, .yellow, .orange]
-    
-    var body: some View {
-        VStack {
-            TabView(selection: $selection) {
-                ForEach(rules.indices,id: \.self) {index in
-                    VStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(.white)
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(rules[index])
-                                    .padding(20)
-                                    .tag(index)
-                            }
-                            .padding(.horizontal, 32)
-                            .padding(.bottom, 40)
-                    }
-                }
-
-            }
-            .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            
-            HStack(spacing: 8) {
-                ForEach(0..<numberOfTabs, id: \.self) { index in
-                    Circle()
-                        .frame(width: 15, height: 15)
-                        .foregroundColor(selection == index ? .white : .white.opacity(0.3))
-                        .animation(.easeInOut(duration: 0.2))
-                        .padding(.horizontal, 2)
-                }
-            }
-        }
-        .preferredColorScheme(.dark)
     }
 }
 
