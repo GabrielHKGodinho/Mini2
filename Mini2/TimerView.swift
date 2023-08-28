@@ -15,12 +15,19 @@ struct TimerView: View {
         
         VStack {
             
+            Text("Game Title")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .padding(.vertical, 40)
+            
+            Spacer()
+            
             Group {
                 let tempo = countDownTimer
                 let min = tempo / 60
                 let sec = tempo - (min * 60)
                 Text (sec < 10 ? "\(min):0\(sec)" : "\(min):\(sec)")
-                    .font(.title)
+                    .font(.system(size: 80))
                     .bold()
                     .padding(.top, 8)
                     .onReceive(timer) { _ in
@@ -32,14 +39,16 @@ struct TimerView: View {
                     }
             }
             
-            HStack(spacing: 16) {
+            Spacer()
+            
+            HStack(spacing: 32) {
                 Button {
                     countDownTimer = 300
                     
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 40)
-                            .fill(Color(uiColor: .lightGray))
+                            .fill(Color(uiColor: .systemGray4))
                             .frame(width: 80, height: 80)
                         
                         Image(systemName: "arrow.counterclockwise")
@@ -56,7 +65,7 @@ struct TimerView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 40)
-                            .fill(Color(uiColor: .lightGray))
+                            .fill(Color(uiColor: .systemGray4))
                             .frame(width: 80, height: 80)
                         
                         Image(systemName: timerRunning ? "play" : "pause")
@@ -72,7 +81,7 @@ struct TimerView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 40)
-                            .fill(Color(uiColor: .lightGray))
+                            .fill(Color(uiColor: .systemGray4))
                             .frame(width: 80, height: 80)
                         
                         Text("+1m")
@@ -82,6 +91,23 @@ struct TimerView: View {
                     }
                 }
             }
+            
+            Button {
+                
+                
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 40)
+                        .fill(Color(uiColor: .systemGray4))
+                        .frame(height: 80)
+                    
+                    Text("Terminar")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                        .font(.title)
+                }
+            }
+            
         }
         .padding(32)
     }
