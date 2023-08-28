@@ -15,7 +15,7 @@ struct SelectKingView: View {
         VStack{
             ZStack {
                 
-                Text("Play!")
+                Text("    Select \n the Master")
                     .font(.system(size: 40))
                     .bold()
                     .padding(.top, 16)
