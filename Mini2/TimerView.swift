@@ -70,7 +70,7 @@ struct TimerView: View {
                             .fill(Color(uiColor: .systemGray4))
                             .frame(width: 80, height: 80)
                         
-                        Image(systemName: timerRunning ? "play" : "pause")
+                        Image(systemName: timerRunning ? "pause" : "play")
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                             .font(.title)
