@@ -60,7 +60,9 @@ struct TimerView: View {
                 
                 
                 Button {
-                    timerRunning.toggle()
+                    if countDownTimer != 0 {
+                        timerRunning.toggle()
+                    }
                     
                 } label: {
                     ZStack {
@@ -93,7 +95,7 @@ struct TimerView: View {
             }
             
             Button {
-                
+                countDownTimer = 0
                 
             } label: {
                 ZStack {
