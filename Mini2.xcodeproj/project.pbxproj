@@ -11,6 +11,7 @@
 		54C9D8972A83D8750038968C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8962A83D8750038968C /* ContentView.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
 		54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D89B2A83D8760038968C /* Preview Assets.xcassets */; };
+		5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08EF742A9CD6AD001B0411 /* TimerView.swift */; };
 		5A2E1D8F2A9784FE0039714C /* RulesAndInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E1D8E2A9784FE0039714C /* RulesAndInfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		54C9D8962A83D8750038968C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		54C9D8982A83D8760038968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54C9D89B2A83D8760038968C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A08EF742A9CD6AD001B0411 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		5A2E1D8E2A9784FE0039714C /* RulesAndInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesAndInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 				54C9D8942A83D8750038968C /* Mini2App.swift */,
 				54C9D8962A83D8750038968C /* ContentView.swift */,
 				5A2E1D8E2A9784FE0039714C /* RulesAndInfoView.swift */,
+				5A08EF742A9CD6AD001B0411 /* TimerView.swift */,
 				54C9D8982A83D8760038968C /* Assets.xcassets */,
 				54C9D89A2A83D8760038968C /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				5A2E1D8F2A9784FE0039714C /* RulesAndInfoView.swift in Sources */,
 				54C9D8972A83D8750038968C /* ContentView.swift in Sources */,
+				5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
