@@ -33,7 +33,7 @@ struct RulesAndInfoView: View {
                                         .tag(index)
                                 }
                                 .padding(.horizontal, 32)
-                                .padding(.bottom, 40)
+                                .padding(.bottom, 20)
                         }
                     }
 
@@ -60,7 +60,7 @@ struct RulesAndInfoView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.white)
-                        .frame(height: 100)
+                        .frame(height: 70)
                         .padding(32)
                     
                     Text("Play")
