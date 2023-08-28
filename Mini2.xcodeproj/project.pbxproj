@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		255C15442A9CE35A003C777D /* FimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C15432A9CE35A003C777D /* FimView.swift */; };
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
 		54C9D8972A83D8750038968C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8962A83D8750038968C /* ContentView.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		255C15432A9CE35A003C777D /* FimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FimView.swift; sourceTree = "<group>"; };
 		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		54C9D8962A83D8750038968C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 		54C9D8932A83D8750038968C /* Mini2 */ = {
 			isa = PBXGroup;
 			children = (
+				255C15432A9CE35A003C777D /* FimView.swift */,
 				54C9D8942A83D8750038968C /* Mini2App.swift */,
 				54C9D8962A83D8750038968C /* ContentView.swift */,
 				5A2E1D8E2A9784FE0039714C /* RulesAndInfoView.swift */,
@@ -145,6 +148,7 @@
 			files = (
 				5A2E1D8F2A9784FE0039714C /* RulesAndInfoView.swift in Sources */,
 				54C9D8972A83D8750038968C /* ContentView.swift in Sources */,
+				255C15442A9CE35A003C777D /* FimView.swift in Sources */,
 				5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
 			);
