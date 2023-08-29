@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Game {
+class Game: Identifiable {
+    let id = UUID()
     var name: String
     var description: String
     var categories = [Category]()
