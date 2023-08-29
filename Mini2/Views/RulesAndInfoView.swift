@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct RulesAndInfoView: View {
+    @EnvironmentObject var manager: SceneManager
+    
     @State private var selection = 0
     private let numberOfTabs = 5
     var rules: [Color] = [.blue, .green, .red, .yellow, .orange]
-    @Binding var tela: Tela
     
     var body: some View {
         VStack {
@@ -57,7 +58,7 @@ struct RulesAndInfoView: View {
             
             
             Button {
-                tela = .selectKing
+                manager.currentView = .SelectKingView
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -80,6 +81,6 @@ struct RulesAndInfoView: View {
 
 struct RulesAndInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        RulesAndInfoView(tela: .constant(.rules))
+        RulesAndInfoView()
     }
 }

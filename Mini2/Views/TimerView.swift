@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct TimerView: View {
+    @EnvironmentObject var manager: SceneManager
+    
     @State var countDownTimer = 60
     @State var timerRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @Binding var tela: Tela
     
     var body: some View {
         
@@ -98,7 +99,7 @@ struct TimerView: View {
             
             Button {
                 countDownTimer = 0
-                tela = .endGame
+                manager.currentView = .EndGameView
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 40)
@@ -119,6 +120,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(tela: .constant(.game))
+        TimerView()
     }
 }
