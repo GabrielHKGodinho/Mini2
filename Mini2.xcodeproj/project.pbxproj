@@ -20,6 +20,7 @@
 		5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08EF742A9CD6AD001B0411 /* TimerView.swift */; };
 		8170B3482A964B9500AA367F /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170B3472A964B9500AA367F /* AddPlayerView.swift */; };
 		8170B34A2A964BAD00AA367F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170B3492A964BAD00AA367F /* Player.swift */; };
+		81D9B41A2A9E29C200854798 /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D9B4192A9E29C200854798 /* GameListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5A08EF742A9CD6AD001B0411 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		8170B3472A964B9500AA367F /* AddPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerView.swift; sourceTree = "<group>"; };
 		8170B3492A964BAD00AA367F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		81D9B4192A9E29C200854798 /* GameListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,9 @@
 				54E037102A9D43CB00413F37 /* Classes */,
 				54E037032A9CD72600413F37 /* Views */,
 				54C9D8942A83D8750038968C /* Mini2App.swift */,
+				81D9B4192A9E29C200854798 /* GameListView.swift */,
+				8170B3472A964B9500AA367F /* AddPlayerView.swift */,
+				8170B3492A964BAD00AA367F /* Player.swift */,
 				54C9D8982A83D8760038968C /* Assets.xcassets */,
 				256EA4882A9E10C300F0F103 /* Model */,
 				54C9D89A2A83D8760038968C /* Preview Content */,
@@ -190,6 +195,7 @@
 			files = (
 				8170B34A2A964BAD00AA367F /* Player.swift in Sources */,
 				8170B3482A964B9500AA367F /* AddPlayerView.swift in Sources */,
+				81D9B41A2A9E29C200854798 /* GameListView.swift in Sources */,
 				54E037072A9D42C300413F37 /* RulesAndInfoView.swift in Sources */,
 				255C15442A9CE35A003C777D /* FimView.swift in Sources */,
 				54E0370F2A9D43C100413F37 /* Game.swift in Sources */,
