@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct AddPlayerView: View {
+    @EnvironmentObject var manager: SceneManager
+    
     @State var players = [Player(icon: "circle.fill", name: "Gabi"), Player(icon: "circle.fill", name: "Isa")]
     @State var name: String = ""
     @State var isEditing: Bool = false
     
-    @Binding var tela: Tela
-
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             Spacer()
@@ -62,7 +62,7 @@ struct AddPlayerView: View {
             Spacer()
             
             Button {
-                tela = .rules
+                manager.currentView = .RulesView
             } label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 16)
@@ -83,6 +83,6 @@ struct AddPlayerView: View {
 
 struct AddPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlayerView(tela: .constant(.addPLayer))
+        AddPlayerView()
     }
 }

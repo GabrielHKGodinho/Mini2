@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FimView: View {
-    @Binding var tela: Tela
+    @EnvironmentObject var manager: SceneManager
     
     var body: some View {
         VStack{
@@ -16,7 +16,7 @@ struct FimView: View {
             Spacer()
             
             Button {
-                tela = .rules
+                manager.currentView = .RulesView
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -29,7 +29,7 @@ struct FimView: View {
             }
             
             Button {
-                tela = .selectGame
+                manager.currentView = .GameListView
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -50,6 +50,6 @@ struct FimView: View {
 
 struct FimView_Previews: PreviewProvider {
     static var previews: some View {
-        FimView(tela: .constant(.endGame))
+        FimView()
     }
 }
