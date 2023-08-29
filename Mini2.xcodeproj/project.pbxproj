@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		255C15442A9CE35A003C777D /* FimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C15432A9CE35A003C777D /* FimView.swift */; };
+		256EA4872A9E10BF00F0F103 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EA4862A9E10BF00F0F103 /* Model.swift */; };
+		256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EA4892A9E179C00F0F103 /* GameRepository.swift */; };
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
 		54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D89B2A83D8760038968C /* Preview Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		255C15432A9CE35A003C777D /* FimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FimView.swift; sourceTree = "<group>"; };
+		256EA4862A9E10BF00F0F103 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		256EA4892A9E179C00F0F103 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		54C9D8982A83D8760038968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		256EA4882A9E10C300F0F103 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				256EA4862A9E10BF00F0F103 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		54C9D8882A83D8750038968C = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 				8170B3472A964B9500AA367F /* AddPlayerView.swift */,
 				8170B3492A964BAD00AA367F /* Player.swift */,
 				54C9D8982A83D8760038968C /* Assets.xcassets */,
+				256EA4882A9E10C300F0F103 /* Model */,
 				54C9D89A2A83D8760038968C /* Preview Content */,
 			);
 			path = Mini2;
@@ -101,6 +114,7 @@
 			children = (
 				54E037092A9D42E200413F37 /* Category.swift */,
 				54E0370E2A9D43C100413F37 /* Game.swift */,
+				256EA4892A9E179C00F0F103 /* GameRepository.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -184,7 +198,9 @@
 				5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
 				54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */,
+				256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */,
 				54E0370B2A9D42E200413F37 /* Category.swift in Sources */,
+				256EA4872A9E10BF00F0F103 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
