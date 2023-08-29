@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct Category {
+struct Category: Identifiable, Equatable {
+    let id = UUID()
     let name: String
 }
