@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State var countDownTimer = 300
+    @State var countDownTimer = 60
     @State var timerRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @Binding var tela: Tela
+    
     var body: some View {
         
         VStack {
@@ -39,11 +41,9 @@ struct TimerView: View {
                     }
             }
             
-            Spacer()
-            
             HStack(spacing: 32) {
                 Button {
-                    countDownTimer = 300
+                    countDownTimer = 60
                     
                 } label: {
                     ZStack {
@@ -94,19 +94,21 @@ struct TimerView: View {
                 }
             }
             
+            Spacer()
+            
             Button {
                 countDownTimer = 0
-                
+                tela = .endGame
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 40)
                         .fill(Color(uiColor: .systemGray4))
                         .frame(height: 80)
                     
-                    Text("Terminar")
-                        .fontWeight(.semibold)
+                    Text("Finish Game")
+                        .bold()
                         .foregroundColor(.black)
-                        .font(.title)
+                        .font(.system(size: 20))
                 }
             }
             
@@ -117,6 +119,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView(tela: .constant(.game))
     }
 }

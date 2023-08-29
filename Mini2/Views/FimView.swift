@@ -8,36 +8,38 @@
 import SwiftUI
 
 struct FimView: View {
+    @Binding var tela: Tela
+    
     var body: some View {
         VStack{
             
             Spacer()
             
             Button {
-                
+                tela = .rules
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.white)
                         .frame(height: 70)
                     Text("Play again")
-                        .font(.title)
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
                 }
             }
-            .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
             
             Button {
-                
+                tela = .selectGame
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.white)
                         .frame(height: 70)
                     Text("Next game")
-                        .font(.title)
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
                 }
             }
-            .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
             
         } .padding(32)
             .preferredColorScheme(.dark)
@@ -48,6 +50,6 @@ struct FimView: View {
 
 struct FimView_Previews: PreviewProvider {
     static var previews: some View {
-        FimView()
+        FimView(tela: .constant(.endGame))
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectKingView: View {
     var players = ["1","2"]
     @State var playerSelected : Int = -1
+    @Binding var tela: Tela
     
     var body: some View {
         VStack{
@@ -84,7 +85,7 @@ struct SelectKingView: View {
             Spacer()
             
             Button {
-                
+                tela = .game
             } label: {
                 HStack{
                     Text("Start Game")
@@ -106,6 +107,6 @@ struct SelectKingView: View {
 
 struct SelectKingView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectKingView()
+        SelectKingView(tela: .constant(.selectKing))
     }
 }
