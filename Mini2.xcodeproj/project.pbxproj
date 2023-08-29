@@ -106,6 +106,7 @@
 				255C15432A9CE35A003C777D /* FimView.swift */,
 				5A08EF742A9CD6AD001B0411 /* TimerView.swift */,
 				54E037062A9D42C300413F37 /* RulesAndInfoView.swift */,
+				8170B3472A964B9500AA367F /* AddPlayerView.swift */,
 				54E037042A9CD75400413F37 /* SelectKingView.swift */,
 			);
 			path = Views;
@@ -115,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				54E037092A9D42E200413F37 /* Category.swift */,
+				8170B3492A964BAD00AA367F /* Player.swift */,
 				54E0370E2A9D43C100413F37 /* Game.swift */,
 				256EA4892A9E179C00F0F103 /* GameRepository.swift */,
 			);
