@@ -15,13 +15,12 @@ struct SelectKingView: View {
         VStack{
             ZStack {
                 
-                Text("    Select \n the Master")
-                    .font(.system(size: 40))
-                    .bold()
-                    .padding(.top, 16)
-                    .padding(.bottom, 32)
-                
                 HStack {
+                    Text("Select the Master")
+                        .frame(width: 200)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 40))
+                        .bold()
                     Spacer()
                     
                     Button {
@@ -39,6 +38,7 @@ struct SelectKingView: View {
                     }//fim button
                     .padding(.trailing, 12)
                 }//fim hstack
+                .padding(16)
 
             }
             
