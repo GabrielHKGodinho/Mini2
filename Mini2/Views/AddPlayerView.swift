@@ -11,9 +11,13 @@ struct AddPlayerView: View {
     @State var players = [Player(icon: "circle.fill", name: "Gabi"), Player(icon: "circle.fill", name: "Isa")]
     @State var name: String = ""
     @State var isEditing: Bool = false
+    
+    @Binding var tela: Tela
 
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
+            Spacer()
+            
             ForEach(players) { player in
                 if !(isEditing && player.id == players.last!.id) {
                     HStack(alignment: .center, spacing: 8) {
@@ -52,14 +56,33 @@ struct AddPlayerView: View {
             } label: {
                 Text("Adicionar player")
                     .foregroundColor(.black)
-            }
+            }//fim button
             .buttonStyle(.bordered)
-        }
+            
+            Spacer()
+            
+            Button {
+                tela = .rules
+            } label: {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 16)
+                        .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, maxHeight: 50)
+                    
+                    Text("Next")
+                        .font(.system(size: 20))
+                        .bold()
+                        .foregroundColor(.black)
+                }
+            }//fim button
+            .padding(.bottom, 16)
+        }//fim vstack
+        .padding(.horizontal)
     }
 }
 
 struct AddPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlayerView()
+        AddPlayerView(tela: .constant(.addPLayer))
     }
 }

@@ -11,6 +11,8 @@ struct RulesAndInfoView: View {
     @State private var selection = 0
     private let numberOfTabs = 5
     var rules: [Color] = [.blue, .green, .red, .yellow, .orange]
+    @Binding var tela: Tela
+    
     var body: some View {
         VStack {
             Text("Game Title Rules")
@@ -55,7 +57,7 @@ struct RulesAndInfoView: View {
             
             
             Button {
-                
+                tela = .selectKing
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -78,6 +80,6 @@ struct RulesAndInfoView: View {
 
 struct RulesAndInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        RulesAndInfoView()
+        RulesAndInfoView(tela: .constant(.rules))
     }
 }
