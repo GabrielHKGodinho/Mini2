@@ -10,23 +10,26 @@ import SwiftUI
 struct SelectKingView: View {
     @EnvironmentObject var manager: SceneManager
     
-    var players = ["1","2"]
+    @State var players = PlayerManager.getPlayers()
+    
     @State var playerSelected : Int = -1
     
     var body: some View {
         VStack{
             ZStack {
                 
-                HStack {
+                
                     Text("Select the Master")
                         .frame(width: 200)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 40))
                         .bold()
+                
+                HStack {
                     Spacer()
                     
                     Button {
-                        
+                        playerSelected = Int.random(in: 0..<PlayerManager.getNumberOfPlayers())
                     } label: {
                         ZStack{
                             Circle()
@@ -57,7 +60,7 @@ struct SelectKingView: View {
                                     .foregroundColor(.gray)
                                     .padding(.leading, 16)
                                 
-                                Text("Player Name")
+                                Text(player.name)
                                     .foregroundColor(.black)
                                     .bold()
                                     .font(.system(size: 20))
@@ -90,15 +93,16 @@ struct SelectKingView: View {
             } label: {
                 HStack{
                     Text("Start Game")
-                        .foregroundColor(.black)
+                        .foregroundColor(.black.opacity(playerSelected == -1 ? 0.5 : 1))
                         .bold()
                         .font(.system(size: 20))
                 }
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity, maxHeight: 50)
-                .background(Color(uiColor: .systemGray2))
+                .background(Color(uiColor: .systemGray2).opacity(playerSelected == -1 ? 0.5 : 1))
                 .cornerRadius(16)
             }//fim button
+            .disabled(playerSelected == -1)
             .padding(.bottom, 32)
             
         }//fim Vstack
