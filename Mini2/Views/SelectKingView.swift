@@ -55,6 +55,7 @@ struct SelectKingView: View {
                                         .font(.system(size: 26))
                                         .foregroundColor(.white)
                                 }//fim zstack
+                                .shadow(color: .black.opacity(0.12), radius: 5, x: 5, y: 5)
                             }//fim button
                         }//fim hstack
                     }
@@ -108,15 +109,27 @@ struct SelectKingView: View {
                     manager.currentView = .GameView
                 } label: {
                     HStack{
-                        Text("Start Game")
-                            .foregroundColor(.black.opacity(playerSelected == -1 ? 0.5 : 1))
-                            .bold()
-                            .font(.system(size: 20))
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color(uiColor: .systemGray).opacity(playerSelected == -1 ? 1 : 0))
+                                .frame(height: 70)
+                            
+                            Text("Start Game")
+                                .foregroundColor(.black.opacity(playerSelected == -1 ? 0.5 : 1))
+                                .font(.title)
+                        }
                     }
-                    .padding(.vertical, 12)
-                    .frame(maxWidth: .infinity, maxHeight: 50)
-                    .background(Color(uiColor: .systemGray2).opacity(playerSelected == -1 ? 0.5 : 1))
-                    .cornerRadius(16)
+                    .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
+                        
+//                        Text("Start Game")
+//                            .foregroundColor(.black.opacity(playerSelected == -1 ? 0.5 : 1))
+//                            .bold()
+//                            .font(.system(size: 20))
+//                    }
+//                    .padding(.vertical, 12)
+//                    .frame(maxWidth: .infinity, maxHeight: 50)
+//                    .background(Color(uiColor: .systemGray2).opacity(playerSelected == -1 ? 0.5 : 1))
+//                    .cornerRadius(16)
                 }//fim button
                 .padding(.bottom, 32)
                 .disabled(playerSelected == -1)

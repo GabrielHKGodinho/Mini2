@@ -51,7 +51,8 @@ struct RulesAndInfoView: View {
                                         .fill(Color(uiColor: .systemGray5))
                                         .padding(20)
                                     Text(repository.games[repository.selectedGame].instructions[i])
-                                        .padding(32)
+                                        .multilineTextAlignment(.center)
+                                        .padding(40)
                                 }
                                 .padding(.horizontal, 32)
                                 .padding(.bottom, 20)
@@ -59,7 +60,7 @@ struct RulesAndInfoView: View {
                     }
 
                 }
-                .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
+                .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
                 HStack(spacing: 8) {
@@ -69,7 +70,7 @@ struct RulesAndInfoView: View {
                             .foregroundColor(selection == index ? .white : Color(uiColor: .systemGray5))
                             .animation(.easeInOut(duration: 0.2))
                             .padding(.horizontal, 2)
-                            .shadow(color: .black.opacity(0.2), radius: 5, x: 5, y: 5)
+                            .shadow(color: .black.opacity(0.12), radius: 5, x: 5, y: 5)
                     }
                 }
             }
@@ -89,7 +90,7 @@ struct RulesAndInfoView: View {
                         .font(.title)
                 }
             }
-            .shadow(color: .black.opacity(0.2), radius: 6, x: 10, y: 10)
+            .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
             
         }
         .background(Color(uiColor: .systemGray4))
