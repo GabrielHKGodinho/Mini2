@@ -69,7 +69,7 @@ struct AddPlayerView: View {
             Spacer()
             
             Button {
-                manager.currentView = .RulesView
+                manager.currentView = .GameListView
             } label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 16)

@@ -8,37 +8,56 @@
 import SwiftUI
 
 struct GameListView: View {
-    @StateObject var repository = GameRepository()
+    @EnvironmentObject var repository: GameRepository
+    @EnvironmentObject var manager: SceneManager
     
 //    @State var categories = [Category(name: "Singleplayer"), Category(name: "Multiplayer"), Category(name: "Improviso"), Category(name: "Mímica")]
 //    @State var selectedCategories = [Category]()
     
     var body: some View {
         VStack(spacing: 16) {
-            ForEach(repository.games) { game in
+            
+            VStack {
                 HStack {
-                    Text(game.name)
-                        .foregroundColor(.white)
-                    Text(game.description)
-                        .foregroundColor(.white)
+                    Button {
+                        manager.currentView = .AddPlayerView
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .bold()
+                    }
+                    
+                    Spacer()
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background {
-                    RoundedRectangle(cornerRadius: 16)
-                }
-            }
-            .onTapGesture {
                 
+                ForEach(0..<repository.games.count) { i in
+                    HStack {
+                        Text(repository.games[i].name)
+                            .foregroundColor(.white)
+                        Text(repository.games[i].description)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background {
+                        RoundedRectangle(cornerRadius: 16)
+                    }
+                    .onTapGesture {
+                        manager.currentView = .RulesView
+                        repository.selectedGame = i
+                    }
+                }
+                Spacer()
             }
-            Spacer()
+            .padding(32)
         }
-        .padding(16)
+        .background(.gray) 
     }
 }
 
-struct GameListView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameListView()
-    }
-}
+//struct GameListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameListView()
+//    }
+//}

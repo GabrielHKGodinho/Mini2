@@ -9,31 +9,49 @@ import SwiftUI
 
 struct RulesAndInfoView: View {
     @EnvironmentObject var manager: SceneManager
-    
+    @EnvironmentObject var repository: GameRepository
     @State private var selection = 0
-    private let numberOfTabs = 5
+    @State private var numberOfTabs = 1
     var rules: [Color] = [.blue, .green, .red, .yellow, .orange]
     
     var body: some View {
         VStack {
-            Text("Game Title Rules")
-                .foregroundColor(.white)
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .padding(.vertical, 40)
+            ZStack {
+                Text(repository.games[repository.selectedGame].name)
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .padding(.vertical, 40)
+                
+                HStack {
+                    Button {
+                        manager.currentView = .GameListView
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .bold()
+                    }
+                    
+                    Spacer()
+                }
+                .padding(32)
+            }
             
             
             VStack {
                 TabView(selection: $selection) {
-                    ForEach(rules.indices,id: \.self) {index in
+                    ForEach(repository.games[repository.selectedGame].instructions.indices, id: \.self) { i in
+//                     ForEach(rules.indices,id: \.self) {index in
                         VStack {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(.white)
                                 .overlay {
                                     RoundedRectangle(cornerRadius: 12)
-                                        .fill(rules[index])
+                                        .fill(.gray)
                                         .padding(20)
-                                        .tag(index)
+                                    Text(repository.games[repository.selectedGame].instructions[i])
+                                        .padding(32)
                                 }
                                 .padding(.horizontal, 32)
                                 .padding(.bottom, 20)
@@ -75,12 +93,18 @@ struct RulesAndInfoView: View {
         }
         .preferredColorScheme(.dark)
         .background(.gray)
-        
+        .onAppear {
+            numberOfTabs = repository.games[repository.selectedGame].instructions.count
+        }
     }
 }
 
 struct RulesAndInfoView_Previews: PreviewProvider {
     static var previews: some View {
+        let manager = SceneManager()
+        let repository = GameRepository()
         RulesAndInfoView()
+            .environmentObject(manager)
+            .environmentObject(repository)
     }
 }
