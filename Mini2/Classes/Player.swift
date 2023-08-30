@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct Player: Identifiable {
+struct Player: Identifiable, Hashable {
     let id = UUID()
     let icon: String
     var name: String
+    
+    init(icon: String = "deafult", name: String) {
+        self.icon = icon
+        self.name = name
+    }
 }

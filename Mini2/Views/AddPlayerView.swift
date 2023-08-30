@@ -10,15 +10,16 @@ import SwiftUI
 struct AddPlayerView: View {
     @EnvironmentObject var manager: SceneManager
     
-    @State var players = [Player(icon: "circle.fill", name: "Gabi"), Player(icon: "circle.fill", name: "Isa")]
-    @State var name: String = ""
+    @State var players = PlayerManager.getPlayers()
+    
+    @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
     @State var isEditing: Bool = false
     
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             Spacer()
             
-            ForEach(players) { player in
+            ForEach(Array(players.enumerated()), id: \.element){index, player in
                 if !(isEditing && player.id == players.last!.id) {
                     HStack(alignment: .center, spacing: 8) {
                         Image(systemName: player.icon)
@@ -26,7 +27,9 @@ struct AddPlayerView: View {
                         Text(player.name)
                             .foregroundColor(.white)
                         Button {
-                            players.remove(at: players.firstIndex(where: { $0.id == player.id })!)
+                            PlayerManager.removePlayer(index: index)
+                            players = PlayerManager.getPlayers()
+                            name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
                         } label: {
                             Image(systemName: "trash.fill")
                         }
@@ -41,18 +44,22 @@ struct AddPlayerView: View {
             }
             
             if isEditing {
-                TextField("", text: $players.last!.name, prompt: Text("Player \(players.count + 1)"))
+                TextField("", text: $name, prompt: Text("Player \(PlayerManager.getNumberOfPlayers())"))
                     .onSubmit {
                         isEditing = false
+                        PlayerManager.setPlayerName(index: PlayerManager.getNumberOfPlayers()-1, name: name)
+                        players = PlayerManager.getPlayers()
+                        name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
                     }
                     .autocorrectionDisabled()
-                    .frame(width: CGFloat(players.last!.name.count + 8) * 5, alignment: .center)
+                    .frame(width: CGFloat(PlayerManager.getLastPlayerName().count + 8) * 5, alignment: .center)
                     .textFieldStyle(.roundedBorder)
             }
 
             Button {
-                players.append(Player(icon: "circle.fill", name: "Player \(players.count+1)"))
+                PlayerManager.addPlayer(player: Player(name: "Player  \(PlayerManager.getNumberOfPlayers())"))
                 isEditing = true
+                players = PlayerManager.getPlayers()
             } label: {
                 Text("Adicionar player")
                     .foregroundColor(.black)
