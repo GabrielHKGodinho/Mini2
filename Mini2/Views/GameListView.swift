@@ -18,17 +18,25 @@ struct GameListView: View {
         VStack(spacing: 16) {
             
             VStack {
-                HStack {
-                    Button {
-                        manager.currentView = .AddPlayerView
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .bold()
-                    }
+                ZStack {
+                    Text("Select a game")
+                        .foregroundColor(.black)
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .padding(.vertical, 40)
                     
-                    Spacer()
+                    HStack {
+                        Button {
+                            manager.currentView = .AddPlayerView
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(.black)
+                                .font(.title)
+                                .bold()
+                        }
+                        
+                        Spacer()
+                    }
                 }
                 
                 ForEach(0..<repository.games.count) { i in
@@ -52,7 +60,8 @@ struct GameListView: View {
             }
             .padding(32)
         }
-        .background(.gray) 
+        .background(Color(uiColor: .systemGray4))
+        
     }
 }
 
