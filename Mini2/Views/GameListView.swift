@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct GameListView: View {
-    @StateObject var repository = GameRepository()
+    @EnvironmentObject var repository: GameRepository
+    @EnvironmentObject var manager: SceneManager
     
 //    @State var categories = [Category(name: "Singleplayer"), Category(name: "Multiplayer"), Category(name: "Improviso"), Category(name: "Mímica")]
 //    @State var selectedCategories = [Category]()
     
     var body: some View {
         VStack(spacing: 16) {
-            ForEach(repository.games) { game in
+            ForEach(0..<repository.games.count) { i in
                 HStack {
-                    Text(game.name)
+                    Text(repository.games[i].name)
                         .foregroundColor(.white)
-                    Text(game.description)
+                    Text(repository.games[i].description)
                         .foregroundColor(.white)
                 }
                 .padding()
@@ -27,9 +28,10 @@ struct GameListView: View {
                 .background {
                     RoundedRectangle(cornerRadius: 16)
                 }
-            }
-            .onTapGesture {
-                
+                .onTapGesture {
+                    manager.currentView = .RulesView
+                    repository.selectedGame = i
+                }
             }
             Spacer()
         }
@@ -37,8 +39,8 @@ struct GameListView: View {
     }
 }
 
-struct GameListView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameListView()
-    }
-}
+//struct GameListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameListView()
+//    }
+//}

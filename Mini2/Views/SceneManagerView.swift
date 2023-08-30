@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SceneManagerView: View {
     @StateObject var manager = SceneManager()
+    @StateObject var repository = GameRepository()
     
     var body: some View {
         ZStack {
@@ -37,6 +38,7 @@ struct SceneManagerView: View {
             }
         }
         .environmentObject(manager)
+        .environmentObject(repository)
     }
 }
 
