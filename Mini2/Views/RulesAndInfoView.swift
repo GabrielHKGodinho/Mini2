@@ -16,11 +16,27 @@ struct RulesAndInfoView: View {
     
     var body: some View {
         VStack {
-            Text(repository.games[repository.selectedGame].name)
-                .foregroundColor(.white)
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .padding(.vertical, 40)
+            ZStack {
+                Text(repository.games[repository.selectedGame].name)
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .padding(.vertical, 40)
+                
+                HStack {
+                    Button {
+                        manager.currentView = .GameListView
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .bold()
+                    }
+                    
+                    Spacer()
+                }
+                .padding(32)
+            }
             
             
             VStack {

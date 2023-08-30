@@ -16,26 +16,43 @@ struct GameListView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            ForEach(0..<repository.games.count) { i in
+            
+            VStack {
                 HStack {
-                    Text(repository.games[i].name)
-                        .foregroundColor(.white)
-                    Text(repository.games[i].description)
-                        .foregroundColor(.white)
+                    Button {
+                        manager.currentView = .AddPlayerView
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .bold()
+                    }
+                    
+                    Spacer()
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background {
-                    RoundedRectangle(cornerRadius: 16)
+                
+                ForEach(0..<repository.games.count) { i in
+                    HStack {
+                        Text(repository.games[i].name)
+                            .foregroundColor(.white)
+                        Text(repository.games[i].description)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background {
+                        RoundedRectangle(cornerRadius: 16)
+                    }
+                    .onTapGesture {
+                        manager.currentView = .RulesView
+                        repository.selectedGame = i
+                    }
                 }
-                .onTapGesture {
-                    manager.currentView = .RulesView
-                    repository.selectedGame = i
-                }
+                Spacer()
             }
-            Spacer()
+            .padding(32)
         }
-        .padding(16)
+        .background(.gray) 
     }
 }
 
