@@ -12,8 +12,8 @@ struct Top10 {
     var items: [String]
 }
 
-class Top10Repository {
-    var list: [Top10] = [
+class Top10Repository: ObservableObject {
+    static let list: [Top10] = [
         Top10(theme: "filmes de todos os tempos", items: [
             "O Poderoso Chefão",
             "O Poderoso Chefão - Parte II",
