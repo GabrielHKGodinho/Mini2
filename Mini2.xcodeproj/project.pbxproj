@@ -24,6 +24,7 @@
 		5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08EF742A9CD6AD001B0411 /* TimerView.swift */; };
 		81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3602A9E330B001A15AB /* SceneManager.swift */; };
 		81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3622A9E3317001A15AB /* SceneManagerView.swift */; };
+		81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7D2AA25BB700298A52 /* Top10.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		5A08EF742A9CD6AD001B0411 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		81C1F3602A9E330B001A15AB /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		81C1F3622A9E3317001A15AB /* SceneManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerView.swift; sourceTree = "<group>"; };
+		81E9AF7D2AA25BB700298A52 /* Top10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		54C9D8932A83D8750038968C /* Mini2 */ = {
 			isa = PBXGroup;
 			children = (
+				81E9AF7C2AA25B8B00298A52 /* Repositories */,
 				54E037102A9D43CB00413F37 /* Classes */,
 				54E037032A9CD72600413F37 /* Views */,
 				54C9D8942A83D8750038968C /* Mini2App.swift */,
@@ -128,6 +131,14 @@
 				54EEEFE02A9F64CF003256BC /* PlayerManager.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		81E9AF7C2AA25B8B00298A52 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				81E9AF7D2AA25BB700298A52 /* Top10.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
 				54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */,
 				256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */,
+				81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */,
 				54E0370B2A9D42E200413F37 /* Category.swift in Sources */,
 				54EEEFDB2A9E31AE003256BC /* Player.swift in Sources */,
 				81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */,
@@ -343,7 +355,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini2/Preview Content\"";
-				DEVELOPMENT_TEAM = UZ9Y74NAXC;
+				DEVELOPMENT_TEAM = Q379URF792;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -372,7 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini2/Preview Content\"";
-				DEVELOPMENT_TEAM = UZ9Y74NAXC;
+				DEVELOPMENT_TEAM = Q379URF792;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
