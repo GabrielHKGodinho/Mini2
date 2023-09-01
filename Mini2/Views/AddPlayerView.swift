@@ -82,10 +82,11 @@ struct AddPlayerView: View {
                             .frame(height: 70)
                         
                         Text("Start")
-                            .foregroundColor(.black)
+                            .foregroundColor(.black.opacity((PlayerManager.getNumberOfPlayers() == 0 ? 0.5 : 1)))
                             .font(.title)
                     }
-                }
+                }//.fim button
+                .disabled(PlayerManager.getNumberOfPlayers() == 0)
                 .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
             }//fim vstack
             

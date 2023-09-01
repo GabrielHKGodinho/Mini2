@@ -13,6 +13,7 @@ struct SelectKingView: View {
     @State var players = PlayerManager.getPlayers()
     
     @State var playerSelected : Int = -1
+    @State var aux : Int = -1
     
     var body: some View {
         VStack{
@@ -44,7 +45,11 @@ struct SelectKingView: View {
                             Spacer()
                             
                             Button {
-                                playerSelected = Int.random(in: 0..<PlayerManager.getNumberOfPlayers())
+                                aux = playerSelected
+                                while playerSelected == aux{
+                                    playerSelected = Int.random(in: 0..<PlayerManager.getNumberOfPlayers())
+                                }
+                                
                             } label: {
                                 ZStack{
                                     Circle()
@@ -86,7 +91,6 @@ struct SelectKingView: View {
                                     Spacer()
                                 }
                                 .padding(.vertical, 12)
-    //                            .frame(maxWidth: .infinity, maxHeight: 100)
                                 .background(Color(uiColor: .systemGray2))
                                 .cornerRadius(16)
                                 
@@ -111,7 +115,7 @@ struct SelectKingView: View {
                     HStack{
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(uiColor: .systemGray).opacity(playerSelected == -1 ? 1 : 0))
+                                .fill(Color(uiColor: .systemGray).opacity(playerSelected == -1 ? 0.5 : 1))
                                 .frame(height: 70)
                             
                             Text("Start Game")
@@ -121,15 +125,6 @@ struct SelectKingView: View {
                     }
                     .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
                         
-//                        Text("Start Game")
-//                            .foregroundColor(.black.opacity(playerSelected == -1 ? 0.5 : 1))
-//                            .bold()
-//                            .font(.system(size: 20))
-//                    }
-//                    .padding(.vertical, 12)
-//                    .frame(maxWidth: .infinity, maxHeight: 50)
-//                    .background(Color(uiColor: .systemGray2).opacity(playerSelected == -1 ? 0.5 : 1))
-//                    .cornerRadius(16)
                 }//fim button
                 .padding(.bottom, 32)
                 .disabled(playerSelected == -1)
