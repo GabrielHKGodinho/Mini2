@@ -32,6 +32,9 @@ struct SceneManagerView: View {
             case .GameView:
                 TimerView()
                     .transition(manager.animation)
+            case .Top10View:
+                Top10View()
+                    .transition(manager.animation)
             case .EndGameView:
                 FimView()
                     .transition(manager.animation)

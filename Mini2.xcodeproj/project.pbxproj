@@ -25,7 +25,7 @@
 		81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3602A9E330B001A15AB /* SceneManager.swift */; };
 		81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3622A9E3317001A15AB /* SceneManagerView.swift */; };
 		81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7D2AA25BB700298A52 /* Top10.swift */; };
-		81E9AF802AA2718400298A52 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7F2AA2718400298A52 /* GameView.swift */; };
+		81E9AF802AA2718400298A52 /* Top10View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7F2AA2718400298A52 /* Top10View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 		81C1F3602A9E330B001A15AB /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		81C1F3622A9E3317001A15AB /* SceneManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerView.swift; sourceTree = "<group>"; };
 		81E9AF7D2AA25BB700298A52 /* Top10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10.swift; sourceTree = "<group>"; };
-		81E9AF7F2AA2718400298A52 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		81E9AF7F2AA2718400298A52 /* Top10View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 				255C15432A9CE35A003C777D /* FimView.swift */,
 				5A08EF742A9CD6AD001B0411 /* TimerView.swift */,
 				54EEEFDC2A9E31B7003256BC /* AddPlayerView.swift */,
-				81E9AF7F2AA2718400298A52 /* GameView.swift */,
+				81E9AF7F2AA2718400298A52 /* Top10View.swift */,
 				54EEEFDD2A9E31B7003256BC /* GameListView.swift */,
 				54E037062A9D42C300413F37 /* RulesAndInfoView.swift */,
 				81C1F3622A9E3317001A15AB /* SceneManagerView.swift */,
@@ -219,7 +219,7 @@
 				54EEEFDF2A9E31B7003256BC /* GameListView.swift in Sources */,
 				54E0370F2A9D43C100413F37 /* Game.swift in Sources */,
 				5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */,
-				81E9AF802AA2718400298A52 /* GameView.swift in Sources */,
+				81E9AF802AA2718400298A52 /* Top10View.swift in Sources */,
 				54EEEFE12A9F64CF003256BC /* PlayerManager.swift in Sources */,
 				54EEEFDE2A9E31B7003256BC /* AddPlayerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,

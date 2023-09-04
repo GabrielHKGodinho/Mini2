@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SelectKingView: View {
     @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var repository: GameRepository
     
     @State var players = PlayerManager.getPlayers()
     
@@ -44,7 +45,7 @@ struct SelectKingView: View {
                             Spacer()
                             Button {
                                 aux = playerSelected
-                                while playerSelected == aux{
+                                while playerSelected == aux {
                                     playerSelected = Int.random(in: 0..<PlayerManager.getNumberOfPlayers())
                                 }
                             } label: {
@@ -102,7 +103,12 @@ struct SelectKingView: View {
                 Spacer()
                 
                 Button {
-                    manager.currentView = .GameView
+                    switch repository.selectedGame {
+                    case 2:
+                        manager.currentView = .Top10View
+                    default:
+                        manager.currentView = .GameView
+                    }
                 } label: {
                     HStack {
                         ZStack {
