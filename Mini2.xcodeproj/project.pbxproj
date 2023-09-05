@@ -13,6 +13,7 @@
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
 		54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D89B2A83D8760038968C /* Preview Assets.xcassets */; };
+		54D242AE2AA75CB000E8DFF9 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D242AD2AA75CB000E8DFF9 /* StartView.swift */; };
 		54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E037042A9CD75400413F37 /* SelectKingView.swift */; };
 		54E037072A9D42C300413F37 /* RulesAndInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E037062A9D42C300413F37 /* RulesAndInfoView.swift */; };
 		54E0370B2A9D42E200413F37 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E037092A9D42E200413F37 /* Category.swift */; };
@@ -36,6 +37,7 @@
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		54C9D8982A83D8760038968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54C9D89B2A83D8760038968C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54D242AD2AA75CB000E8DFF9 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		54E037042A9CD75400413F37 /* SelectKingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectKingView.swift; sourceTree = "<group>"; };
 		54E037062A9D42C300413F37 /* RulesAndInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesAndInfoView.swift; sourceTree = "<group>"; };
 		54E037092A9D42E200413F37 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Mini2/Classes/Category.swift; sourceTree = SOURCE_ROOT; };
@@ -119,6 +121,7 @@
 				54E037062A9D42C300413F37 /* RulesAndInfoView.swift */,
 				81C1F3622A9E3317001A15AB /* SceneManagerView.swift */,
 				54E037042A9CD75400413F37 /* SelectKingView.swift */,
+				54D242AD2AA75CB000E8DFF9 /* StartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				54EEEFE12A9F64CF003256BC /* PlayerManager.swift in Sources */,
 				54EEEFDE2A9E31B7003256BC /* AddPlayerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
+				54D242AE2AA75CB000E8DFF9 /* StartView.swift in Sources */,
 				54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */,
 				256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */,
 				81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */,

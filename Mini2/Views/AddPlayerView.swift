@@ -18,9 +18,11 @@ struct AddPlayerView: View {
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 16) {
-                Text("Players")
-                    .foregroundColor(.black)
-                    .font(.largeTitle)
+                Text("GET THE PARTY STARTED")
+                    .foregroundColor(.white)
+//                    .font(Font.custom("Grandstander-Bold", size: 64))
+                Text("First of all, get together with your friends")
+                    .foregroundColor(.white)
                     .fontWeight(.semibold)
                 Spacer()
                 
@@ -66,10 +68,22 @@ struct AddPlayerView: View {
                     isEditing = true
                     players = PlayerManager.getPlayers()
                 } label: {
-                    Text("Adicionar player")
-                        .foregroundColor(.black)
+                    
+                    HStack {
+                        Text("+ Add a buddy")
+                            .foregroundColor(.white)
+                    }//fim hstack
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(.white.opacity(0.3))
+                    .cornerRadius(100)
+                    .overlay(
+                    RoundedRectangle(cornerRadius: 100)
+                    .inset(by: 0.5)
+                    .stroke(.white, lineWidth: 1)
+                    )
                 } //fim button
-                .buttonStyle(.bordered)
                 
                 Spacer()
                 
@@ -90,6 +104,7 @@ struct AddPlayerView: View {
                 .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
             } //fim vstack
             .padding( 32)
+            .background(.black)
         }
         .background(Color(uiColor: .systemGray4))
     }
