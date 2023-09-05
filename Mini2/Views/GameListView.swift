@@ -11,9 +11,6 @@ struct GameListView: View {
     @EnvironmentObject var repository: GameRepository
     @EnvironmentObject var manager: SceneManager
     
-//    @State var categories = [Category(name: "Singleplayer"), Category(name: "Multiplayer"), Category(name: "Improviso"), Category(name: "Mímica")]
-//    @State var selectedCategories = [Category]()
-    
     var body: some View {
         VStack(spacing: 16) {
             
@@ -39,7 +36,7 @@ struct GameListView: View {
                     }
                 }
                 
-                ForEach(0..<repository.games.count) { i in
+                ForEach(0..<repository.games.count, id: \.self) { i in
                     HStack {
                         Text(repository.games[i].name)
                             .foregroundColor(.white)

@@ -15,6 +15,7 @@ enum Views {
     case RulesView
     case SelectKingView
     case GameView
+    case Top10View
     case EndGameView
 }
 

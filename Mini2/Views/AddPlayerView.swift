@@ -24,7 +24,7 @@ struct AddPlayerView: View {
                     .fontWeight(.semibold)
                 Spacer()
                 
-                ForEach(Array(players.enumerated()), id: \.element){index, player in
+                ForEach(Array(players.enumerated()), id: \.element){ index, player in
                     if !(isEditing && player.id == players.last!.id) {
                         HStack(alignment: .center, spacing: 8) {
                             Image(systemName: player.icon)
@@ -68,7 +68,7 @@ struct AddPlayerView: View {
                 } label: {
                     Text("Adicionar player")
                         .foregroundColor(.black)
-                }//fim button
+                } //fim button
                 .buttonStyle(.bordered)
                 
                 Spacer()
@@ -85,11 +85,10 @@ struct AddPlayerView: View {
                             .foregroundColor(.black.opacity((PlayerManager.getNumberOfPlayers() == 0 ? 0.5 : 1)))
                             .font(.title)
                     }
-                }//.fim button
+                } //.fim button
                 .disabled(PlayerManager.getNumberOfPlayers() == 0)
                 .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
-            }//fim vstack
-            
+            } //fim vstack
             .padding( 32)
         }
         .background(Color(uiColor: .systemGray4))

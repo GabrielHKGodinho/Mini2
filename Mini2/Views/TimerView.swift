@@ -9,16 +9,15 @@ import SwiftUI
 
 struct TimerView: View {
     @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var repository: GameRepository
     
     @State var countDownTimer = 60
     @State var timerRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        
         VStack {
-            
-            Text("Game Title")
+            Text(repository.games[repository.selectedGame].name)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding(.vertical, 40)
@@ -64,13 +63,11 @@ struct TimerView: View {
                     if countDownTimer != 0 {
                         timerRunning.toggle()
                     }
-                    
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 40)
                             .fill(Color(uiColor: .systemGray4))
                             .frame(width: 80, height: 80)
-                        
                         Image(systemName: timerRunning ? "pause" : "play")
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -80,7 +77,6 @@ struct TimerView: View {
                 
                 Button {
                     countDownTimer += 60
-                    
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 40)
@@ -120,6 +116,8 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
+        let repository = GameRepository()
         TimerView()
+            .environmentObject(repository)
     }
 }

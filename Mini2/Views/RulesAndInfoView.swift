@@ -32,17 +32,14 @@ struct RulesAndInfoView: View {
                             .font(.title)
                             .bold()
                     }
-                    
                     Spacer()
                 }
                 .padding(32)
             }
             
-            
             VStack {
                 TabView(selection: $selection) {
                     ForEach(repository.games[repository.selectedGame].instructions.indices, id: \.self) { i in
-//                     ForEach(rules.indices,id: \.self) {index in
                         VStack {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(.white)
@@ -75,7 +72,6 @@ struct RulesAndInfoView: View {
                 }
             }
             
-            
             Button {
                 manager.currentView = .SelectKingView
             } label: {
@@ -91,7 +87,6 @@ struct RulesAndInfoView: View {
                 }
             }
             .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
-            
         }
         .background(Color(uiColor: .systemGray4))
         .onAppear {
