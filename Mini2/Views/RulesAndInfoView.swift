@@ -14,7 +14,7 @@ struct RulesAndInfoView: View {
     @State private var numberOfTabs = 1
     
     var body: some View {
-        VStack {
+        VStack(spacing: 24) {
             
             HStack {
                 Button {
@@ -35,7 +35,7 @@ struct RulesAndInfoView: View {
                 .multilineTextAlignment(.center)
                 .frame(width: 300)
                 .foregroundColor(.white)
-                .font(.largeTitle)
+                .font(.system(size: 32))
                 .fontWeight(.semibold)
             
             VStack {
@@ -47,22 +47,25 @@ struct RulesAndInfoView: View {
                                 .overlay {
                                     VStack {
                                         Text(repository.games[repository.selectedGame].name)
+                                            .multilineTextAlignment(.center)
+                                            .frame(width: 300)
                                             .foregroundColor(.black)
-                                            .font(.largeTitle)
+                                            .font(.system(size: 32))
                                             .fontWeight(.semibold)
                                             .padding(.vertical, 40)
                                         
                                         Text(repository.games[repository.selectedGame].instructions[i])
-                                            .multilineTextAlignment(.center)
+                                            .font(.system(size: 20))
+                                            .multilineTextAlignment(.leading)
                                             .padding(40)
                                         
                                         Spacer()
                                         
-                                        CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs)
+                                        CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
                                     }
                                     
                                 }
-                                .padding(.horizontal, 32)
+                                .padding(.horizontal, 24)
                         }
                     }
 
@@ -76,15 +79,15 @@ struct RulesAndInfoView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 42)
                         .fill(.white)
-                        .frame(height: 70)
-                        .padding(32)
+                        .frame(width: 257, height: 52)
                     
                     Text("Let's go")
                         .foregroundColor(.black)
-                        .font(.title)
+                        .font(.system(size: 20))
                 }
             }
         }
+        .padding(.bottom, 40)
         .background(Color("DarkBackground"))
         .onAppear {
             numberOfTabs = repository.games[repository.selectedGame].instructions.count
