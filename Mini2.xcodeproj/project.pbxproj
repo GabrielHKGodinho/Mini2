@@ -22,6 +22,7 @@
 		54EEEFDF2A9E31B7003256BC /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFDD2A9E31B7003256BC /* GameListView.swift */; };
 		54EEEFE12A9F64CF003256BC /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFE02A9F64CF003256BC /* PlayerManager.swift */; };
 		5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08EF742A9CD6AD001B0411 /* TimerView.swift */; };
+		5A7B56DE2AA75BE300AC4992 /* CustomTabViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */; };
 		81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3602A9E330B001A15AB /* SceneManager.swift */; };
 		81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3622A9E3317001A15AB /* SceneManagerView.swift */; };
 		81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7D2AA25BB700298A52 /* Top10.swift */; };
@@ -45,6 +46,7 @@
 		54EEEFDD2A9E31B7003256BC /* GameListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
 		54EEEFE02A9F64CF003256BC /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		5A08EF742A9CD6AD001B0411 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewIndicator.swift; sourceTree = "<group>"; };
 		81C1F3602A9E330B001A15AB /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		81C1F3622A9E3317001A15AB /* SceneManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerView.swift; sourceTree = "<group>"; };
 		81E9AF7D2AA25BB700298A52 /* Top10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		54C9D8932A83D8750038968C /* Mini2 */ = {
 			isa = PBXGroup;
 			children = (
+				5A7B56DC2AA75B9E00AC4992 /* Components */,
 				81E9AF7C2AA25B8B00298A52 /* Repositories */,
 				54E037102A9D43CB00413F37 /* Classes */,
 				54E037032A9CD72600413F37 /* Views */,
@@ -134,6 +137,14 @@
 				54EEEFE02A9F64CF003256BC /* PlayerManager.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		5A7B56DC2AA75B9E00AC4992 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		81E9AF7C2AA25B8B00298A52 /* Repositories */ = {
@@ -221,6 +232,7 @@
 				5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */,
 				81E9AF802AA2718400298A52 /* Top10View.swift in Sources */,
 				54EEEFE12A9F64CF003256BC /* PlayerManager.swift in Sources */,
+				5A7B56DE2AA75BE300AC4992 /* CustomTabViewIndicator.swift in Sources */,
 				54EEEFDE2A9E31B7003256BC /* AddPlayerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
 				54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */,
