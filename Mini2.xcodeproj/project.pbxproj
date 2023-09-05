@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		255C15442A9CE35A003C777D /* FimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C15432A9CE35A003C777D /* FimView.swift */; };
-		256EA4872A9E10BF00F0F103 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EA4862A9E10BF00F0F103 /* Model.swift */; };
 		256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EA4892A9E179C00F0F103 /* GameRepository.swift */; };
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
@@ -23,16 +22,18 @@
 		54EEEFDF2A9E31B7003256BC /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFDD2A9E31B7003256BC /* GameListView.swift */; };
 		54EEEFE12A9F64CF003256BC /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFE02A9F64CF003256BC /* PlayerManager.swift */; };
 		5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08EF742A9CD6AD001B0411 /* TimerView.swift */; };
+		81683E792AA75AB00046064F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81683E782AA75AB00046064F /* PrimaryButton.swift */; };
 		5A7B56DE2AA75BE300AC4992 /* CustomTabViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */; };
 		81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3602A9E330B001A15AB /* SceneManager.swift */; };
 		81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3622A9E3317001A15AB /* SceneManagerView.swift */; };
+		81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */; };
+		81E6F3682AA7670D00ABFDE0 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */; };
 		81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7D2AA25BB700298A52 /* Top10.swift */; };
 		81E9AF802AA2718400298A52 /* Top10View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7F2AA2718400298A52 /* Top10View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		255C15432A9CE35A003C777D /* FimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FimView.swift; sourceTree = "<group>"; };
-		256EA4862A9E10BF00F0F103 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		256EA4892A9E179C00F0F103 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
@@ -48,9 +49,13 @@
 		54EEEFDD2A9E31B7003256BC /* GameListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
 		54EEEFE02A9F64CF003256BC /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		5A08EF742A9CD6AD001B0411 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		81683E782AA75AB00046064F /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		81683E7D2AA75F390046064F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grandstander-Bold.ttf"; sourceTree = "<group>"; };
 		5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewIndicator.swift; sourceTree = "<group>"; };
 		81C1F3602A9E330B001A15AB /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		81C1F3622A9E3317001A15AB /* SceneManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerView.swift; sourceTree = "<group>"; };
+		81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		81E9AF7D2AA25BB700298A52 /* Top10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10.swift; sourceTree = "<group>"; };
 		81E9AF7F2AA2718400298A52 /* Top10View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,14 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		256EA4882A9E10C300F0F103 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				256EA4862A9E10BF00F0F103 /* Model.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		54C9D8882A83D8750038968C = {
 			isa = PBXGroup;
 			children = (
@@ -93,13 +90,14 @@
 		54C9D8932A83D8750038968C /* Mini2 */ = {
 			isa = PBXGroup;
 			children = (
-				5A7B56DC2AA75B9E00AC4992 /* Components */,
+				8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */,
+				81683E7D2AA75F390046064F /* Info.plist */,
+				81683E772AA75A960046064F /* Components */,
 				81E9AF7C2AA25B8B00298A52 /* Repositories */,
 				54E037102A9D43CB00413F37 /* Classes */,
 				54E037032A9CD72600413F37 /* Views */,
 				54C9D8942A83D8750038968C /* Mini2App.swift */,
 				54C9D8982A83D8760038968C /* Assets.xcassets */,
-				256EA4882A9E10C300F0F103 /* Model */,
 				54C9D89A2A83D8760038968C /* Preview Content */,
 			);
 			path = Mini2;
@@ -142,10 +140,12 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		5A7B56DC2AA75B9E00AC4992 /* Components */ = {
+		81683E772AA75A960046064F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */,
+				81683E782AA75AB00046064F /* PrimaryButton.swift */,
+				81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */,
+        5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -216,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */,
 				54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */,
 				54C9D8992A83D8760038968C /* Assets.xcassets in Resources */,
 			);
@@ -228,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E6F3682AA7670D00ABFDE0 /* SecondaryButton.swift in Sources */,
+				81683E792AA75AB00046064F /* PrimaryButton.swift in Sources */,
 				54E037072A9D42C300413F37 /* RulesAndInfoView.swift in Sources */,
 				255C15442A9CE35A003C777D /* FimView.swift in Sources */,
 				54EEEFDF2A9E31B7003256BC /* GameListView.swift in Sources */,
@@ -245,7 +248,6 @@
 				54E0370B2A9D42E200413F37 /* Category.swift in Sources */,
 				54EEEFDB2A9E31AE003256BC /* Player.swift in Sources */,
 				81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */,
-				256EA4872A9E10BF00F0F103 /* Model.swift in Sources */,
 				81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +380,7 @@
 				DEVELOPMENT_TEAM = Q379URF792;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mini2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -407,6 +410,7 @@
 				DEVELOPMENT_TEAM = Q379URF792;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mini2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
