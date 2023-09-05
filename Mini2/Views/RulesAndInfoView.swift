@@ -12,53 +12,61 @@ struct RulesAndInfoView: View {
     @EnvironmentObject var repository: GameRepository
     @State private var selection = 0
     @State private var numberOfTabs = 1
-    var rules: [Color] = [.blue, .green, .red, .yellow, .orange]
     
     var body: some View {
         VStack {
-            ZStack {
-                Text(repository.games[repository.selectedGame].name)
-                    .foregroundColor(.black)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .padding(.vertical, 40)
-                
-                HStack {
-                    Button {
-                        manager.currentView = .GameListView
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
-                            .font(.title)
-                            .bold()
-                    }
-                    Spacer()
+            
+            HStack {
+                Button {
+                    manager.currentView = .GameListView
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .bold()
+                        .padding(.vertical, 2)
                 }
-                .padding(32)
+                
+                Spacer()
             }
+            .padding(.horizontal, 32)
+            
+            Text("Take a look at the rules")
+                .multilineTextAlignment(.center)
+                .frame(width: 300)
+                .foregroundColor(.white)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
             
             VStack {
                 TabView(selection: $selection) {
                     ForEach(repository.games[repository.selectedGame].instructions.indices, id: \.self) { i in
                         VStack {
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius: 42)
                                 .fill(.white)
                                 .overlay {
-                                    Text(repository.games[repository.selectedGame].instructions[i])
-                                        .multilineTextAlignment(.center)
-                                        .padding(40)
                                     VStack {
+                                        Text(repository.games[repository.selectedGame].name)
+                                            .foregroundColor(.black)
+                                            .font(.largeTitle)
+                                            .fontWeight(.semibold)
+                                            .padding(.vertical, 40)
+                                        
+                                        Text(repository.games[repository.selectedGame].instructions[i])
+                                            .multilineTextAlignment(.center)
+                                            .padding(40)
+                                        
                                         Spacer()
-                                        CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
+                                        
+                                        CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs)
                                     }
+                                    
                                 }
                                 .padding(.horizontal, 32)
-                                .padding(.bottom, 20)
                         }
                     }
 
                 }
-                .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
             
@@ -66,19 +74,18 @@ struct RulesAndInfoView: View {
                 manager.currentView = .SelectKingView
             } label: {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 42)
                         .fill(.white)
                         .frame(height: 70)
                         .padding(32)
                     
-                    Text("Play")
+                    Text("Let's go")
                         .foregroundColor(.black)
                         .font(.title)
                 }
             }
-            .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
         }
-        .background(Color(uiColor: .systemGray4))
+        .background(Color("DarkBackground"))
         .onAppear {
             numberOfTabs = repository.games[repository.selectedGame].instructions.count
         }
