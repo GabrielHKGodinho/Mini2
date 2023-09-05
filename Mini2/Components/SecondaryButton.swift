@@ -13,7 +13,6 @@ struct SecondaryButton: View {
     
     var body: some View {
         ZStack {
-            Color(.gray)
             RoundedRectangle(cornerRadius: 100)
                 .stroke(lineWidth: 1)
                 .foregroundColor(.white)

@@ -14,7 +14,6 @@ struct PrimaryButton: View {
     
     var body: some View {
         ZStack {
-            Color(.gray)
             Text(text)
                 .font(Font.custom("Grandstander-Bold", size: 29))
                 .foregroundColor(Color(color ?? "White"))

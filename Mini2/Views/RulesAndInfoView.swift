@@ -20,22 +20,21 @@ struct RulesAndInfoView: View {
                 Button {
                     manager.currentView = .GameListView
                 } label: {
-                    Image(systemName: "chevron.left")
+
+                    Text("< GAMES")
                         .foregroundColor(.white)
-                        .font(.title)
-                        .bold()
-                        .padding(.vertical, 2)
+                        .font(Font.custom("Grandstander-Bold", size: 24))
                 }
                 
                 Spacer()
             }
             .padding(.horizontal, 32)
             
-            Text("Take a look at the rules")
-                .multilineTextAlignment(.center)
+            Text("TAKE A LOOK AT THE RULES")
+                .multilineTextAlignment(.leading)
                 .frame(width: 300)
                 .foregroundColor(.white)
-                .font(.system(size: 32))
+                .font(Font.custom("Grandstander-Bold", size: 64))
                 .fontWeight(.semibold)
             
             VStack {
