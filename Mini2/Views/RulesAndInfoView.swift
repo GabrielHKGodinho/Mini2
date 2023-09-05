@@ -44,12 +44,13 @@ struct RulesAndInfoView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(.white)
                                 .overlay {
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color(uiColor: .systemGray5))
-                                        .padding(20)
                                     Text(repository.games[repository.selectedGame].instructions[i])
                                         .multilineTextAlignment(.center)
                                         .padding(40)
+                                    VStack {
+                                        Spacer()
+                                        CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
+                                    }
                                 }
                                 .padding(.horizontal, 32)
                                 .padding(.bottom, 20)
@@ -59,17 +60,6 @@ struct RulesAndInfoView: View {
                 }
                 .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                
-                HStack(spacing: 8) {
-                    ForEach(0..<numberOfTabs, id: \.self) { index in
-                        Circle()
-                            .frame(width: 15, height: 15)
-                            .foregroundColor(selection == index ? .white : Color(uiColor: .systemGray5))
-                            .animation(.easeInOut(duration: 0.2))
-                            .padding(.horizontal, 2)
-                            .shadow(color: .black.opacity(0.12), radius: 5, x: 5, y: 5)
-                    }
-                }
             }
             
             Button {
