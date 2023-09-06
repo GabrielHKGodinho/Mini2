@@ -14,13 +14,13 @@ struct RulesAndInfoView: View {
     @State private var numberOfTabs = 1
     
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: 12) {
             
             HStack {
                 Button {
                     manager.currentView = .GameListView
                 } label: {
-
+                    
                     Text("< GAMES")
                         .foregroundColor(.white)
                         .font(Font.custom("Grandstander-Bold", size: 24))
@@ -28,14 +28,19 @@ struct RulesAndInfoView: View {
                 
                 Spacer()
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, 36)
             
-            Text("TAKE A LOOK AT THE RULES")
-                .multilineTextAlignment(.leading)
-                .frame(width: 300)
-                .foregroundColor(.white)
-                .font(Font.custom("Grandstander-Bold", size: 64))
-                .fontWeight(.semibold)
+            HStack {
+                Text("TAKE A LOOK AT THE RULES")
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 300)
+                    .foregroundColor(.white)
+                    .font(Font.custom("Grandstander-Bold", size: 64))
+                    .fontWeight(.semibold)
+                
+                Spacer()
+            }
+            .padding(.horizontal, 32)
             
             VStack {
                 TabView(selection: $selection) {
@@ -44,30 +49,29 @@ struct RulesAndInfoView: View {
                             RoundedRectangle(cornerRadius: 42)
                                 .fill(.white)
                                 .overlay {
-                                    VStack {
-                                        Text(repository.games[repository.selectedGame].name)
-                                            .multilineTextAlignment(.center)
-                                            .frame(width: 300)
-                                            .foregroundColor(.black)
-                                            .font(.system(size: 32))
-                                            .fontWeight(.semibold)
-                                            .padding(.vertical, 40)
+                                    ZStack {
+                                        VStack {
+                                            Text(repository.games[repository.selectedGame].name)
+                                                .multilineTextAlignment(.center)
+                                                .frame(width: 250)
+                                                .foregroundColor(.black)
+                                                .font(Font.custom("Grandstander-Bold", size: 36))
+                                                .padding(.vertical, 40)
+                                            
+                                            Spacer()
+                                            
+                                            CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
+                                        }
                                         
                                         Text(repository.games[repository.selectedGame].instructions[i])
                                             .font(.system(size: 20))
-                                            .multilineTextAlignment(.leading)
-                                            .padding(40)
-                                        
-                                        Spacer()
-                                        
-                                        CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
+                                            .multilineTextAlignment(.center)
+                                            .padding(28)
                                     }
-                                    
                                 }
-                                .padding(.horizontal, 24)
+                                .padding(.horizontal, 36)
                         }
                     }
-
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
@@ -75,18 +79,13 @@ struct RulesAndInfoView: View {
             Button {
                 manager.currentView = .SelectKingView
             } label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 42)
-                        .fill(.white)
-                        .frame(width: 257, height: 52)
-                    
-                    Text("Let's go")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                }
+                PrimaryButton(text: "LET'S PLAY", color: false)
             }
+            .padding(.bottom, 12)
+            .padding(.top, 40)
         }
-        .padding(.bottom, 40)
+        .padding(.top, 36)
+        .padding(.bottom, 24)
         .background(Color("DarkBackground"))
         .onAppear {
             numberOfTabs = repository.games[repository.selectedGame].instructions.count
