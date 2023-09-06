@@ -21,16 +21,12 @@ struct StartView: View {
             Button {
                 
             } label: {
-                HStack{
-                    Text("botao")
-                }
-                    .frame(maxWidth: .infinity, maxHeight: 80)
-                    .background(.gray)
-                    .padding()
+                PrimaryButton(text: "START THE PARTY")
             }
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.bottom, 40)
         .background(.black)
     }
 }

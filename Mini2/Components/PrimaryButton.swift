@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PrimaryButton: View {
     let text: String
-    var color: String?
+    var color: Color?
     var isActive: Bool = true
     
     var body: some View {
