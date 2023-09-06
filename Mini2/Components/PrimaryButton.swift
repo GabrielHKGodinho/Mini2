@@ -16,7 +16,7 @@ struct PrimaryButton: View {
         ZStack {
             Text(text)
                 .font(Font.custom("Grandstander-Bold", size: 29))
-                .foregroundColor(Color(color ?? "White"))
+                .foregroundColor(isActive ? (color ?? .black) : .white)
                 .offset(y: 6)
                 .background {
                     if isActive {
