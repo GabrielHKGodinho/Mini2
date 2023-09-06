@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PlayerManager:ObservableObject {
+class PlayerManager: ObservableObject {
     
     static let instance = PlayerManager()
     
@@ -15,11 +15,11 @@ class PlayerManager:ObservableObject {
     
     private init(){}
     
-    static func addPlayer(player: Player){
+    static func addPlayer(player: Player) {
         players.append(player)
     }
     
-    static func removePlayer(index: Int){
+    static func removePlayer(index: Int) {
         if index >= players.count{
             return
         }else{
@@ -27,15 +27,15 @@ class PlayerManager:ObservableObject {
         }
     }
     
-    static func getPlayers()->[Player]{
+    static func getPlayers() -> [Player] {
         return players
     }
     
-    static func getNumberOfPlayers()->Int{
+    static func getNumberOfPlayers() -> Int {
         return players.count
     }
     
-    static func getLastPlayerName()->String{
+    static func getLastPlayerName() -> String {
         if getNumberOfPlayers() > 0{
             return players.last!.name
         }else{
