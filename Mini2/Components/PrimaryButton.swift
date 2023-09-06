@@ -9,14 +9,14 @@ import SwiftUI
 
 struct PrimaryButton: View {
     let text: String
-    var color: Bool
+    var color: String?
     var isActive: Bool = true
     
     var body: some View {
         ZStack {
             Text(text)
                 .font(Font.custom("Grandstander-Bold", size: 29))
-                .foregroundColor(color ? Color(.white) : Color.black)
+                .foregroundColor(Color(color ?? "White"))
                 .offset(y: 6)
                 .background {
                     if isActive {
@@ -31,6 +31,6 @@ struct PrimaryButton: View {
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(text: "START THE PARTY", color: true, isActive: false)
+        PrimaryButton(text: "START THE PARTY", isActive: false)
     }
 }

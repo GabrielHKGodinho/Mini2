@@ -79,7 +79,7 @@ struct RulesAndInfoView: View {
             Button {
                 manager.currentView = .SelectKingView
             } label: {
-                PrimaryButton(text: "LET'S PLAY", color: false)
+                PrimaryButton(text: "LET'S PLAY")
             }
             .padding(.bottom, 12)
             .padding(.top, 40)
