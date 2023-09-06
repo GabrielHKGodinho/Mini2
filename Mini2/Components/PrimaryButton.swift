@@ -20,9 +20,9 @@ struct PrimaryButton: View {
                 .offset(y: 6)
                 .background {
                     if isActive {
-                        Image("filledButton")
+                        Image("FilledButton")
                     } else {
-                        Image("strokedButton")
+                        Image("StrokedButton")
                     }
                 }
         }
@@ -31,6 +31,6 @@ struct PrimaryButton: View {
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(text: "START THE PARTY", isActive: false)
+        PrimaryButton(text: "START THE PARTY", isActive: true)
     }
 }

@@ -86,7 +86,7 @@ struct RulesAndInfoView: View {
         }
         .padding(.top, 36)
         .padding(.bottom, 24)
-        .background(Color("darkBackground"))
+        .background(Color("DarkBackground"))
         .onAppear {
             numberOfTabs = repository.games[repository.selectedGame].instructions.count
         }
