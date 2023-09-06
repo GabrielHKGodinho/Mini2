@@ -9,15 +9,14 @@ import SwiftUI
 
 struct PrimaryButton: View {
     let text: String
-    var color: String?
+    var color: Color?
     var isActive: Bool = true
     
     var body: some View {
         ZStack {
-            Color(.gray)
             Text(text)
                 .font(Font.custom("Grandstander-Bold", size: 29))
-                .foregroundColor(Color(color ?? "White"))
+                .foregroundColor(isActive ? (color ?? .black) : .white)
                 .offset(y: 6)
                 .background {
                     if isActive {
