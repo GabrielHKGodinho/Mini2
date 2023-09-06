@@ -12,58 +12,61 @@ struct GameListView: View {
     @EnvironmentObject var manager: SceneManager
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(alignment: .leading, spacing: 24) {
+            ReturnButton(manager: _manager, text: "PLAYERS", path: .AddPlayerView)
             
-            VStack {
-                ZStack {
-                    Text("Select a game")
-                        .foregroundColor(.black)
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
-                        .padding(.vertical, 40)
-                    
-                    HStack {
-                        Button {
-                            manager.currentView = .AddPlayerView
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.black)
-                                .font(.title)
-                                .bold()
+            Text("SELECT GAME")
+                .foregroundColor(.white)
+                .font(Font.custom("Grandstander-Bold", size: 64))
+                .padding(.bottom, -8)
+            
+            Text("Time to choose")
+                .font(.system(size: 24, weight: .semibold))
+                .foregroundColor(.white)
+            
+            ScrollView {
+                VStack(spacing: 24) {
+                    ForEach(0..<repository.games.count, id: \.self) { i in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 22)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                            VStack(alignment: .leading) {
+                                HStack(alignment: .center) {
+                                    Image(systemName: repository.games[i].icon)
+                                        .foregroundColor(.black)
+                                        .font(.system(size: 42))
+                                    Text(repository.games[i].name.uppercased())
+                                        .foregroundColor(.black)
+                                        .font(Font.custom("Grandstander-Bold", size: 32))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom, -4)
+                                    Spacer()
+                                }
+                                .frame(alignment: .center)
+                                Text(repository.games[i].description)
+                                    .font(.body)
+                            }
+                            .padding(24)
                         }
-                        
-                        Spacer()
+                        .onTapGesture {
+                            manager.currentView = .RulesView
+                            repository.selectedGame = i
+                        }
                     }
                 }
-                
-                ForEach(0..<repository.games.count, id: \.self) { i in
-                    HStack {
-                        Text(repository.games[i].name)
-                            .foregroundColor(.white)
-                        Text(repository.games[i].description)
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                    }
-                    .onTapGesture {
-                        manager.currentView = .RulesView
-                        repository.selectedGame = i
-                    }
-                }
-                Spacer()
             }
-            .padding(32)
+            .scrollIndicators(.never)
         }
-        .background(Color(uiColor: .systemGray4))
-        
+        .padding(32)
+        .background(.black)
     }
 }
 
-//struct GameListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameListView()
-//    }
-//}
+struct GameListView_Previews: PreviewProvider {
+    static var previews: some View {
+        let repository = GameRepository()
+        GameListView()
+            .environmentObject(repository)
+    }
+}
