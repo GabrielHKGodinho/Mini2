@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25034AFD2AA8A4C90044E568 /* BotaoVoltar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25034AFC2AA8A4C90044E568 /* BotaoVoltar.swift */; };
+		25034B032AA8B0680044E568 /* modalTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25034B022AA8B0680044E568 /* modalTimerView.swift */; };
 		255C15442A9CE35A003C777D /* FimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C15432A9CE35A003C777D /* FimView.swift */; };
 		256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EA4892A9E179C00F0F103 /* GameRepository.swift */; };
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		25034AFC2AA8A4C90044E568 /* BotaoVoltar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoVoltar.swift; sourceTree = "<group>"; };
+		25034B022AA8B0680044E568 /* modalTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modalTimerView.swift; sourceTree = "<group>"; };
 		255C15432A9CE35A003C777D /* FimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FimView.swift; sourceTree = "<group>"; };
 		256EA4892A9E179C00F0F103 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				81683E782AA75AB00046064F /* PrimaryButton.swift */,
 				81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */,
 				5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */,
+				25034B022AA8B0680044E568 /* modalTimerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */,
 				81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */,
 				54E0370B2A9D42E200413F37 /* Category.swift in Sources */,
+				25034B032AA8B0680044E568 /* modalTimerView.swift in Sources */,
 				54EEEFDB2A9E31AE003256BC /* Player.swift in Sources */,
 				81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */,
 				81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */,
