@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct botaoVoltar: View {
+struct ReturnButton: View {
     @EnvironmentObject var manager: SceneManager
 
     var text: String
@@ -26,9 +26,9 @@ struct botaoVoltar: View {
         
     }
     
-    struct botaoVoltar_preview: PreviewProvider {
+    struct ReturnButton_preview: PreviewProvider {
         static var previews: some View {
-            botaoVoltar(text: "START THE PARTY", path: .HomeView)
+            ReturnButton(text: "START THE PARTY", path: .HomeView)
         }
     }
 }
