@@ -20,9 +20,9 @@ struct PrimaryButton: View {
                 .offset(y: 6)
                 .background {
                     if isActive {
-                        Image("filledButton")
+                        Image("FilledButton")
                     } else {
-                        Image("strokedButton")
+                        Image("StrokedButton")
                     }
                 }
         }
