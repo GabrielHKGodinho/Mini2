@@ -87,7 +87,8 @@ struct AddPlayerView: View {
                 .disabled(PlayerManager.getNumberOfPlayers() == 0)
                 .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
             } //fim vstack
-            .padding( 32)
+            .padding(.horizontal, 32)
+            .padding(.bottom, 24)
             .background(.black)
         }
         .background(Color(uiColor: .systemGray4))

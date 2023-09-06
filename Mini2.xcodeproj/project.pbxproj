@@ -27,6 +27,7 @@
 		81683E792AA75AB00046064F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81683E782AA75AB00046064F /* PrimaryButton.swift */; };
 		81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3602A9E330B001A15AB /* SceneManager.swift */; };
 		81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3622A9E3317001A15AB /* SceneManagerView.swift */; };
+		81CFC76B2AA8AB3E003503A9 /* Grandstander-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */; };
 		81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */; };
 		81E6F3682AA7670D00ABFDE0 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */; };
 		81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7D2AA25BB700298A52 /* Top10.swift */; };
@@ -57,6 +58,7 @@
 		8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grandstander-Bold.ttf"; sourceTree = "<group>"; };
 		81C1F3602A9E330B001A15AB /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		81C1F3622A9E3317001A15AB /* SceneManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerView.swift; sourceTree = "<group>"; };
+		81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grandstander-Regular.ttf"; sourceTree = "<group>"; };
 		81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		81E9AF7D2AA25BB700298A52 /* Top10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10.swift; sourceTree = "<group>"; };
 		81E9AF7F2AA2718400298A52 /* Top10View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10View.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */,
+				81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */,
 				81683E7D2AA75F390046064F /* Info.plist */,
 				81683E772AA75A960046064F /* Components */,
 				81E9AF7C2AA25B8B00298A52 /* Repositories */,
@@ -219,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81CFC76B2AA8AB3E003503A9 /* Grandstander-Regular.ttf in Resources */,
 				81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */,
 				54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */,
 				54C9D8992A83D8760038968C /* Assets.xcassets in Resources */,
