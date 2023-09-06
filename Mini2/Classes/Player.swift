@@ -12,7 +12,7 @@ struct Player: Identifiable, Hashable {
     let icon: String
     var name: String
     
-    init(icon: String = "deafult", name: String) {
+    init(icon: String = "circle.fill", name: String) {
         self.icon = icon
         self.name = name
     }

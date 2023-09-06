@@ -28,6 +28,7 @@
 		81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3602A9E330B001A15AB /* SceneManager.swift */; };
 		81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3622A9E3317001A15AB /* SceneManagerView.swift */; };
 		81CFC76B2AA8AB3E003503A9 /* Grandstander-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */; };
+		81CFC76D2AA8EE87003503A9 /* OvalTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFC76C2AA8EE87003503A9 /* OvalTextFieldStyle.swift */; };
 		81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */; };
 		81E6F3682AA7670D00ABFDE0 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */; };
 		81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7D2AA25BB700298A52 /* Top10.swift */; };
@@ -59,6 +60,7 @@
 		81C1F3602A9E330B001A15AB /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		81C1F3622A9E3317001A15AB /* SceneManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerView.swift; sourceTree = "<group>"; };
 		81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grandstander-Regular.ttf"; sourceTree = "<group>"; };
+		81CFC76C2AA8EE87003503A9 /* OvalTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalTextFieldStyle.swift; sourceTree = "<group>"; };
 		81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		81E9AF7D2AA25BB700298A52 /* Top10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10.swift; sourceTree = "<group>"; };
 		81E9AF7F2AA2718400298A52 /* Top10View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10View.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				81683E782AA75AB00046064F /* PrimaryButton.swift */,
 				81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */,
 				5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */,
+				81CFC76C2AA8EE87003503A9 /* OvalTextFieldStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				5A7B56DE2AA75BE300AC4992 /* CustomTabViewIndicator.swift in Sources */,
 				54EEEFDE2A9E31B7003256BC /* AddPlayerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
+				81CFC76D2AA8EE87003503A9 /* OvalTextFieldStyle.swift in Sources */,
 				54D242AE2AA75CB000E8DFF9 /* StartView.swift in Sources */,
 				54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */,
 				256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */,
