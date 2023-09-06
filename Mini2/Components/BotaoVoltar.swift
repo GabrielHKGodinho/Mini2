@@ -20,7 +20,7 @@ struct botaoVoltar: View {
         } label: {
             
             Text("< \(text)")
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .font(Font.custom("Grandstander-regular", size: 24))
         }
         
