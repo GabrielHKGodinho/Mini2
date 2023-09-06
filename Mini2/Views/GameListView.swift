@@ -13,6 +13,8 @@ struct GameListView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
+            ReturnButton(manager: _manager, text: "PLAYERS", path: .AddPlayerView)
+            
             Text("SELECT GAME")
                 .foregroundColor(.white)
                 .font(Font.custom("Grandstander-Bold", size: 64))
@@ -34,7 +36,7 @@ struct GameListView: View {
                                     Image(systemName: repository.games[i].icon)
                                         .foregroundColor(.black)
                                         .font(.system(size: 42))
-                                    Text(repository.games[i].name)
+                                    Text(repository.games[i].name.uppercased())
                                         .foregroundColor(.black)
                                         .font(Font.custom("Grandstander-Bold", size: 32))
                                         .frame(maxWidth: .infinity, alignment: .leading)
