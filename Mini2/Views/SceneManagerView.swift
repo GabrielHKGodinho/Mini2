@@ -15,7 +15,7 @@ struct SceneManagerView: View {
         ZStack {
             switch manager.currentView {
             case .HomeView:
-                GameListView()
+                StartView()
                     .transition(manager.animation)
             case .GameListView:
                 GameListView()

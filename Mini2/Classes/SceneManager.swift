@@ -20,6 +20,6 @@ enum Views {
 }
 
 class SceneManager: ObservableObject {
-    @Published var currentView = Views.AddPlayerView
+    @Published var currentView = Views.HomeView
     @Published var animation = AnyTransition.scale
 }

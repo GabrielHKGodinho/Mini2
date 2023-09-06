@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartView: View {
+    @EnvironmentObject var manager: SceneManager
+    
     var body: some View {
         VStack{
             Spacer()
@@ -19,7 +21,7 @@ struct StartView: View {
             Spacer()
             
             Button {
-                
+                manager.currentView = .AddPlayerView
             } label: {
                 PrimaryButton(text: "START THE PARTY")
             }
