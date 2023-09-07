@@ -35,6 +35,18 @@ class PlayerManager: ObservableObject {
         return players.count
     }
     
+    static func getPlayersNames() -> [String] {
+        var names: [String] = []
+        if getNumberOfPlayers() > 0{
+            for(player) in players{
+                names.append(player.name)
+            }
+            return names
+        }else{
+            return names
+        }
+    }
+    
     static func getLastPlayerName() -> String {
         if getNumberOfPlayers() > 0{
             return players.last!.name
