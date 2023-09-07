@@ -11,7 +11,7 @@ struct AddPlayerView: View {
     @EnvironmentObject var manager: SceneManager
     
     @State var players = PlayerManager.getPlayers()
-    @State var playersNames = [String]()
+    @State var playersNames : [String] = PlayerManager.getPlayersNames()
     
     @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
     @State var isEditing: Bool = false
@@ -34,7 +34,6 @@ struct AddPlayerView: View {
                 Spacer()
                 
                 ForEach(Array(players.enumerated()), id: \.element){ index, player in
-                    //if !(isEditing && player.id == players.last!.id) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 100)
                                 .foregroundColor(Color("gray"))
@@ -52,9 +51,6 @@ struct AddPlayerView: View {
                                     .font(.title2)
                                     .bold()
                                     .foregroundColor(.white)
-                                    .onSubmit {
-                                        PlayerManager.setPlayerName(index: index, name: playersNames[index])
-                                    }
                                 Spacer()
                                 Button {
                                     PlayerManager.removePlayer(index: index)
@@ -71,22 +67,8 @@ struct AddPlayerView: View {
                             .padding(.horizontal, 12)
                             .padding(.vertical, 8)
                         }
-                   // }
                 }
                 
-//                if isEditing {
-//                    TextField("", text: $name, prompt: Text("Player \(PlayerManager.getNumberOfPlayers())"))
-//                        .onSubmit {
-//                            isEditing = false
-//                            PlayerManager.setPlayerName(index: PlayerManager.getNumberOfPlayers()-1, name: name)
-//                            players = PlayerManager.getPlayers()
-//                            name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
-//                        }
-//                        .autocorrectionDisabled()
-//                        .frame(width: CGFloat(PlayerManager.getLastPlayerName().count + 8) * 5, alignment: .center)
-//                        .textFieldStyle(OvalTextFieldStyle())
-//                }
-
                 Button {
                     PlayerManager.addPlayer(player: Player(name: "Player \(PlayerManager.getNumberOfPlayers() + 1)"))
                     playersNames.append(PlayerManager.getLastPlayerName())
@@ -100,6 +82,9 @@ struct AddPlayerView: View {
                 Spacer()
                 
                 Button {
+                    for (index, name) in playersNames.enumerated() {
+                        PlayerManager.setPlayerName(index: index, name: name)
+                    }
                     manager.currentView = .GameListView
                 } label: {
                     PrimaryButton(text: "SELECT GAME", isActive: isActive)
@@ -112,11 +97,6 @@ struct AddPlayerView: View {
             .background(.black)
         }
         .background(Color(uiColor: .systemGray4))
-        .onAppear {
-            for player in players {
-                playersNames.append(player.name)
-            }
-        }
     }
 }
 
