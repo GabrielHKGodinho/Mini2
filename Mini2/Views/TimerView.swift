@@ -8,135 +8,119 @@
 import SwiftUI
 
 struct TimerView: View {
-    //    @EnvironmentObject var manager: SceneManager
-    //    @EnvironmentObject var repository: GameRepository
+    @Environment(\.dismiss) var dismiss
     
     @State var countDownTimer = 60
     @State var timerRunning = false
+    @Binding var showingTimer: Bool
+    
+    var onCloseButtonTap: () -> Void
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        
-        VStack {
-            Spacer()
-            
-            HStack {
+        HStack(alignment: .bottom) {
+            VStack(spacing: 24) {
                 Spacer()
-                
-                VStack {
-                    HStack {
-                        Spacer()
-                        
-                        ZStack{
-                            
-                            Button {
-                                // atualizar a variavel de abrir e fechar a modal depois
-                            } label: {
-                                Image(systemName: "xmark.circle")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                            }
-                        }
-                    }
-                    
-                    Text ("TIMER")
-                        .foregroundColor(.white)
-                        .font(Font.custom("Grandstander-Bold", size: 64))
-                    
+                HStack {
                     Spacer()
-                    
-                    Group {
-                        let tempo = countDownTimer
-                        let min = tempo / 60
-                        let sec = tempo - (min * 60)
-                        Text (sec < 10 ? "\(min):0\(sec)" : "\(min):\(sec)")
-                            .font(.system(size: 80))
+                    Button {
+                        //dismiss()
+                        //showingTimer = false
+                        onCloseButtonTap()
+                    } label: {
+                        Image(systemName: "xmark.circle")
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .bold()
-                            .onReceive(timer) { _ in
-                                if countDownTimer > 0 && timerRunning {
-                                    countDownTimer -= 1
-                                } else {
-                                    timerRunning = false
-                                }
-                            }
+                            .font(.title)
                     }
-                    
-                    HStack(spacing: 18) {
-                        Button {
-                            countDownTimer = 60
+                }
+                
+                Text("TIMER")
+                    .foregroundColor(.white)
+                    .font(Font.custom("Grandstander-Bold", size: 64))
+                
+                let tempo = countDownTimer
+                let min = tempo / 60
+                let sec = tempo - (min * 60)
+                Text(sec < 10 ? "\(min):0\(sec)" : "\(min):\(sec)")
+                    .font(.system(size: 80))
+                    .foregroundColor(.white)
+                    .bold()
+                    .onReceive(timer) { _ in
+                        if countDownTimer > 0 && timerRunning {
+                            countDownTimer -= 1
+                        } else {
+                            timerRunning = false
+                        }
+                    }
+                
+                HStack(spacing: 16) {
+                    Button {
+                        countDownTimer = 60
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 40)
+                                .fill(Color(uiColor: .white))
+                                .frame(width: 80, height: 80)
                             
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 40)
-                                    .fill(Color(uiColor: .white))
-                                    .frame(width: 80, height: 80)
-                                
-                                Image(systemName: "arrow.counterclockwise")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
-                                    .font(.title2)
-                            }
-                        }
-                        
-                        Button {
-                            if countDownTimer != 0 {
-                                timerRunning.toggle()
-                            }
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 40)
-                                    .fill(Color(uiColor: .white))
-                                    .frame(width: 80, height: 80)
-                                Image(systemName: timerRunning ? "pause.fill" : "play.fill")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
-                                    .font(.title2)
-                            }
-                        }
-                        
-                        Button {
-                            countDownTimer += 60
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 40)
-                                    .fill(Color(uiColor: .white))
-                                    .frame(width: 80, height: 80)
-                                
-                                Text("+1m")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.black)
-                                    .font(.title)
-                            }
+                            Image(systemName: "arrow.counterclockwise")
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .font(.title2)
                         }
                     }
-                    
-                    Spacer()
                     
                     Button {
-                        countDownTimer = 0
+                        if countDownTimer != 0 {
+                            timerRunning.toggle()
+                        }
                     } label: {
-                        
-                        PrimaryButton(text: "Finish Timer")
-                        
-                    } .padding(42)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 40)
+                                .fill(Color(uiColor: .white))
+                                .frame(width: 80, height: 80)
+                            Image(systemName: timerRunning ? "pause.fill" : "play.fill")
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .font(.title2)
+                        }
+                    }
                     
-                } .padding(42)
+                    Button {
+                        countDownTimer += 60
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 40)
+                                .fill(Color(uiColor: .white))
+                                .frame(width: 80, height: 80)
+                            
+                            Text("+1m")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                                .font(.title)
+                        }
+                    }
+                }
                 
-                Spacer()
+                Button {
+                    countDownTimer = 0
+                    dismiss()
+                } label: {
+                    PrimaryButton(text: "Finish Timer")
+                }
+                .padding(42)
             }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
             .background(.green)
-            .frame(height: 520)
-            
-        }            .edgesIgnoringSafeArea(.bottom)
+            .frame(height: 400, alignment: .bottom)
+        }
     }
 }
 
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        let repository = GameRepository()
-        TimerView()
-            .environmentObject(repository)
-    }
-}
+//struct TimerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimerView(showingTimer: .constant(false))
+//    }
+//}

@@ -10,13 +10,26 @@ import SwiftUI
 struct GameView: View {
     @EnvironmentObject var manager: SceneManager
     @EnvironmentObject var repository: GameRepository
+    @State private var showingTimer = false
+    @State private var hideTimer = false
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             Color(.black)
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 24) {
-                ReturnButton(manager: _manager, text: "RULES", path: .RulesView)
+                HStack {
+                    ReturnButton(manager: _manager, text: "RULES", path: .RulesView)
+                    Spacer()
+                    Button {
+                        showingTimer.toggle()
+                    } label: {
+                        Image(systemName: "timer")
+                            .foregroundColor(.white)
+                            .font(.title2)
+                            .bold()
+                    }
+                }
                 
                 Text(repository.games[repository.selectedGame].name.uppercased())
                     .foregroundColor(.white)
@@ -60,6 +73,30 @@ struct GameView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(36)
+            
+            if showingTimer {
+                Color(.black)
+                    .opacity(0.3)
+                    .onTapGesture {
+                        hideTimer = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            showingTimer = false
+                            hideTimer = false
+                        }
+                    }
+                TimerView(showingTimer: $showingTimer) {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        hideTimer = true
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        showingTimer = false
+                        hideTimer = false
+                    }
+                }
+                .transition(.move(edge: .bottom))
+                .animation(.linear(duration: 0.2))
+                .offset(y: hideTimer ? UIScreen.main.bounds.height : 0)
+            }
         }
     }
 }

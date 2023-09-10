@@ -23,7 +23,6 @@ struct ReturnButton: View {
                 .foregroundColor(.white)
                 .font(Font.custom("Grandstander-regular", size: 24))
         }
-        
     }
     
     struct ReturnButton_preview: PreviewProvider {
