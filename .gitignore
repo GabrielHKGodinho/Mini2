@@ -89,3 +89,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 Mini2.xcodeproj/project.xcworkspace/xcuserdata/du.xcuserdatad/UserInterfaceState.xcuserstate
+Mini2.xcodeproj/project.xcworkspace/xcuserdata/du.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate

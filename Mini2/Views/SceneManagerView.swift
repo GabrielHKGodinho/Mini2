@@ -30,7 +30,7 @@ struct SceneManagerView: View {
                 SelectKingView()
                     .transition(manager.animation)
             case .GameView:
-                TimerView()
+                GameView()
                     .transition(manager.animation)
             case .Top10View:
                 Top10View()
