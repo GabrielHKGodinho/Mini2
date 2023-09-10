@@ -16,7 +16,7 @@ struct SecondaryButton: View {
             RoundedRectangle(cornerRadius: 100)
                 .stroke(lineWidth: 1)
                 .foregroundColor(.white)
-                .frame(width: .infinity, height: 44)
+                .frame(maxWidth: .infinity, maxHeight: 44)
                 .background {
                     RoundedRectangle(cornerRadius: 100)
                         .foregroundColor(.white)
