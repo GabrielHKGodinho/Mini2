@@ -8,6 +8,8 @@
 import Foundation
 
 class PlayerManager: ObservableObject {
+    static let icons = ["face1-pink", "face1-yellow", "face2-pink", "face2-yellow", "face3-pink", "face3-yellow", "face4-pink", "face4-yellow"].shuffled()
+    static var currentIconIndex = 0
     
     static let instance = PlayerManager()
     
@@ -22,9 +24,15 @@ class PlayerManager: ObservableObject {
     static func removePlayer(index: Int) {
         if index >= players.count{
             return
-        }else{
+        } else {
             players.remove(at: index)
         }
+    }
+    
+    static func getRandomIcon() -> String {
+        let icon = icons[currentIconIndex]
+        currentIconIndex = (currentIconIndex + 1) % icons.count
+        return icon
     }
     
     static func getPlayers() -> [Player] {
