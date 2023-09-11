@@ -17,6 +17,7 @@ struct GameView: View {
         ZStack(alignment: .bottom) {
             Color(.black)
                 .ignoresSafeArea()
+            
             VStack(alignment: .leading, spacing: 24) {
                 HStack {
                     ReturnButton(manager: _manager, text: "RULES", path: .RulesView)
@@ -38,30 +39,8 @@ struct GameView: View {
                 
                 Spacer()
                     
-                VStack(alignment: .leading, spacing: 4) {
-                        HStack {
-                            Image(systemName: "timer")
-                                .foregroundColor(.white)
-                                .bold()
-                            Text("Timer tip!")
-                                .font(.body)
-                                .bold()
-                                .foregroundColor(.white)
-                        }
-                        Text("Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
-                            .font(.footnote)
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(lineWidth: 1)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                    }
-                    .padding(.bottom, 32)
-
+                Tip(icon: "timer", title: "Timer tip!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
+                
                 HStack(alignment: .center) {
                     Button {
                         manager.currentView = .EndGameView
