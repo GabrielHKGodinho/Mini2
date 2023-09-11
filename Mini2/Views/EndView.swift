@@ -10,8 +10,8 @@ import SwiftUI
 struct EndView: View {
     @EnvironmentObject var manager: SceneManager
     @EnvironmentObject var repository: GameRepository
-    @State var showingModal = false
-    @State private var hideModal = true
+    @State private var showingModal = false
+    @State private var hideModal = false
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -58,33 +58,33 @@ struct EndView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(32)
-        }
-        
-        if showingModal {
-            Color(.black)
-                .opacity(0.3)
-                .onTapGesture {
-                    hideModal = true
+            
+            if showingModal {
+                Color(.black)
+                    .opacity(0.3)
+                    .onTapGesture {
+                        hideModal = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            showingModal = false
+                            hideModal = false
+                        }
+                    }
+                EditPlayerModal(showingModal: $showingModal) {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        hideModal = true
+                    }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         showingModal = false
                         hideModal = false
                     }
                 }
-            EditPlayerModal(showingModal: $showingModal) {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    hideModal = true
+                .onAppear {
+                    print("Ok")
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    showingModal = false
-                    hideModal = false
-                }
+                .transition(.move(edge: .bottom))
+                .animation(.linear(duration: 0.2))
+                .offset(y: hideModal ? UIScreen.main.bounds.height : 0)
             }
-            .onAppear {
-                print("Ok")
-            }
-            .transition(.move(edge: .bottom))
-            .animation(.linear(duration: 0.2))
-            .offset(y: hideModal ? UIScreen.main.bounds.height : 0)
         }
     }
 }
