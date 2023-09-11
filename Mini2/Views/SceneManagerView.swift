@@ -36,7 +36,7 @@ struct SceneManagerView: View {
                 Top10View()
                     .transition(manager.animation)
             case .EndGameView:
-                FimView()
+                EndView()
                     .transition(manager.animation)
             }
         }
