@@ -19,54 +19,54 @@ struct AddPlayerView: View {
     @State var fieldText: String = ""
     
     var body: some View {
-        VStack {
-            VStack(alignment: .center, spacing: 16) {
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("GET THE PARTY STARTED")
-                        .foregroundColor(.white)
-                        .font(Font.custom("Grandstander-Bold", size: 64))
-                    
-                    Text("First of all, get together with your friends")
-                        .font(.system(size: 24))
-                        .foregroundColor(.white)
-                        .fontWeight(.semibold)
-                }
+        ZStack {
+            VStack(alignment: .leading, spacing: 16) {
+                Title1(text: "JUNTE A GALERA")
+                    .background {
+                        Image("mouth")
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                            .scaledToFit()
+                            .offset(x: 100, y: 20)
+                    }
+                Subtitle(text: "Tudo bem amigão, quem está jogando?")
+                
                 Spacer()
                 
                 ForEach(Array(players.enumerated()), id: \.element){ index, player in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 100)
-                                .foregroundColor(Color("gray"))
-                                .frame(maxWidth: .infinity, maxHeight: 55)
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(lineWidth: 1)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 100)
+                            .foregroundColor(Color("gray"))
+                            .frame(maxWidth: .infinity, maxHeight: 55)
+                        RoundedRectangle(cornerRadius: 100)
+                            .stroke(lineWidth: 1)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, maxHeight: 55)
+                        HStack(alignment: .center, spacing: 9) {
+                            Image(systemName: players[index].icon)
+                                .resizable()
+                                .frame(width: 40, height: 40)
                                 .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, maxHeight: 55)
-                            HStack(alignment: .center, spacing: 9) {
-                                Image(systemName: players[index].icon)
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
+                            TextField("", text: $playersNames[index])
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.white)
+                            Spacer()
+                            Button {
+                                PlayerManager.removePlayer(index: index)
+                                playersNames.remove(at: index)
+                                players = PlayerManager.getPlayers()
+                                name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
+                            } label: {
+                                Image(systemName: "x.circle.fill")
                                     .foregroundColor(.white)
-                                TextField("", text: $playersNames[index])
                                     .font(.title2)
                                     .bold()
-                                    .foregroundColor(.white)
-                                Spacer()
-                                Button {
-                                    PlayerManager.removePlayer(index: index)
-                                    playersNames.remove(at: index)
-                                    players = PlayerManager.getPlayers()
-                                    name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
-                                } label: {
-                                    Image(systemName: "x.circle.fill")
-                                        .foregroundColor(.white)
-                                        .font(.title2)
-                                        .bold()
-                                }
                             }
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 8)
                         }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                    }
                 }
                 
                 Button {
@@ -76,8 +76,8 @@ struct AddPlayerView: View {
                     players = PlayerManager.getPlayers()
                     isActive = PlayerManager.getNumberOfPlayers() == 0 ? false : true
                 } label: {
-                    SecondaryButton(icon: "plus", text: "Add a buddy")
-                } //fim button
+                    SecondaryButton(icon: "plus", text: "adicionar amigo")
+                }
                 
                 Spacer()
                 
@@ -88,15 +88,17 @@ struct AddPlayerView: View {
                     manager.currentView = .GameListView
                 } label: {
                     PrimaryButton(text: "SELECT GAME", isActive: isActive)
-                } //.fim button
+                }
                 .disabled(PlayerManager.getNumberOfPlayers() == 0)
                 .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
-            } //fim vstack
-            .padding(.horizontal, 32)
-            .padding(.bottom, 24)
-            .background(.black)
+            }
+            .padding(.horizontal, 40)
+            .padding(.top, 56)
+            .padding(.bottom, 40)
+            .background(Color("purple"))
+            
+            //Image("mouth")
         }
-        .background(Color(uiColor: .systemGray4))
     }
 }
 

@@ -32,10 +32,7 @@ struct GameView: View {
                     }
                 }
                 
-                Text(repository.games[repository.selectedGame].name.uppercased())
-                    .foregroundColor(.white)
-                    .font(Font.custom("Grandstander-Bold", size: 64))
-                    .padding(.bottom, -8)
+                Title1(text: repository.games[repository.selectedGame].name.uppercased())
                 
                 Spacer()
                     
