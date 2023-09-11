@@ -1,5 +1,5 @@
 //
-//  Title1.swift
+//  GameTitle.swift
 //  Mini2
 //
 //  Created by Eduardo Stefanel Paludo on 11/09/23.
@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct Title1: View {
+struct GameTitle: View {
     var text: String = ""
     
     var body: some View {
         Text(text)
             .multilineTextAlignment(.leading)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .foregroundColor(.white)
-            .font(Font.custom("Grandstander-Bold", size: 64))
+            .foregroundColor(.black)
+            .font(Font.custom("Grandstander-Bold", size: 36))
             .padding(.bottom, -8)
     }
 }
 
-struct Title1_Previews: PreviewProvider {
+struct GameTitle_Previews: PreviewProvider {
     static var previews: some View {
-        Title1()
+        GameTitle()
     }
 }

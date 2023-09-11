@@ -6,20 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Game: Identifiable {
     let id = UUID()
     var name: String
-    var description: String
     var icon: String
-    
+    var color: Color
+    var description: String
     let instructions: [String]
     
-    init(name: String, description: String, icon: String = "shuffle.circle.fill", instructions: [String]) {
+    init(name: String, icon: String = "shuffle.circle.fill", color: Color = .black, description: String, instructions: [String]) {
         self.name = name
         self.description = description
         self.icon = icon
         self.instructions = instructions
+        self.color = color
     }
     
     // static var todasJogos = Game.populateJogos()

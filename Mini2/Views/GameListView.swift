@@ -13,16 +13,18 @@ struct GameListView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
-            ReturnButton(manager: _manager, text: "PLAYERS", path: .AddPlayerView)
-            
-            Text("SELECT GAME")
-                .foregroundColor(.white)
-                .font(Font.custom("Grandstander-Bold", size: 64))
-                .padding(.bottom, -8)
-            
-            Text("Time to choose")
-                .font(.system(size: 24, weight: .semibold))
-                .foregroundColor(.white)
+            VStack(alignment: .leading, spacing: 16) {
+                ReturnButton(manager: _manager, text: "JOGADORES", path: .AddPlayerView)
+                Title1(text: "APERTE O PLAY")
+                    .background {
+                        Image("hand")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 160)
+                            .offset(x: 120, y: 20)
+                    }
+                Subtitle(text: "Hora de escolher!")
+            }
             
             ScrollView {
                 VStack(spacing: 24) {
@@ -32,15 +34,13 @@ struct GameListView: View {
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                             VStack(alignment: .leading) {
-                                HStack(alignment: .center) {
+                                HStack(alignment: .center, spacing: 12) {
                                     Image(systemName: repository.games[i].icon)
-                                        .foregroundColor(.black)
-                                        .font(.system(size: 42))
-                                    Text(repository.games[i].name.uppercased())
-                                        .foregroundColor(.black)
-                                        .font(Font.custom("Grandstander-Bold", size: 32))
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.bottom, -4)
+                                        .resizable()
+                                        .foregroundColor(repository.games[i].color)
+                                        .frame(width: 36, height: 36)
+                                        .scaledToFit()
+                                    GameTitle(text: repository.games[i].name)
                                     Spacer()
                                 }
                                 .frame(alignment: .center)
@@ -58,8 +58,10 @@ struct GameListView: View {
             }
             .scrollIndicators(.never)
         }
-        .padding(32)
-        .background(.black)
+        .padding(.horizontal, 36)
+        .padding(.vertical, 24)
+        .background(Color("blue"))
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 
