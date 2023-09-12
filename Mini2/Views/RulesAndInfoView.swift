@@ -44,7 +44,7 @@ struct RulesAndInfoView: View {
                                             CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
                                         }
                                         
-                                        Text(repository.games[repository.selectedGame].instructions[i])
+                                        Text(repository.games[repository.selectedGame].instructions[i].0)
                                             .font(.system(size: 20))
                                             .multilineTextAlignment(.center)
                                             .padding(28)
