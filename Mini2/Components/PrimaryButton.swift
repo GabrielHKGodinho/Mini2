@@ -12,12 +12,29 @@ struct PrimaryButton: View {
     var color: Color?
     var isActive: Bool = true
     var alt: Bool = false
+    var type: [Int]? = [0, 1, 2]
+
     
     var body: some View {
         ZStack {
             if isActive {
                 if alt {
-                    Image("filledButton2")
+                    switch type {
+                    case [0]:
+                        Image("filledButton2")
+                            .shadow(color: .black.opacity(0.55), radius: 6, x: 1, y: 8)
+                        
+                    case [1]:
+                        Image("filledButton2")
+                            .shadow(color: .black.opacity(0.4), radius: 6, x: 1, y: 8)
+                        
+                    case [2]:
+                        Image("filledButton2")
+                            .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
+                        
+                    default:
+                        Image("filledButton2")
+                    }
                 } else {
                     Image("filledButton")
                 }
@@ -32,8 +49,9 @@ struct PrimaryButton: View {
     }
 }
 
+
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(text: "START THE PARTY", alt: true)
+        PrimaryButton(text: "START THE PARTY", alt: true, type: [0])
     }
 }

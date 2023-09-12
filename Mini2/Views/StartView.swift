@@ -10,6 +10,8 @@ import SwiftUI
 struct StartView: View {
     @EnvironmentObject var manager: SceneManager
     
+    @AppStorage("showOnboarding") private var showOnboarding = true
+    
     var body: some View {
         VStack{
             Spacer()
@@ -23,13 +25,19 @@ struct StartView: View {
             Button {
                 manager.currentView = .AddPlayerView
             } label: {
-                PrimaryButton(text: "START THE PARTY")
+                PrimaryButton(text: "START THE PARTY", isActive: true, alt: true)
             }
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.bottom, 40)
         .background(.black)
+        
+        .fullScreenCover(isPresented: $showOnboarding) {
+            ZStack {
+                OnboardingView(showOnboarding: $showOnboarding)
+            }
+        }
     }
 }
 

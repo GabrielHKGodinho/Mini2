@@ -52,7 +52,10 @@ struct RulesAndInfoView: View {
                                     .padding(.bottom, 32)
                                     .padding(.horizontal, 16)
                             }
+                            .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
+                            .padding(.bottom)
                         }
+                        
                         .padding(.horizontal, 36)
                     }
                 }
@@ -65,7 +68,7 @@ struct RulesAndInfoView: View {
             Button {
                 manager.currentView = .SelectKingView
             } label: {
-                PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color)
+                PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color, isActive: true, alt: true, type: [0])
             }
             .padding(.horizontal, 36)
         }

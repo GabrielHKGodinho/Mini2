@@ -14,8 +14,8 @@ struct CustomTabViewIndicator: View {
     var body: some View {
         HStack(spacing: 6) {
             ForEach(0..<numberOfTabs, id: \.self) { index in
-                RoundedRectangle(cornerRadius: 2)
-                    .frame(height: 5)
+                RoundedRectangle(cornerRadius: 8)
+                    .frame(height: 6)
                     .foregroundColor(selection == index ? Color(.white) : Color(.white).opacity(0.3))
                     .animation(.easeInOut(duration: 0.2))
                     .padding(.horizontal, 2)
