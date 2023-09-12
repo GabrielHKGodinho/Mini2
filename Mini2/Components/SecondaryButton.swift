@@ -64,11 +64,6 @@ struct SecondaryButton: View {
                     .font(.title2)
             }
         }
-        //.shadow(color: .black.opacity(0.25), radius: 8, x: 2, y: 4)
-        //.shadow(color: Color(red: 36, green: 35, blue: 32).opacity(0.15), radius: 9, x: 0, y: 7)
-        
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("red"))
     }
 }
 
