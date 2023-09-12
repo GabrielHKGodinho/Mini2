@@ -23,7 +23,6 @@ struct CustomTabViewIndicator: View {
         }
         .preferredColorScheme(darkMode ? .dark : .light)
         .padding(.horizontal, 32)
-        .padding(.bottom, 48)
     }
 }
 

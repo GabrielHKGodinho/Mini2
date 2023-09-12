@@ -22,35 +22,45 @@ struct OnboardingView: View {
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
+            .padding(.top, 60)
             
             CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
                 .padding(.horizontal, 40)
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.vertical, 24)
+        .padding(.bottom, 24)
         .background(Color("red"))
     }
 }
 
 struct OnboardingView1: View {
     var body: some View {
-        VStack {
-            Image("logo")
-                .resizable()
-                .frame(width: 291, height: 151)
+        VStack(spacing: 16) {
+            
+            VStack {
+                Image("logo")
+                    .resizable()
+                    .frame(width: 219, height: 114)
+            }
+            .frame(height: 190)
             
             
+            VStack {
+                Subtitle(text: "Primeiro")
+                Title1(text: "REÚNA SEUS AMIGOS")
+                    .overlay {
+                        Image("cherries")
+                            .resizable()
+                            .frame(width: 208, height: 230)
+                            .scaledToFit()
+                            .offset(x: 70, y: -50)
+                    }
+            }
+            .padding(.top, 24)
             
-            Subtitle(text: "Primeiro")
-            Title1(text: "REÚNA SEUS AMIGOS")
-                .overlay {
-                    Image("cherries")
-                        .resizable()
-                        .frame(width: 208, height: 230)
-                        .scaledToFit()
-                        .offset(x: 70, y: -45)
-                }
+            Spacer()
+            Spacer()
         }
         .padding(.horizontal, 40)
     }
@@ -59,21 +69,24 @@ struct OnboardingView1: View {
 struct OnboardingView2: View {
     var body: some View {
         VStack {
-            Image("logo")
-                .resizable()
-                .frame(width: 291, height: 151)
+
+            Subtitle(text: "Então você pode")
+            Title1(text: "ESCOLHER O JOGO")
+            Subtitle(text: "e se divertir usando ferramentas para ajudar na sua gameplay")
             
+            Tip(icon: "timer", title: "Dica do Timer!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
             
+            Tip(icon: "figure.run.square.stack.fill", title: "Torne seu grupo maior!", description: "Utilize o botão de jogadores para adicionar ou remover jogadores da rodada!")
             
-            Subtitle(text: "Primeiro")
-            Title1(text: "REÚNA SEUS AMIGOS")
-                .overlay {
-                    Image("cherries")
-                        .resizable()
-                        .frame(width: 208, height: 230)
-                        .scaledToFit()
-                        .offset(x: 70, y: -45)
-                }
+            Spacer()
+            
+            Button {
+                
+            } label: {
+                PrimaryButton(text: "VAMOS!", color: Color("red"), isActive: true, alt: true)
+            }
+            .padding(.bottom)
+            
         }
         .padding(.horizontal, 40)
     }
