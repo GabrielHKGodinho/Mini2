@@ -57,7 +57,8 @@ struct EndView: View {
                 .frame(maxWidth: .infinity)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(32)
+            .padding(.horizontal, 36)
+            .padding(.vertical, 24)
             
             if showingModal {
                 Color(.black)

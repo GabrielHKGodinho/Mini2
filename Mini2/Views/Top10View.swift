@@ -17,7 +17,7 @@ struct Top10View: View {
             .updating($isDetectingLongPress) { currentState, gestureState,
                     transaction in
                 gestureState = currentState
-                transaction.animation = Animation.easeIn(duration: 2.0)
+                transaction.animation = Animation.easeIn(duration: 0.4)
             }
     }
     
