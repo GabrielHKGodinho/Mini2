@@ -15,9 +15,6 @@ struct GameView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Color(.black)
-                .ignoresSafeArea()
-            
             VStack(alignment: .leading, spacing: 24) {
                 HStack {
                     ReturnButton(manager: _manager, text: "RULES", path: .RulesView)
@@ -33,9 +30,10 @@ struct GameView: View {
                 }
                 
                 Title1(text: repository.games[repository.selectedGame].name.uppercased())
+                    .baselineOffset(-8)
                 
                 Spacer()
-                    
+                
                 Tip(icon: "timer", title: "Timer tip!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
                 
                 HStack(alignment: .center) {
@@ -73,6 +71,10 @@ struct GameView: View {
                 .animation(.linear(duration: 0.2))
                 .offset(y: hideTimer ? UIScreen.main.bounds.height : 0)
             }
+        }
+        .background {
+            repository.games[repository.selectedGame].color
+                .ignoresSafeArea()
         }
     }
 }

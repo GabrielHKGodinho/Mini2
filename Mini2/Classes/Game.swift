@@ -14,9 +14,9 @@ class Game: Identifiable {
     var icon: String
     var color: Color
     var description: String
-    let instructions: [String]
+    let instructions: [(String, String)]
     
-    init(name: String, icon: String = "shuffle.circle.fill", color: Color = .black, description: String, instructions: [String]) {
+    init(name: String, icon: String = "shuffle.circle.fill", color: Color = .black, description: String, instructions: [(String, String)]) {
         self.name = name
         self.description = description
         self.icon = icon
