@@ -42,6 +42,7 @@ struct RulesAndInfoView: View {
                                             Spacer()
                                             
                                             CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
+                                                .padding(.bottom, 30)
                                         }
                                         
                                         Text(repository.games[repository.selectedGame].instructions[i].0)
@@ -49,18 +50,23 @@ struct RulesAndInfoView: View {
                                             .multilineTextAlignment(.center)
                                             .padding(28)
                                     }
+                                    
                                 }
+                            
                         }
+                        
                         .padding(.horizontal, 36)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
+                .padding(.bottom)
             }
             
             Button {
                 manager.currentView = .SelectKingView
             } label: {
-                PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color)
+                PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color, isActive: true, alt: true, type: [0])
             }
             .padding(.horizontal, 36)
         }
