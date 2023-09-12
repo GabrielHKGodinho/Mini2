@@ -107,9 +107,9 @@ struct SelectKingView: View {
                 manager.currentView = .GameView
             } label: {
                 if (playerSelected == -1) {
-                    PrimaryButton(text: "NEXT", isActive: false)
+                    PrimaryButton(text: "TABOM", isActive: false)
                 } else {
-                    PrimaryButton(text: "NEXT")
+                    PrimaryButton(text: "TABOM")
                 }
             }
             .disabled(playerSelected == -1)
