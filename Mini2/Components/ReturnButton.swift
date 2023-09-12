@@ -18,7 +18,6 @@ struct ReturnButton: View {
         Button {
             manager.currentView = path
         } label: {
-            
             Text("< \(text)")
                 .foregroundColor(.white)
                 .font(Font.custom("Grandstander-regular", size: 24))
