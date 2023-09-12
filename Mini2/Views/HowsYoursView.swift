@@ -37,9 +37,9 @@ struct HowsYoursView: View {
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
                     Button {
-                        manager.currentView = .RulesView
+                        manager.currentView = .SelectKingView
                     } label: {
-                        Text("< REGRAS")
+                        Text("< SELEÇÃO DE MESTRE")
                             .foregroundColor(.white)
                             .font(Font.custom("Grandstander-regular", size: 24))
                     }

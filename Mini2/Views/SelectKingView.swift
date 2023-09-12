@@ -54,7 +54,7 @@ struct SelectKingView: View {
                             .padding(.vertical, 8)
                             .background {
                                 RoundedRectangle(cornerRadius: 100)
-                                    .foregroundColor(Color("gray"))
+                                    .foregroundColor(Color("grayOpacity"))
                                     .frame(maxWidth: .infinity, maxHeight: 55)
                                 if playerSelected == index {
                                     RoundedRectangle(cornerRadius: 100)

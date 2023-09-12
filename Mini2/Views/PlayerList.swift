@@ -19,7 +19,7 @@ struct PlayerList: View {
                 ForEach(Array(players.enumerated()), id: \.element) { index, player in
                     ZStack {
                         RoundedRectangle(cornerRadius: 100)
-                            .foregroundColor(Color("gray"))
+                            .foregroundColor(Color("grayOpacity"))
                             .frame(maxWidth: .infinity, maxHeight: 55)
                         RoundedRectangle(cornerRadius: 100)
                             .stroke(lineWidth: 1)

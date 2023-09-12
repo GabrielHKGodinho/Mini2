@@ -13,6 +13,8 @@ struct EditPlayerModal: View {
     @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
     
     @Binding var showingModal: Bool
+    let color: Color
+    
     var onCloseButtonTap: () -> Void
     
     var body: some View {
@@ -46,7 +48,7 @@ struct EditPlayerModal: View {
 
 struct EditPlayerModal_Previews: PreviewProvider {
     static var previews: some View {
-        EditPlayerModal(showingModal: .constant(false)) {
+        EditPlayerModal(showingModal: .constant(false), color: Color("blue")) {
             
         }
     }
