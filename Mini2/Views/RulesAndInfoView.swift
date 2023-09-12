@@ -14,34 +14,15 @@ struct RulesAndInfoView: View {
     @State private var numberOfTabs = 1
     
     var body: some View {
-        VStack(spacing: 12) {
-            
+        VStack(alignment: .center, spacing: 16) {
             HStack {
-                Button {
-                    manager.currentView = .GameListView
-                } label: {
-                    
-                    Text("< GAMES")
-                        .foregroundColor(.white)
-                        .font(Font.custom("Grandstander-Bold", size: 24))
-                }
-                
+                ReturnButton(manager: _manager, text: "GAMES", path: .GameListView)
                 Spacer()
             }
             .padding(.horizontal, 36)
-            
-            HStack {
-                Text("TAKE A LOOK AT THE RULES")
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 300)
-                    .foregroundColor(.white)
-                    .font(Font.custom("Grandstander-Bold", size: 64))
-                    .fontWeight(.semibold)
-                
-                Spacer()
-            }
-            .padding(.horizontal, 32)
-            
+            Title2(text: "CONFIRA AS REGRAS")
+                .padding(.horizontal, 36)
+            Spacer()
             VStack {
                 TabView(selection: $selection) {
                     ForEach(repository.games[repository.selectedGame].instructions.indices, id: \.self) { i in
@@ -69,8 +50,8 @@ struct RulesAndInfoView: View {
                                             .padding(28)
                                     }
                                 }
-                                .padding(.horizontal, 36)
                         }
+                        .padding(.horizontal, 36)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -79,17 +60,15 @@ struct RulesAndInfoView: View {
             Button {
                 manager.currentView = .SelectKingView
             } label: {
-                PrimaryButton(text: "LET'S PLAY")
+                PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color)
             }
-            .padding(.bottom, 12)
-            .padding(.top, 40)
+            .padding(.horizontal, 36)
         }
-        .padding(.top, 36)
-        .padding(.bottom, 24)
-        .background(Color("darkBackground"))
         .onAppear {
             numberOfTabs = repository.games[repository.selectedGame].instructions.count
         }
+        .padding(.vertical, 24)
+        .background(repository.games[repository.selectedGame].color)
     }
 }
 
