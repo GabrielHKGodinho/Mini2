@@ -16,14 +16,14 @@ struct CustomTabViewIndicator: View {
             ForEach(0..<numberOfTabs, id: \.self) { index in
                 RoundedRectangle(cornerRadius: 2)
                     .frame(height: 5)
-                    .foregroundColor(selection == index ? Color(uiColor: .systemGray) : Color(uiColor: .systemGray).opacity(0.3))
+                    .foregroundColor(selection == index ? Color(.white) : Color(.white).opacity(0.3))
                     .animation(.easeInOut(duration: 0.2))
                     .padding(.horizontal, 2)
             }
         }
         .preferredColorScheme(darkMode ? .dark : .light)
         .padding(.horizontal, 32)
-        .padding(.bottom, 48)
+        //.padding(.bottom, 48)
     }
 }
 

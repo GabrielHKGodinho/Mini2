@@ -78,9 +78,6 @@ struct EndView: View {
                         hideModal = false
                     }
                 }
-                .onAppear {
-                    print("Ok")
-                }
                 .transition(.move(edge: .bottom))
                 .animation(.linear(duration: 0.2))
                 .offset(y: hideModal ? UIScreen.main.bounds.height : 0)

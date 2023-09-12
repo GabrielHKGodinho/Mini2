@@ -15,6 +15,9 @@ struct GameView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
+            repository.games[repository.selectedGame].color
+                .ignoresSafeArea()
+            
             VStack(alignment: .leading, spacing: 24) {
                 HStack {
                     ReturnButton(manager: _manager, text: "RULES", path: .RulesView)
@@ -46,11 +49,12 @@ struct GameView: View {
                 .frame(maxWidth: .infinity)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(36)
+            .padding(32)
             
             if showingTimer {
                 Color(.black)
-                    .opacity(0.3)
+                    .opacity(0.5)
+                    .ignoresSafeArea()
                     .onTapGesture {
                         hideTimer = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -58,7 +62,7 @@ struct GameView: View {
                             hideTimer = false
                         }
                     }
-                TimerView(showingTimer: $showingTimer) {
+                TimerView(showingTimer: $showingTimer, color: repository.games[repository.selectedGame].color) {
                     withAnimation(.easeInOut(duration: 0.2)) {
                         hideTimer = true
                     }
@@ -71,10 +75,6 @@ struct GameView: View {
                 .animation(.linear(duration: 0.2))
                 .offset(y: hideTimer ? UIScreen.main.bounds.height : 0)
             }
-        }
-        .background {
-            repository.games[repository.selectedGame].color
-                .ignoresSafeArea()
         }
     }
 }
