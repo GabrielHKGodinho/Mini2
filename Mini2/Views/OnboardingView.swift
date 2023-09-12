@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @Binding var showOnboarding: Bool
     @State private var selection = 0
     @State private var numberOfTabs = 2
-    @State var viewsOnboarding = [OnboardingView1().self, OnboardingView2().self] as [Any]
     var body: some View {
         VStack {
             
@@ -18,7 +18,7 @@ struct OnboardingView: View {
                 TabView(selection: $selection) {
                     OnboardingView1().tag(0)
                     
-                    OnboardingView2().tag(1)
+                    OnboardingView2(showOnboarding: $showOnboarding).tag(1)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
@@ -67,6 +67,7 @@ struct OnboardingView1: View {
 }
 
 struct OnboardingView2: View {
+    @Binding var showOnboarding: Bool
     var body: some View {
         VStack {
 
@@ -81,7 +82,7 @@ struct OnboardingView2: View {
             Spacer()
             
             Button {
-                
+                showOnboarding.toggle()
             } label: {
                 PrimaryButton(text: "VAMOS!", color: Color("red"), isActive: true, alt: true)
             }
@@ -89,11 +90,5 @@ struct OnboardingView2: View {
             
         }
         .padding(.horizontal, 40)
-    }
-}
-
-struct OnboardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView()
     }
 }
