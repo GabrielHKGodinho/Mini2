@@ -31,6 +31,25 @@ class JsonManager: ObservableObject {
         return top10;
     }
     
+    static func fill20sec() -> [String]{
+        
+        guard let sourcesURL = Bundle.main.url(forResource: "youHave20s", withExtension: "json") else {
+            fatalError("Could not find top10.json\n")
+        }
+        
+        guard let top10Data = try? Data(contentsOf: sourcesURL) else {
+            fatalError("Could not convert data\n")
+        }
+        
+        let decoder = JSONDecoder()
+        guard let top10 = try? decoder.decode([String].self, from: top10Data) else{
+            fatalError("Could not decode data\n")
+        }
+        print(top10)
+        
+        return top10;
+    }
+    
 }
 
 struct Top10: Decodable {

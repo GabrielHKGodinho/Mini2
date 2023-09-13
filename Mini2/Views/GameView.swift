@@ -18,8 +18,10 @@ struct GameView: View {
             Top10View()
         case 2:
             BeeeengoView()
+        case 3:
+            YouHave20sView()
         default:
-            Top10View()
+            YouHave20sView()
         }
     }
 }
