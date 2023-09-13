@@ -22,7 +22,7 @@ struct Top10View: View {
     var longPress: some Gesture {
         LongPressGesture(minimumDuration: 10)
             .updating($isDetectingLongPress) { currentState, gestureState,
-                    transaction in
+                transaction in
                 gestureState = currentState
                 //transaction.animation = Animation.(duration: 0.2)
             }
@@ -33,21 +33,7 @@ struct Top10View: View {
             ZStack(alignment: .bottom) {
                 repository.games[repository.selectedGame].color
                     .ignoresSafeArea()
-                    .onTapGesture {
-                        isFocused = false
-                    }
-                    .disabled(isFocused)
-                    
-                    Spacer()
-                    
-                    Button {
-                        showingTimer.toggle()
-                    } label: {
-                        TimerButtonLabel()
-                    }
-                    .disabled(isFocused)
-                }
-
+                
                 VStack(alignment: .leading, spacing: hasChosen ? 8 : 16) {
                     HStack {
                         Button {
@@ -64,16 +50,12 @@ struct Top10View: View {
                         Button {
                             showingTimer.toggle()
                         } label: {
-                            Image(systemName: "timer")
-                                .foregroundColor(.white)
-                                .font(.title2)
-                                .bold()
+                            TimerButtonLabel()
                         }
                         .disabled(isFocused)
                     }
                     
                     Title1(text: repository.games[repository.selectedGame].name.uppercased())
-                        .baselineOffset(-8)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.bottom, 8)
                     
@@ -85,12 +67,14 @@ struct Top10View: View {
                             VStack {
                                 Text("BORA ESCOLHER A CATEGORIA")
                                     .font(Font.custom("Grandstander-Bold", size: 32))
-                                .multilineTextAlignment(.center)
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.center)
                                 
                                 Spacer()
                                 
                                 Text(top10.theme)
                                     .font(Font.custom("Grandstander-Bold", size: 28))
+                                    .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
                                 
                                 Spacer()
@@ -115,7 +99,7 @@ struct Top10View: View {
                                     .cornerRadius(30)
                                     .padding()
                                 }
-
+                                
                             }
                             .padding(.top, 74)
                             .padding(.bottom, 40)
@@ -134,13 +118,15 @@ struct Top10View: View {
                                         Text(top10.theme)
                                             .multilineTextAlignment(.center)
                                             .font(Font.custom("Grandstander-Bold", size: 30))
-                                        .padding()
+                                            .foregroundColor(.black)
+                                            .padding()
                                     }
                                     .frame(maxWidth: .infinity)
                                     
                                     ForEach(Array(top10.items.enumerated()), id: \.element) { index, item in
                                         Text("\(index+1). "+item)
                                             .font(.system(size: 16))
+                                            .foregroundColor(.black)
                                             .padding(.leading, 20)
                                             .padding(.bottom, 4)
                                     }
@@ -164,11 +150,11 @@ struct Top10View: View {
                         .gesture(longPress)
                     }
                     
-
+                    
                     Spacer()
                     
                     if (!isFocused) {
-                            
+                        
                         HStack(alignment: .center) {
                             if hasChosen {
                                 Button {
@@ -222,6 +208,7 @@ struct Top10View: View {
             }
         }
     }
+}
 
 struct Top10View_Previews: PreviewProvider {
     static var previews: some View {

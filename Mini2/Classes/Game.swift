@@ -13,15 +13,17 @@ class Game: Identifiable {
     var name: String
     var icon: String
     var color: Color
+    var endImage: String
     var description: String
     let instructions: [(String, String)]
     
-    init(name: String, icon: String = "shuffle.circle.fill", color: Color = .black, description: String, instructions: [(String, String)]) {
+    init(name: String, icon: String = "shuffle.circle.fill", color: Color = .black, endImage: String, description: String, instructions: [(String, String)]) {
         self.name = name
         self.description = description
         self.icon = icon
-        self.instructions = instructions
         self.color = color
+        self.endImage = endImage
+        self.instructions = instructions
     }
     
     // static var todasJogos = Game.populateJogos()

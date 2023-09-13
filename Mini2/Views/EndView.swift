@@ -42,6 +42,16 @@ struct EndView: View {
                 
                 Spacer()
                 
+                HStack {
+                    Image(repository.games[repository.selectedGame].endImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 240)
+                }
+                .frame(maxWidth: .infinity)
+                
+                Spacer()
+                
                 VStack(alignment: .center, spacing: 0) {
                     Button {
                         manager.currentView = .SelectKingView
