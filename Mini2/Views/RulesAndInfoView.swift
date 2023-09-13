@@ -14,7 +14,7 @@ struct RulesAndInfoView: View {
     @State private var numberOfTabs = 1
     
     var body: some View {
-        VStack(alignment: .center, spacing: 16) {
+        VStack(alignment: .center, spacing: 32) {
             HStack {
                 ReturnButton(manager: _manager, text: "GAMES", path: .GameListView)
                 Spacer()
@@ -23,7 +23,7 @@ struct RulesAndInfoView: View {
             Title2(text: "CONFIRA AS REGRAS")
                 .padding(.horizontal, 36)
         
-            VStack(spacing: 12) {
+            VStack(spacing: 24) {
                 TabView(selection: $selection) {
                     ForEach(repository.games[repository.selectedGame].instructions.indices, id: \.self) { i in
                         ZStack {
@@ -52,16 +52,15 @@ struct RulesAndInfoView: View {
                                     .padding(.bottom, 32)
                                     .padding(.horizontal, 16)
                             }
-                            .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
                             .padding(.bottom)
                         }
-                        
                         .padding(.horizontal, 36)
                     }
                 }
+                .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
-                CustomTabViewIndicator(selection: $selection, numberOfTabs: 4, darkMode: false)
+                CustomTabViewIndicator(selection: $selection, numberOfTabs: repository.games[repository.selectedGame].instructions.count, darkMode: false)
                     .padding(.horizontal, 48)
             }
             
