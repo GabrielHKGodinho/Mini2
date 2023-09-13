@@ -12,6 +12,7 @@ struct PlayerList: View {
     @State var playersNames: [String] = PlayerManager.getPlayersNames()
     @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
     @Binding var isActive: Bool
+    @FocusState var localFocus: Bool
     
     var body: some View {
         ScrollView {
@@ -31,6 +32,7 @@ struct PlayerList: View {
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.white)
                             TextField("", text: $playersNames[index])
+                                .focused($localFocus)
                                 .font(.title2)
                                 .bold()
                                 .foregroundColor(.white)
@@ -67,6 +69,11 @@ struct PlayerList: View {
         } label: {
             SecondaryButton(icon: "plus", text: "adicionar amigo")
                 .padding(.horizontal, 28)
+        }
+        .onDisappear {
+            for (index, name) in playersNames.enumerated() {
+                PlayerManager.setPlayerName(index: index, name: name)
+            }
         }
     }
 }
