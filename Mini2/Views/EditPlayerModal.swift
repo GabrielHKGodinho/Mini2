@@ -37,7 +37,7 @@ struct EditPlayerModal: View {
                 
                 Spacer()
                 
-                PlayerList(isActive: .constant(false), isFocused: .constant(false))
+                PlayerList(isActive: .constant(false))
             }
             .padding(.vertical, 24)
             .frame(minHeight: 540, maxHeight: 540, alignment: .bottom)

@@ -15,11 +15,13 @@ enum Views {
     case RulesView
     case SelectKingView
     case GameView
+    case HowsYoursView
+    case BeeeengoView
     case Top10View
     case EndGameView
 }
 
 class SceneManager: ObservableObject {
     @Published var currentView = Views.HomeView
-    @Published var animation = AnyTransition.scale
+    @Published var animation = AnyTransition.move(edge: .leading)
 }

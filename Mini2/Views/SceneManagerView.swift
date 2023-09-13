@@ -18,7 +18,7 @@ struct SceneManagerView: View {
                 StartView()
                     .transition(manager.animation)
             case .GameListView:
-                Top10View()
+                GameListView()
                     .transition(manager.animation)
             case .AddPlayerView:
                 AddPlayerView()
@@ -29,11 +29,14 @@ struct SceneManagerView: View {
             case .SelectKingView:
                 SelectKingView()
                     .transition(manager.animation)
-//            case .GameView:
-//                GameView()
-//                    .transition(manager.animation)
             case .GameView:
+                GameView()
+                    .transition(manager.animation)
+            case .HowsYoursView:
                 HowsYoursView()
+                    .transition(manager.animation)
+            case .BeeeengoView:
+                BeeeengoView()
                     .transition(manager.animation)
             case .Top10View:
                 Top10View()

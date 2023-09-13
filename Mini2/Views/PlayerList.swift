@@ -12,7 +12,6 @@ struct PlayerList: View {
     @State var playersNames: [String] = PlayerManager.getPlayersNames()
     @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
     @Binding var isActive: Bool
-    @Binding var isFocused: Bool
     @FocusState var localFocus: Bool
     
     var body: some View {
@@ -71,14 +70,16 @@ struct PlayerList: View {
             SecondaryButton(icon: "plus", text: "adicionar amigo")
                 .padding(.horizontal, 28)
         }
-        .onChange(of: localFocus) { _ in
-            isFocused = localFocus
+        .onDisappear {
+            for (index, name) in playersNames.enumerated() {
+                PlayerManager.setPlayerName(index: index, name: name)
+            }
         }
     }
 }
 
 struct PlayerList_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerList(isActive: .constant(false), isFocused: .constant(false))
+        PlayerList(isActive: .constant(false))
     }
 }

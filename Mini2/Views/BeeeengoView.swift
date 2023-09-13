@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BeeengoView: View {
+struct BeeeengoView: View {
     @EnvironmentObject var manager: SceneManager
     @EnvironmentObject var repository: GameRepository
     @State private var showingTimer = false
@@ -206,10 +206,10 @@ struct BeeengoView: View {
     }
 }
 
-struct BeeengoView_Previews: PreviewProvider {
+struct BeeeengoView_Previews: PreviewProvider {
     static var previews: some View {
         let repository = GameRepository()
-        BeeengoView()
+        BeeeengoView()
             .environmentObject(repository)
     }
 }
