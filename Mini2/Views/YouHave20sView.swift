@@ -13,11 +13,11 @@ struct YouHave20sView: View {
     @EnvironmentObject var repository: GameRepository
     @State private var showingTimer = false
     @State private var hideTimer = false
-    @State var word: String = "-"
     @FocusState var isFocused: Bool
     @State var hasChosen: Bool = false
     @State var file20s = JsonManager.fill20sec()
     @State var categoria20s = "-"
+    @State var aux = ""
     
     var body: some View {
         VStack(spacing: 4) {
@@ -68,14 +68,17 @@ struct YouHave20sView: View {
                             .multilineTextAlignment(.center)
                             .font(Font.custom("Grandstander-Bold", size: 30))
                             .multilineTextAlignment(.center)
-                            .frame(width: 200, height: 80)
+                            .frame(width: 250, height: 80)
                             .padding(.top, 24)
                         
                         Spacer()
                         
                         
                         Button {
-                            categoria20s = file20s.randomElement()!
+                            aux = categoria20s
+                            while categoria20s == aux {
+                                categoria20s = file20s.randomElement()!
+                            }
                                 
                         } label: {
                             VStack {
