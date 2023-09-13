@@ -18,7 +18,7 @@ struct SceneManagerView: View {
                 StartView()
                     .transition(manager.animation)
             case .GameListView:
-                GameListView()
+                Top10View()
                     .transition(manager.animation)
             case .AddPlayerView:
                 AddPlayerView()
