@@ -26,6 +26,7 @@
 		5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08EF742A9CD6AD001B0411 /* TimerView.swift */; };
 		5A7B56DE2AA75BE300AC4992 /* CustomTabViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */; };
 		5A8461672AB088DF005E4853 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8461662AB088DF005E4853 /* OnboardingView.swift */; };
+		5A99E2E72AB1E4A40034FE73 /* YouHave20sView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A99E2E62AB1E4A40034FE73 /* YouHave20sView.swift */; };
 		8100E82B2AA900630004048B /* HowsYoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100E82A2AA900630004048B /* HowsYoursView.swift */; };
 		81402F4F2AAF70C300942DBB /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F4E2AAF70C300942DBB /* Tip.swift */; };
 		81402F512AAF729600942DBB /* EditPlayerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F502AAF729600942DBB /* EditPlayerModal.swift */; };
@@ -66,6 +67,7 @@
 		5A08EF742A9CD6AD001B0411 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewIndicator.swift; sourceTree = "<group>"; };
 		5A8461662AB088DF005E4853 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5A99E2E62AB1E4A40034FE73 /* YouHave20sView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouHave20sView.swift; sourceTree = "<group>"; };
 		8100E82A2AA900630004048B /* HowsYoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowsYoursView.swift; sourceTree = "<group>"; };
 		81402F4E2AAF70C300942DBB /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		81402F502AAF729600942DBB /* EditPlayerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayerModal.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				54E037042A9CD75400413F37 /* SelectKingView.swift */,
 				54D242AD2AA75CB000E8DFF9 /* StartView.swift */,
 				5A8461662AB088DF005E4853 /* OnboardingView.swift */,
+				5A99E2E62AB1E4A40034FE73 /* YouHave20sView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				255C15442A9CE35A003C777D /* EndView.swift in Sources */,
 				54EEEFDF2A9E31B7003256BC /* GameListView.swift in Sources */,
 				54E0370F2A9D43C100413F37 /* Game.swift in Sources */,
+				5A99E2E72AB1E4A40034FE73 /* YouHave20sView.swift in Sources */,
 				5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */,
 				81402F5D2AB1045500942DBB /* CustomTextFieldStyle.swift in Sources */,
 				81E9AF802AA2718400298A52 /* Top10View.swift in Sources */,
