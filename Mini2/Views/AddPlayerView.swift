@@ -17,40 +17,57 @@ struct AddPlayerView: View {
     @State var isActive: Bool = false
     @State var fieldText: String = ""
     
+    @State var isFocused: Bool = false
+    
     var body: some View {
-        VStack(alignment: .center, spacing: 16) {
-            Title1(text: "JUNTE A GALERA")
-                .background {
-                    Image("mouth")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .scaledToFit()
-                        .offset(x: 100, y: 20)
+        ZStack {
+            Color("purple")
+                .ignoresSafeArea()
+                .onTapGesture {
+                    isFocused = false
                 }
-                .padding(.horizontal, 36)
-            Subtitle(text: "Tudo bem amigão, quem está jogando?")
-                .padding(.horizontal, 36)
-                        
-            PlayerList(isActive: $isActive)
             
-            Spacer()
-            
-            Button {
-                for (index, name) in playersNames.enumerated() {
-                    PlayerManager.setPlayerName(index: index, name: name)
+            VStack(alignment: .center, spacing: 16) {
+                if !isFocused {
+                    Title1(text: "JUNTE A GALERA")
+                        .background {
+                            Image("mouth")
+                                .resizable()
+                                .frame(width: 200, height: 200)
+                                .scaledToFit()
+                                .offset(x: 100, y: 20)
+                        }
+                        .animation(.linear(duration: 0.15))
+                        .padding(.horizontal, 36)
+                    Subtitle(text: "Tudo bem amigão, quem está jogando?")
+                        .padding(.horizontal, 36)
+                        .animation(.linear(duration: 0.15))
                 }
-                manager.currentView = .GameListView
-            } label: {
-                PrimaryButton(text: "SELECT GAME", color: Color("purple"), isActive: isActive)
+                
+                PlayerList(isActive: $isActive, isFocused: $isFocused)
+                    .animation(.linear(duration: 0.15), value: isFocused)
+                
+                Spacer()
+                
+                if !isFocused {
+                    Button {
+                        for (index, name) in playersNames.enumerated() {
+                            PlayerManager.setPlayerName(index: index, name: name)
+                        }
+                        manager.currentView = .GameListView
+                    } label: {
+                        PrimaryButton(text: "SELECT GAME", color: Color("purple"), isActive: isActive)
+                    }
+                    .disabled(PlayerManager.getNumberOfPlayers() == 0)
+                    .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
+                    .animation(.linear(duration: 0.15))
+                }
             }
-            .disabled(PlayerManager.getNumberOfPlayers() == 0)
-            .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
-        }
-        .padding(.vertical, 24)
-        .background(Color("purple"))
-        .onAppear {
-            if PlayerManager.getNumberOfPlayers() > 0 {
-                isActive = true
+            .padding(.vertical, 24)
+            .onAppear {
+                if PlayerManager.getNumberOfPlayers() > 0 {
+                    isActive = true
+                }
             }
         }
     }

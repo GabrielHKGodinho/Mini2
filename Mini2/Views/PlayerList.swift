@@ -12,6 +12,8 @@ struct PlayerList: View {
     @State var playersNames: [String] = PlayerManager.getPlayersNames()
     @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
     @Binding var isActive: Bool
+    @Binding var isFocused: Bool
+    @FocusState var localFocus: Bool
     
     var body: some View {
         ScrollView {
@@ -31,6 +33,7 @@ struct PlayerList: View {
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.white)
                             TextField("", text: $playersNames[index])
+                                .focused($localFocus)
                                 .font(.title2)
                                 .bold()
                                 .foregroundColor(.white)
@@ -68,11 +71,14 @@ struct PlayerList: View {
             SecondaryButton(icon: "plus", text: "adicionar amigo")
                 .padding(.horizontal, 28)
         }
+        .onChange(of: localFocus) { _ in
+            isFocused = localFocus
+        }
     }
 }
 
 struct PlayerList_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerList(isActive: .constant(false))
+        PlayerList(isActive: .constant(false), isFocused: .constant(false))
     }
 }
