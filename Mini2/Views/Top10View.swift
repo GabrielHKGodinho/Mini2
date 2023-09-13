@@ -36,7 +36,18 @@ struct Top10View: View {
                     .onTapGesture {
                         isFocused = false
                     }
-                
+                    .disabled(isFocused)
+                    
+                    Spacer()
+                    
+                    Button {
+                        showingTimer.toggle()
+                    } label: {
+                        TimerButtonLabel()
+                    }
+                    .disabled(isFocused)
+                }
+
                 VStack(alignment: .leading, spacing: hasChosen ? 8 : 16) {
                     HStack {
                         Button {

@@ -54,18 +54,7 @@ struct BeeeengoView: View {
                     Button {
                         showingTimer.toggle()
                     } label: {
-                        Image(systemName: "timer")
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .bold()
-                            .scaleEffect(animationAmount)
-                            .animation(
-                                .linear(duration: 1)
-                                .delay(0)
-                                .repeatCount(10, autoreverses: true), value: animationAmount)
-                            .onAppear {
-                                animationAmount = 1.1
-                            }
+                        TimerButtonLabel()
                     }
                     .disabled(isFocused)
                 }

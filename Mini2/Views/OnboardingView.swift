@@ -46,15 +46,17 @@ struct OnboardingView1: View {
             .frame(height: 190)
             
             
-            VStack {
+            VStack(alignment: .leading) {
                 Subtitle(text: "Primeiro")
                 Title1(text: "REÚNA SEUS AMIGOS")
+                    .frame(maxWidth: 280)
+                    .baselineOffset(-8)
                     .overlay {
                         Image("cherries")
                             .resizable()
-                            .frame(width: 208, height: 230)
                             .scaledToFit()
-                            .offset(x: 70, y: -50)
+                            .frame(width: 240)
+                            .offset(x: 90, y: -20)
                     }
             }
             .padding(.top, 24)

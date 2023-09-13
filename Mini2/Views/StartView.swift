@@ -25,7 +25,7 @@ struct StartView: View {
             Button {
                 manager.currentView = .AddPlayerView
             } label: {
-                PrimaryButton(text: "START THE PARTY", isActive: true, alt: true)
+                PrimaryButton(text: "COMEÇAR A FESTA", isActive: true, alt: true)
             }
 
         }

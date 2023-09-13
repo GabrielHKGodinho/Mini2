@@ -42,6 +42,7 @@ struct PrimaryButton: View {
                 Image("strokedButton")
             }
             Text(text)
+                .baselineOffset(-3)
                 .font(Font.custom("Grandstander-Bold", size: 29))
                 .foregroundColor(isActive ? (color ?? .black) : .white)
                 .offset(y: alt ? 0 : 6)
@@ -52,6 +53,6 @@ struct PrimaryButton: View {
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(text: "START THE PARTY", alt: true, type: [0])
+        PrimaryButton(text: "PRÓXIMO", alt: true, type: [0])
     }
 }
