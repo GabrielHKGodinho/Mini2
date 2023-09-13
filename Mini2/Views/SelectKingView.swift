@@ -18,55 +18,65 @@ struct SelectKingView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
-            VStack(alignment: .leading, spacing: 24) {
-                ReturnButton(manager: _manager, text: "RULES", path: .RulesView)
-                
-                Text("WHO'S GONNA BE THE (UN)LUCKY?")
-                    .foregroundColor(.white)
-                    .font(Font.custom("Grandstander-Bold", size: 48))
-                
-                Text("You can choose a (un)lucky one or leave it to us!")
-                    .font(.system(size: 24))
-                    .foregroundColor(.white)
-                    .fontWeight(.semibold)
+            VStack(alignment: .leading, spacing: 16) {
+                ReturnButton(manager: _manager, text: "REGRAS", path: .RulesView)
+                Title2(text: "QUEM SERÁ O \"SORTUDO\"?")
+                    .fixedSize(horizontal: false, vertical: true)
+                    .baselineOffset(-6)
+                Subtitle(text: "Você pode escolher o \"sortudo\" ou deixar com a gente!")
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            Spacer()
+            .padding(.horizontal, 36)
             
-            ForEach(Array(players.enumerated()), id: \.element) { index, player in
-                Button {
-                    playerSelected = index
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 100)
-                            .foregroundColor(Color("gray"))
-                            .frame(maxWidth: .infinity, maxHeight: 55)
-                        if playerSelected == index {
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(lineWidth: 3)
-                                .frame(maxWidth: .infinity, maxHeight: 55)
-                                .foregroundColor(.white)
-                        } else {
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(lineWidth: 1)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, maxHeight: 55)
+            ScrollView() {
+                VStack {
+                    ForEach(Array(players.enumerated()), id: \.element) { index, player in
+                        Button {
+                            playerSelected = index
+                        } label: {
+                            HStack(alignment: .center, spacing: 8) {
+                                Image(player.icon)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.white)
+                                Text(player.name)
+                                    .font(.title2)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                Spacer()
+                                if playerSelected == index {
+                                    Image(systemName: "crown.fill")
+                                        .foregroundColor(.white)
+                                        .font(.title2)
+                                }
+                            }
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 8)
+                            .background {
+                                RoundedRectangle(cornerRadius: 100)
+                                    .foregroundColor(Color("grayOpacity"))
+                                    .frame(maxWidth: .infinity, maxHeight: 55)
+                                if playerSelected == index {
+                                    RoundedRectangle(cornerRadius: 100)
+                                        .stroke(lineWidth: 3)
+                                        .frame(maxWidth: .infinity, maxHeight: 55)
+                                        .foregroundColor(.white)
+                                } else {
+                                    RoundedRectangle(cornerRadius: 100)
+                                        .stroke(lineWidth: 1)
+                                        .foregroundColor(.white)
+                                        .frame(maxWidth: .infinity, maxHeight: 55)
+                                }
+                            }
+                            .padding(.horizontal, 4)
                         }
-                        HStack(alignment: .center, spacing: 9) {
-                            Image(systemName: player.icon)
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.white)
-                            Text(player.name)
-                                .font(.title2)
-                                .bold()
-                                .foregroundColor(.white)
-                            Spacer()
-                        }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
                     }
+                    
                 }
+                .padding(.vertical, 4)
             }
+            .padding(.horizontal, 24)
+            .scrollIndicators(.hidden)
             
             Button {
                 aux = playerSelected
@@ -74,25 +84,39 @@ struct SelectKingView: View {
                     playerSelected = Int.random(in: 0..<PlayerManager.getNumberOfPlayers())
                 }
             } label: {
-                SecondaryButton(icon: "shuffle", text: "get it randomly")
-            }
-            
-            Spacer()
-            
+                    HStack {
+                        Image(systemName: "shuffle")
+                            .font(.body)
+                            .foregroundColor(Color("red"))
+                            .bold()
+                        Text("aleatório")
+                            .font(.body)
+                            .foregroundColor(Color("red"))
+                            .bold()
+                    }
+                    .padding(.horizontal, 52)
+                    .padding(.vertical, 12)
+                    .background {
+                        RoundedRectangle(cornerRadius: 100)
+                            .foregroundColor(.white)
+                            .opacity(1)
+                    }
+                }
+                        
             Button {
                 manager.currentView = .GameView
             } label: {
                 if (playerSelected == -1) {
-                    PrimaryButton(text: "NEXT", isActive: false)
+                    PrimaryButton(text: "TABOM", isActive: false)
                 } else {
-                    PrimaryButton(text: "NEXT")
+                    PrimaryButton(text: "TABOM")
                 }
             }
             .disabled(playerSelected == -1)
         }
-        .padding(.horizontal, 32)
-        .padding(.bottom, 24)
-        .background(.black)
+        //.padding(.horizontal, 36)
+        .padding(.vertical, 24)
+        .background(Color("red"))
     }
 }
 

@@ -27,13 +27,16 @@
 		54EEEFE12A9F64CF003256BC /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFE02A9F64CF003256BC /* PlayerManager.swift */; };
 		5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08EF742A9CD6AD001B0411 /* TimerView.swift */; };
 		5A7B56DE2AA75BE300AC4992 /* CustomTabViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */; };
-		8100E82B2AA900630004048B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100E82A2AA900630004048B /* GameView.swift */; };
+		5A8461672AB088DF005E4853 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8461662AB088DF005E4853 /* OnboardingView.swift */; };
+		8100E82B2AA900630004048B /* HowsYoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100E82A2AA900630004048B /* HowsYoursView.swift */; };
 		81402F4F2AAF70C300942DBB /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F4E2AAF70C300942DBB /* Tip.swift */; };
 		81402F512AAF729600942DBB /* EditPlayerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F502AAF729600942DBB /* EditPlayerModal.swift */; };
 		81402F532AAFA56700942DBB /* Title1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F522AAFA56700942DBB /* Title1.swift */; };
 		81402F552AAFA68000942DBB /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F542AAFA68000942DBB /* Subtitle.swift */; };
 		81402F572AAFBD1C00942DBB /* Title2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F562AAFBD1C00942DBB /* Title2.swift */; };
 		81402F592AAFBD4A00942DBB /* GameTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F582AAFBD4A00942DBB /* GameTitle.swift */; };
+		81402F5B2AB0AA5E00942DBB /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F5A2AB0AA5E00942DBB /* PlayerList.swift */; };
+		81402F5D2AB1045500942DBB /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81402F5C2AB1045500942DBB /* CustomTextFieldStyle.swift */; };
 		81683E792AA75AB00046064F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81683E782AA75AB00046064F /* PrimaryButton.swift */; };
 		81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3602A9E330B001A15AB /* SceneManager.swift */; };
 		81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C1F3622A9E3317001A15AB /* SceneManagerView.swift */; };
@@ -66,13 +69,16 @@
 		54EEEFE02A9F64CF003256BC /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		5A08EF742A9CD6AD001B0411 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		5A7B56DD2AA75BE300AC4992 /* CustomTabViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewIndicator.swift; sourceTree = "<group>"; };
-		8100E82A2AA900630004048B /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		5A8461662AB088DF005E4853 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8100E82A2AA900630004048B /* HowsYoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowsYoursView.swift; sourceTree = "<group>"; };
 		81402F4E2AAF70C300942DBB /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		81402F502AAF729600942DBB /* EditPlayerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayerModal.swift; sourceTree = "<group>"; };
 		81402F522AAFA56700942DBB /* Title1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title1.swift; sourceTree = "<group>"; };
 		81402F542AAFA68000942DBB /* Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
 		81402F562AAFBD1C00942DBB /* Title2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title2.swift; sourceTree = "<group>"; };
 		81402F582AAFBD4A00942DBB /* GameTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTitle.swift; sourceTree = "<group>"; };
+		81402F5A2AB0AA5E00942DBB /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
+		81402F5C2AB1045500942DBB /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		81683E782AA75AB00046064F /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		81683E7D2AA75F390046064F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grandstander-Bold.ttf"; sourceTree = "<group>"; };
@@ -152,13 +158,15 @@
 				5A08EF742A9CD6AD001B0411 /* TimerView.swift */,
 				81402F502AAF729600942DBB /* EditPlayerModal.swift */,
 				54EEEFDC2A9E31B7003256BC /* AddPlayerView.swift */,
+				81402F5A2AB0AA5E00942DBB /* PlayerList.swift */,
 				81E9AF7F2AA2718400298A52 /* Top10View.swift */,
-				8100E82A2AA900630004048B /* GameView.swift */,
+				8100E82A2AA900630004048B /* HowsYoursView.swift */,
 				54EEEFDD2A9E31B7003256BC /* GameListView.swift */,
 				54E037062A9D42C300413F37 /* RulesAndInfoView.swift */,
 				81C1F3622A9E3317001A15AB /* SceneManagerView.swift */,
 				54E037042A9CD75400413F37 /* SelectKingView.swift */,
 				54D242AD2AA75CB000E8DFF9 /* StartView.swift */,
+				5A8461662AB088DF005E4853 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 			children = (
 				54D242AF2AA90CB700E8DFF9 /* OvalTextFieldStyle.swift */,
 				81402F522AAFA56700942DBB /* Title1.swift */,
+				81402F5C2AB1045500942DBB /* CustomTextFieldStyle.swift */,
 				81402F562AAFBD1C00942DBB /* Title2.swift */,
 				81402F582AAFBD4A00942DBB /* GameTitle.swift */,
 				81402F542AAFA68000942DBB /* Subtitle.swift */,
@@ -279,12 +288,14 @@
 				81402F592AAFBD4A00942DBB /* GameTitle.swift in Sources */,
 				81E6F3682AA7670D00ABFDE0 /* SecondaryButton.swift in Sources */,
 				81683E792AA75AB00046064F /* PrimaryButton.swift in Sources */,
+				5A8461672AB088DF005E4853 /* OnboardingView.swift in Sources */,
 				54E037072A9D42C300413F37 /* RulesAndInfoView.swift in Sources */,
 				81402F572AAFBD1C00942DBB /* Title2.swift in Sources */,
 				255C15442A9CE35A003C777D /* EndView.swift in Sources */,
 				54EEEFDF2A9E31B7003256BC /* GameListView.swift in Sources */,
 				54E0370F2A9D43C100413F37 /* Game.swift in Sources */,
 				5A08EF752A9CD6AD001B0411 /* TimerView.swift in Sources */,
+				81402F5D2AB1045500942DBB /* CustomTextFieldStyle.swift in Sources */,
 				81E9AF802AA2718400298A52 /* Top10View.swift in Sources */,
 				54EEEFE12A9F64CF003256BC /* PlayerManager.swift in Sources */,
 				81402F4F2AAF70C300942DBB /* Tip.swift in Sources */,
@@ -292,11 +303,12 @@
 				5A7B56DE2AA75BE300AC4992 /* CustomTabViewIndicator.swift in Sources */,
 				54EEEFDE2A9E31B7003256BC /* AddPlayerView.swift in Sources */,
 				54C9D8952A83D8750038968C /* Mini2App.swift in Sources */,
+				81402F5B2AB0AA5E00942DBB /* PlayerList.swift in Sources */,
 				54D242AE2AA75CB000E8DFF9 /* StartView.swift in Sources */,
 				81402F552AAFA68000942DBB /* Subtitle.swift in Sources */,
 				54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */,
 				256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */,
-				8100E82B2AA900630004048B /* GameView.swift in Sources */,
+				8100E82B2AA900630004048B /* HowsYoursView.swift in Sources */,
 				81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */,
 				54E0370B2A9D42E200413F37 /* Category.swift in Sources */,
 				54EEEFDB2A9E31AE003256BC /* Player.swift in Sources */,

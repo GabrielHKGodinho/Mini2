@@ -14,7 +14,6 @@ struct AddPlayerView: View {
     @State var playersNames : [String] = PlayerManager.getPlayersNames()
     
     @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
-    @State var isEditing: Bool = false
     @State var isActive: Bool = false
     @State var fieldText: String = ""
     
@@ -28,58 +27,11 @@ struct AddPlayerView: View {
                         .scaledToFit()
                         .offset(x: 100, y: 20)
                 }
+                .padding(.horizontal, 36)
             Subtitle(text: "Tudo bem amigão, quem está jogando?")
-            
-            Spacer()
-            
-            ScrollView {
-                ForEach(Array(players.enumerated()), id: \.element){ index, player in
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 100)
-                            .foregroundColor(Color("gray"))
-                            .frame(maxWidth: .infinity, maxHeight: 55)
-                        RoundedRectangle(cornerRadius: 100)
-                            .stroke(lineWidth: 1)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, maxHeight: 55)
-                        HStack(alignment: .center, spacing: 9) {
-                            Image(players[index].icon)
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.white)
-                            TextField("", text: $playersNames[index])
-                                .font(.title2)
-                                .bold()
-                                .foregroundColor(.white)
-                            Spacer()
-                            Button {
-                                PlayerManager.removePlayer(index: index)
-                                playersNames.remove(at: index)
-                                players = PlayerManager.getPlayers()
-                                name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
-                            } label: {
-                                Image(systemName: "x.circle.fill")
-                                    .foregroundColor(.white)
-                                    .font(.title2)
-                                    .bold()
-                            }
-                        }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                    }
-                }
-            }
-            .scrollIndicators(.never)
-            
-            Button {
-                PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Player \(PlayerManager.getNumberOfPlayers() + 1)"))
-                playersNames.append(PlayerManager.getLastPlayerName())
-                isEditing = true
-                players = PlayerManager.getPlayers()
-                isActive = PlayerManager.getNumberOfPlayers() == 0 ? false : true
-            } label: {
-                SecondaryButton(icon: "plus", text: "adicionar amigo")
-            }
+                .padding(.horizontal, 36)
+                        
+            PlayerList(isActive: $isActive)
             
             Spacer()
             
@@ -94,9 +46,13 @@ struct AddPlayerView: View {
             .disabled(PlayerManager.getNumberOfPlayers() == 0)
             .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
         }
-        .padding(.horizontal, 36)
         .padding(.vertical, 24)
         .background(Color("purple"))
+        .onAppear {
+            if PlayerManager.getNumberOfPlayers() > 0 {
+                isActive = true
+            }
+        }
     }
 }
 
