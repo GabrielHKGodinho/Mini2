@@ -52,10 +52,7 @@ struct Top10View: View {
                     Button {
                         showingTimer.toggle()
                     } label: {
-                        Image(systemName: "timer")
-                            .foregroundColor(.white)
-                            .font(.title2)
-                            .bold()
+                        TimerButtonLabel()
                     }
                     .disabled(isFocused)
                 }

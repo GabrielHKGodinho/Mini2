@@ -14,7 +14,6 @@ struct AddPlayerView: View {
     @State var playersNames : [String] = PlayerManager.getPlayersNames()
     
     @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
-    @State var isActive: Bool = false
     @State var fieldText: String = ""
     
     @FocusState var isFocused: Bool
@@ -95,7 +94,6 @@ struct AddPlayerView: View {
                     PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Player \(PlayerManager.getNumberOfPlayers() + 1)"))
                     playersNames.append(PlayerManager.getLastPlayerName())
                     players = PlayerManager.getPlayers()
-                    isActive = PlayerManager.getNumberOfPlayers() == 0 ? false : true
                 } label: {
                     SecondaryButton(icon: "plus", text: "adicionar amigo")
                         .padding(.horizontal, 28)
@@ -113,7 +111,7 @@ struct AddPlayerView: View {
                     Button {
                         manager.currentView = .GameListView
                     } label: {
-                        PrimaryButton(text: "SELECT GAME", color: Color("purple"), isActive: isActive)
+                        PrimaryButton(text: "PRÓXIMO", color: Color("purple"), isActive: PlayerManager.getNumberOfPlayers() != 0)
                     }
                     .disabled(PlayerManager.getNumberOfPlayers() == 0)
                     .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
@@ -121,11 +119,6 @@ struct AddPlayerView: View {
                 }
             }
             .padding(.vertical, 24)
-            .onAppear {
-                if PlayerManager.getNumberOfPlayers() > 0 {
-                    isActive = true
-                }
-            }
         }
     }
 }

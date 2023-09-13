@@ -63,6 +63,7 @@ struct EndView: View {
             if showingModal {
                 Color(.black)
                     .opacity(0.5)
+                    .ignoresSafeArea()
                     .onTapGesture {
                         hideModal = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
