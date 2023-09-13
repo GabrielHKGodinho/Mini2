@@ -72,6 +72,7 @@ struct YouHave20sView: View {
                             Text("\(categoria20s)")
                                 .multilineTextAlignment(.center)
                                 .font(Font.custom("Grandstander-Bold", size: 30))
+                                .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                                 .frame(width: 250, height: 80)
                                 .padding(.top, 24)

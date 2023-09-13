@@ -27,7 +27,8 @@ struct EndView: View {
                     } label: {
                         Image(systemName: "figure.run.square.stack.fill")
                             .foregroundColor(.white)
-                            .font(.title2)
+                            .font(.title)
+                            .bold()
                     }
                 }
                 

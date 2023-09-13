@@ -101,7 +101,7 @@ struct EditPlayerModal: View {
             }
             .padding(.vertical, 24)
             .frame(minHeight: 540, maxHeight: 540, alignment: .bottom)
-            .background(.green)
+            .background(color)
         }
     }
 }

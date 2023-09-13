@@ -13,7 +13,7 @@ struct AddPlayerView: View {
     @State var players = PlayerManager.getPlayers()
     @State var playersNames : [String] = PlayerManager.getPlayersNames()
     
-    @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
+    @State var name: String = "Jogador \(PlayerManager.getNumberOfPlayers() + 1)"
     @State var fieldText: String = ""
     
     @FocusState var isFocused: Bool
@@ -91,7 +91,7 @@ struct AddPlayerView: View {
                 .scrollIndicators(.never)
                 
                 Button {
-                    PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Player \(PlayerManager.getNumberOfPlayers() + 1)"))
+                    PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Jogador \(PlayerManager.getNumberOfPlayers() + 1)"))
                     playersNames.append(PlayerManager.getLastPlayerName())
                     players = PlayerManager.getPlayers()
                 } label: {

@@ -48,6 +48,7 @@ struct SceneManagerView: View {
         }
         .environmentObject(manager)
         .environmentObject(repository)
+        .preferredColorScheme(.dark)
     }
 }
 

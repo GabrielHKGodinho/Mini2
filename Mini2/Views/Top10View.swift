@@ -222,7 +222,6 @@ struct Top10View: View {
             }
         }
     }
-}
 
 struct Top10View_Previews: PreviewProvider {
     static var previews: some View {

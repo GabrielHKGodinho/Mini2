@@ -72,6 +72,7 @@ struct BeeeengoView: View {
                             VStack(alignment: .center) {
                                 Text("QUAL MEU NÚMERO?")
                                     .font(.custom("Grandstander-Bold", size: 36))
+                                    .foregroundColor(.black)
                                     .baselineOffset(-4)
                                     .multilineTextAlignment(.center)
                                     .frame(maxWidth: .infinity)
@@ -82,10 +83,12 @@ struct BeeeengoView: View {
                                 if let numberSelected = numberSelected {
                                     Text("\(numberSelected)")
                                         .font(.system(size: 40))
+                                        .foregroundColor(.black)
                                         .bold()
                                 } else {
                                     Text("-")
                                         .font(.system(size: 40))
+                                        .foregroundColor(.black)
                                         .bold()
                                 }
                                 
