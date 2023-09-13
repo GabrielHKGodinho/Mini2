@@ -52,7 +52,9 @@ struct YouHave20sView: View {
                     .disabled(isFocused)
                 }
                 
-                Title1(text: "VC TEM 20 SEGUNDOS")
+                Title1(text: repository.games[repository.selectedGame].name.uppercased())
+                    .fixedSize(horizontal: false, vertical: true)
+                    .baselineOffset(-10)
                     .padding(.bottom, 8)
                 
                 RoundedRectangle(cornerRadius: 42)
@@ -72,6 +74,7 @@ struct YouHave20sView: View {
                             Text("\(categoria20s)")
                                 .multilineTextAlignment(.center)
                                 .font(Font.custom("Grandstander-Bold", size: 30))
+                                .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                                 .frame(width: 250, height: 80)
                                 .padding(.top, 24)

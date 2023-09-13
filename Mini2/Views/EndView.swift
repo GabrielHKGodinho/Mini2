@@ -27,7 +27,8 @@ struct EndView: View {
                     } label: {
                         Image(systemName: "figure.run.square.stack.fill")
                             .foregroundColor(.white)
-                            .font(.title2)
+                            .font(.title)
+                            .bold()
                     }
                 }
                 
@@ -38,6 +39,16 @@ struct EndView: View {
                     .baselineOffset(-8)
                 
                 Tip(icon: "figure.run.square.stack.fill", title: "Torne seu grupo maior!", description: "Utilize o botão de jogadores para adicionar ou retirar amigos da rodada!")
+                
+                Spacer()
+                
+                HStack {
+                    Image(repository.games[repository.selectedGame].endImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 240)
+                }
+                .frame(maxWidth: .infinity)
                 
                 Spacer()
                 

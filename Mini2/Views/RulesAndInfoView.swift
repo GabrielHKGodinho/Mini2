@@ -47,7 +47,8 @@ struct RulesAndInfoView: View {
                                 Spacer()
                                 
                                 Text(repository.games[repository.selectedGame].instructions[i].0)
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
                                     .padding(.bottom, 32)
                                     .padding(.horizontal, 16)

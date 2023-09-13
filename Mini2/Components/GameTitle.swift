@@ -13,7 +13,7 @@ struct GameTitle: View {
     var body: some View {
         Text(text)
             .multilineTextAlignment(.leading)
-            .frame(maxWidth: .infinity, alignment: .center)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundColor(.black)
             .font(Font.custom("Grandstander-Bold", size: 36))
             .padding(.bottom, -8)
