@@ -10,6 +10,8 @@
 		25034AFD2AA8A4C90044E568 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25034AFC2AA8A4C90044E568 /* ReturnButton.swift */; };
 		255C15442A9CE35A003C777D /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C15432A9CE35A003C777D /* EndView.swift */; };
 		256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EA4892A9E179C00F0F103 /* GameRepository.swift */; };
+		5412E77A2AB0992F00270CF0 /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412E7792AB0992F00270CF0 /* JsonManager.swift */; };
+		5412E77C2AB0A50100270CF0 /* top10.json in Resources */ = {isa = PBXBuildFile; fileRef = 5412E77B2AB0A50100270CF0 /* top10.json */; };
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
 		54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D89B2A83D8760038968C /* Preview Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		25034AFC2AA8A4C90044E568 /* ReturnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnButton.swift; sourceTree = "<group>"; };
 		255C15432A9CE35A003C777D /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
 		256EA4892A9E179C00F0F103 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
+		5412E7792AB0992F00270CF0 /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
+		5412E77B2AB0A50100270CF0 /* top10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = top10.json; sourceTree = "<group>"; };
 		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		54C9D8982A83D8760038968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5412E77D2AB0A87300270CF0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5412E77B2AB0A50100270CF0 /* top10.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		54C9D8882A83D8750038968C = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,7 @@
 		54C9D8932A83D8750038968C /* Mini2 */ = {
 			isa = PBXGroup;
 			children = (
+				5412E77D2AB0A87300270CF0 /* Resource */,
 				8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */,
 				81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */,
 				81683E7D2AA75F390046064F /* Info.plist */,
@@ -170,6 +183,7 @@
 				81C1F3602A9E330B001A15AB /* SceneManager.swift */,
 				54EEEFDA2A9E31AE003256BC /* Player.swift */,
 				54EEEFE02A9F64CF003256BC /* PlayerManager.swift */,
+				5412E7792AB0992F00270CF0 /* JsonManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -259,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5412E77C2AB0A50100270CF0 /* top10.json in Resources */,
 				81CFC76B2AA8AB3E003503A9 /* Grandstander-Regular.ttf in Resources */,
 				81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */,
 				54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */,
@@ -304,6 +319,7 @@
 				81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */,
 				81402F532AAFA56700942DBB /* Title1.swift in Sources */,
 				81402F512AAF729600942DBB /* EditPlayerModal.swift in Sources */,
+				5412E77A2AB0992F00270CF0 /* JsonManager.swift in Sources */,
 				81C1F3632A9E3317001A15AB /* SceneManagerView.swift in Sources */,
 				54D242B02AA90CB700E8DFF9 /* OvalTextFieldStyle.swift in Sources */,
 			);

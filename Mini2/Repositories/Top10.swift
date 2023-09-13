@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct Top10 {
-    var theme: String
-    var items: [String]
-}
-
 class Top10Repository: ObservableObject {
     static let list: [Top10] = [
         Top10(theme: "filmes de todos os tempos", items: [
