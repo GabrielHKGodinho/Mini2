@@ -21,6 +21,7 @@
 		54E037072A9D42C300413F37 /* RulesAndInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E037062A9D42C300413F37 /* RulesAndInfoView.swift */; };
 		54E0370B2A9D42E200413F37 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E037092A9D42E200413F37 /* Category.swift */; };
 		54E0370F2A9D43C100413F37 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0370E2A9D43C100413F37 /* Game.swift */; };
+		54E7AD032AB1F18300B54611 /* youHave20s.json in Resources */ = {isa = PBXBuildFile; fileRef = 54E7AD022AB1F18300B54611 /* youHave20s.json */; };
 		54EEEFDB2A9E31AE003256BC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFDA2A9E31AE003256BC /* Player.swift */; };
 		54EEEFDE2A9E31B7003256BC /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFDC2A9E31B7003256BC /* AddPlayerView.swift */; };
 		54EEEFDF2A9E31B7003256BC /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEEFDD2A9E31B7003256BC /* GameListView.swift */; };
@@ -43,7 +44,6 @@
 		81CFC76B2AA8AB3E003503A9 /* Grandstander-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */; };
 		81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */; };
 		81E6F3682AA7670D00ABFDE0 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */; };
-		81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7D2AA25BB700298A52 /* Top10.swift */; };
 		81E9AF802AA2718400298A52 /* Top10View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9AF7F2AA2718400298A52 /* Top10View.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +63,7 @@
 		54E037062A9D42C300413F37 /* RulesAndInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesAndInfoView.swift; sourceTree = "<group>"; };
 		54E037092A9D42E200413F37 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Mini2/Classes/Category.swift; sourceTree = SOURCE_ROOT; };
 		54E0370E2A9D43C100413F37 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		54E7AD022AB1F18300B54611 /* youHave20s.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = youHave20s.json; sourceTree = "<group>"; };
 		54EEEFDA2A9E31AE003256BC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		54EEEFDC2A9E31B7003256BC /* AddPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerView.swift; sourceTree = "<group>"; };
 		54EEEFDD2A9E31B7003256BC /* GameListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		81C1F3622A9E3317001A15AB /* SceneManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerView.swift; sourceTree = "<group>"; };
 		81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grandstander-Regular.ttf"; sourceTree = "<group>"; };
 		81E6F3672AA7670D00ABFDE0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
-		81E9AF7D2AA25BB700298A52 /* Top10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10.swift; sourceTree = "<group>"; };
 		81E9AF7F2AA2718400298A52 /* Top10View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5412E77B2AB0A50100270CF0 /* top10.json */,
+				54E7AD022AB1F18300B54611 /* youHave20s.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -133,7 +134,6 @@
 				81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */,
 				81683E7D2AA75F390046064F /* Info.plist */,
 				81683E772AA75A960046064F /* Components */,
-				81E9AF7C2AA25B8B00298A52 /* Repositories */,
 				54E037102A9D43CB00413F37 /* Classes */,
 				54E037032A9CD72600413F37 /* Views */,
 				54C9D8942A83D8750038968C /* Mini2App.swift */,
@@ -203,14 +203,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		81E9AF7C2AA25B8B00298A52 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				81E9AF7D2AA25BB700298A52 /* Top10.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -271,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5412E77C2AB0A50100270CF0 /* top10.json in Resources */,
+				54E7AD032AB1F18300B54611 /* youHave20s.json in Resources */,
 				81CFC76B2AA8AB3E003503A9 /* Grandstander-Regular.ttf in Resources */,
 				81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */,
 				54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */,
@@ -309,7 +302,6 @@
 				54E037052A9CD75400413F37 /* SelectKingView.swift in Sources */,
 				256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */,
 				8100E82B2AA900630004048B /* HowsYoursView.swift in Sources */,
-				81E9AF7E2AA25BB700298A52 /* Top10.swift in Sources */,
 				54E0370B2A9D42E200413F37 /* Category.swift in Sources */,
 				54EEEFDB2A9E31AE003256BC /* Player.swift in Sources */,
 				81C1F3612A9E330B001A15AB /* SceneManager.swift in Sources */,
