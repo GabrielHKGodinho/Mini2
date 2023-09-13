@@ -1,21 +1,25 @@
 //
-//  GameView.swift
+//  BeeeengoView.swift
 //  Mini2
 //
-//  Created by Eduardo Stefanel Paludo on 06/09/23.
+//  Created by Eduardo Stefanel Paludo on 13/09/23.
 //
 
 import SwiftUI
 
-struct HowsYoursView: View {
+struct BeeeengoView: View {
     @EnvironmentObject var manager: SceneManager
     @EnvironmentObject var repository: GameRepository
     @State private var showingTimer = false
     @State private var hideTimer = false
     @State var word: String = ""
     @FocusState var isFocused: Bool
-    @State var hasWritten: Bool = false
+    @State var hasChosen: Bool = false
     @GestureState private var isDetectingLongPress = false
+    
+    @State var numberSelected: Int?
+    
+    @State private var animationAmount: CGFloat = 1
     
     var longPress: some Gesture {
         LongPressGesture(minimumDuration: 10)
@@ -52,8 +56,16 @@ struct HowsYoursView: View {
                     } label: {
                         Image(systemName: "timer")
                             .foregroundColor(.white)
-                            .font(.title2)
+                            .font(.title)
                             .bold()
+                            .scaleEffect(animationAmount)
+                            .animation(
+                                .linear(duration: 1)
+                                .delay(0)
+                                .repeatCount(10, autoreverses: true), value: animationAmount)
+                            .onAppear {
+                                animationAmount = 1.1
+                            }
                     }
                     .disabled(isFocused)
                 }
@@ -63,34 +75,51 @@ struct HowsYoursView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.bottom, 8)
                 
-                if !hasWritten {
+                if !hasChosen {
                     withAnimation {
                         ZStack {
                             RoundedRectangle(cornerRadius: 30)
                                 .foregroundColor(.white)
-                            if word.isEmpty && !isFocused {
-                                Text("Toque para digitar a palavra escolhida")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(.black)
+                            VStack(alignment: .center) {
+                                Text("QUAL MEU NÚMERO?")
+                                    .font(.custom("Grandstander-Bold", size: 36))
+                                    .baselineOffset(-4)
                                     .multilineTextAlignment(.center)
-                            }
-                            TextField("", text: $word, axis: .vertical)
-                                .focused($isFocused)
-                                .baselineOffset(-2)
-                                .padding(.vertical, 24)
-                                .padding(.horizontal, 16)
-                                .font(Font.custom("Grandstander-Bold", size: 48))
-                                .foregroundColor(.black)
-                                .multilineTextAlignment(.center)
-                                .submitLabel(.done)
-                                .onChange(of: word) { _ in
-                                    if word.last?.isNewline == .some(true) {
-                                        word.removeLast()
-                                        isFocused = false
+                                    .frame(maxWidth: .infinity)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                
+                                Spacer()
+                                
+                                if let numberSelected = numberSelected {
+                                    Text("\(numberSelected)")
+                                        .font(.system(size: 40))
+                                        .bold()
+                                } else {
+                                    Text("-")
+                                        .font(.system(size: 40))
+                                        .bold()
+                                }
+                                
+                                Spacer()
+                                
+                                Button {
+                                    numberSelected = Int.random(in: 0...10)
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .foregroundColor(repository.games[repository.selectedGame].color)
+                                            .frame(height: 60)
+                                        Text("NOVO NÚMERO")
+                                            .font(.custom("Grandstander-Regular", size: 24))
+                                            .foregroundColor(.white)
+                                            .baselineOffset(-4)
                                     }
                                 }
+                            }
+                            .padding(.horizontal, 36)
+                            .padding(.vertical, 28)
                         }
-                        .frame(maxHeight: 280)
+                        .frame(maxHeight: .infinity)
                         .animation(.linear(duration: 0.2))
                     }
                 } else {
@@ -98,14 +127,15 @@ struct HowsYoursView: View {
                         if isDetectingLongPress {
                             RoundedRectangle(cornerRadius: 30)
                                 .foregroundColor(.white)
-                            Text(word)
-                                .font(Font.custom("Grandstander-Bold", size: 48))
+                            Text("\(numberSelected!)")
+                                .font(.system(size: 40))
+                                .bold()
                                 .foregroundColor(.black)
                         } else {
                             RoundedRectangle(cornerRadius: 30)
                                 .foregroundColor(Color("gray"))
                             VStack {
-                                Image("topSecretPurple")
+                                Image("topSecretBlue")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 120)
@@ -121,32 +151,28 @@ struct HowsYoursView: View {
 
                 Spacer()
                 
-                if (!isFocused) {
-                    withAnimation {
-                        Tip(icon: "timer", title: "Timer tip!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
-                            .padding(.bottom, 24)
-                            .animation(.linear(duration: 0.15))
-                    }
-                        
-                    HStack(alignment: .center) {
-                        if hasWritten {
-                            Button {
-                                manager.currentView = .EndGameView
-                            } label: {
-                                PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color)
-                            }
-                        } else {
-                            Button {
-                                hasWritten = true
-                            } label: {
-                                PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: !word.isEmpty)
-                            }
-                            .disabled(word.isEmpty)
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
+                Tip(icon: "timer", title: "Timer tip!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
+                    .padding(.bottom, 24)
                     .animation(.linear(duration: 0.15))
+                        
+                HStack(alignment: .center) {
+                    if hasChosen {
+                        Button {
+                            manager.currentView = .EndGameView
+                        } label: {
+                            PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color)
+                        }
+                    } else {
+                        Button {
+                            hasChosen = true
+                        } label: {
+                            PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: numberSelected != nil)
+                        }
+                        .disabled(numberSelected == nil)
+                    }
                 }
+                .frame(maxWidth: .infinity)
+                .animation(.linear(duration: 0.15))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 36)
@@ -180,10 +206,10 @@ struct HowsYoursView: View {
     }
 }
 
-struct HowsYoursView_Previews: PreviewProvider {
+struct BeeeengoView_Previews: PreviewProvider {
     static var previews: some View {
         let repository = GameRepository()
-        HowsYoursView()
+        BeeeengoView()
             .environmentObject(repository)
     }
 }
