@@ -13,10 +13,11 @@ struct YouHave20sView: View {
     @EnvironmentObject var repository: GameRepository
     @State private var showingTimer = false
     @State private var hideTimer = false
-    @State var word: String = ""
+    @State var word: String = "-"
     @FocusState var isFocused: Bool
-    @State var hasWritten: Bool = false
-    @State var categoria20s = Top10Repository.list.randomElement()!
+    @State var hasChosen: Bool = false
+    @State var file20s = JsonManager.fill20sec()
+    @State var categoria20s = "-"
     
     var body: some View {
         VStack(spacing: 4) {
@@ -54,38 +55,45 @@ struct YouHave20sView: View {
                 .foregroundColor(.white)
                 .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
                 .overlay {
-                    Button {
+                    VStack {
+                        Text("BORA ESCOLHER A CATEGORIA")
+                            .multilineTextAlignment(.center)
+                            .frame(width: 250, height: 80)
+                            .foregroundColor(.black)
+                            .font(Font.custom("Grandstander-Bold", size: 35))
+                            .padding(.top)
                         
-                    } label: {
-                        VStack {
-                            Text("BORA ESCOLHER A CATEGORIA")
-                                .multilineTextAlignment(.center)
-                                .frame(width: 250)
-                                .foregroundColor(.black)
-                                .font(Font.custom("Grandstander-Bold", size: 35))
-                                .padding(.top, 32)
-                            
-                            Text("-")
-                                .multilineTextAlignment(.center)
-                                .frame(width: 250)
-                                .foregroundColor(.black)
-                                .font(Font.custom("Grandstander-Bold", size: 35))
-                                .padding(.top, 32)
-                            
-                            Spacer()
-                            
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 100)
-                                    .frame(width: 260, height: 55)
-                                    .foregroundColor(Color("cyan"))
-                                Text("NOVA CATEGORIA")
-                                    .foregroundColor(.white)
-                                    .font(Font.custom("Grandstander-regular", size: 20))
+                        
+                        Text("\(categoria20s)")
+                            .multilineTextAlignment(.center)
+                            .font(Font.custom("Grandstander-Bold", size: 30))
+                            .multilineTextAlignment(.center)
+                            .frame(width: 200, height: 80)
+                            .padding(.top, 24)
+                        
+                        Spacer()
+                        
+                        
+                        Button {
+                            categoria20s = file20s.randomElement()!
                                 
+                        } label: {
+                            VStack {
+                                
+                                Spacer()
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 100)
+                                        .frame(width: 260, height: 55)
+                                        .foregroundColor(Color("cyan"))
+                                    Text("NOVA CATEGORIA")
+                                        .foregroundColor(.white)
+                                        .font(Font.custom("Grandstander-regular", size: 20))
+                                }
                             }
                         }
-                        .padding(.vertical, 40)
                     }
+                    .padding(.vertical, 40)
                     
                 }
                 .padding(.vertical)
