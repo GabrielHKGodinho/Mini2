@@ -9,13 +9,14 @@ import SwiftUI
 
 struct Top10View: View {
     @EnvironmentObject var repository: GameRepository
-    let top10 = Top10Repository.list.randomElement()!
+    @State var top10: Top10 = JsonManager.fillTop10().randomElement()!
+    
     @GestureState private var isDetectingLongPress = false
     
     var longPress: some Gesture {
         LongPressGesture(minimumDuration: 10)
             .updating($isDetectingLongPress) { currentState, gestureState,
-                    transaction in
+                transaction in
                 gestureState = currentState
                 transaction.animation = Animation.easeIn(duration: 2.0)
             }
@@ -41,6 +42,7 @@ struct Top10View: View {
                         .foregroundColor(.white)
                         .font(.title)
                         .multilineTextAlignment(.center)
+                    
                     ForEach(top10.items, id: \.self) { str in
                         Text(str)
                             .foregroundColor(.white)
@@ -52,7 +54,7 @@ struct Top10View: View {
         .gesture(longPress)
     }
 }
-    
+
 struct Top10View_Previews: PreviewProvider {
     static var previews: some View {
         let repository = GameRepository()
