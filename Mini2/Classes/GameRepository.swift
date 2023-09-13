@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 class GameRepository: ObservableObject {
-    @Published var selectedGame: Int = 0
+    @Published var selectedGame: Int = 2
     var games: [Game] = [
         Game(name: "Como é o seu?", icon: "tshirt.fill", color: Color("purple"), description: "Nesse jogo uma pessoa precisará descobrir o que os outros têm em comum perguntando \"Como é o seu?\"", instructions: [("O mestre escolhido ou sorteado deve se retirar do local ou tampar os ouvidos de modo a não ouvir a conversa dos outros jogadores.", "hows-yours1"), ("Os outros jogadores terão 1 a 2 minutos para decidir algo que todos têm em comum.", "hows-yours2"), ("Quando tiverem decidido, o jogador selecionado volta, e precisa fazer a pergunta “Como é o seu?” para cada jogador.", "hows-yours3"), ("Após todos os jogadores derem dicas, o player sorteado deve tentar adivinhar qual palavra foi escolhida.", "hows-yours4")]),
         
-        
-        Game(name: "Top 10", icon: "10.circle.fill", color: Color("purple"), description: "Diga o que acha fazer parte do Top 10 enquanto duvida das respostas de seus amigos", instructions: [("O mestre terá acesso a uma lista de Top 10 de algum tema específico.", ""), ("Cada jogador deverá falar algum item que ele acredita estar na lista.", ""), ("Os outros jogadores podem duvidar se esse item está na lista ou não. Caso esteja, o jogador que duvidou é eliminado. Caso não esteja, o jogador que foi desafiado é eliminado.", ""), ("Se ninguém duvidar, o próximo jogador continua o jogo normalmente.", "")]),
+
+        Game(name: "Top 10", icon: "10.circle.fill", color: Color("green"), description: "Diga o que acha fazer parte do Top 10 enquanto duvida das respostas de seus amigos", instructions: [("O mestre terá acesso a uma lista de Top 10 de algum tema específico.", ""), ("Cada jogador deverá falar algum item que ele acredita estar na lista.", ""), ("Os outros jogadores podem duvidar se esse item está na lista ou não. Caso esteja, o jogador que duvidou é eliminado. Caso não esteja, o jogador que foi desafiado é eliminado.", ""), ("Se ninguém duvidar, o próximo jogador continua o jogo normalmente.", "")]),
         
         Game(name: "Vc tem 20s", icon: "clock.circle", color: Color("pink"), description: "Teste sua capacidade e veja se você tem a habilidade de dizer em 20 segundos o máximo de palavras referente a um tema específico", instructions: [("Um tema será sorteado e cada jogador diz quantas palavras do tema consegue falar em 20 segundos", "vc-tem-20s1"), ("Se o tema for \"times de futebol”, cada jogador começa a falar \"eu falo 5 times”, \"eu falo 8”, sempre aumentando os números", "vc-tem-20s2"), ("Quando ninguém mais quiser aumentar o número, a pessoa que falou o maior inicia o timer e começa a falar as palavras, se ela falar menos do que ela se propôs, ela perde.", "vc-tem-20s3")]),
 
