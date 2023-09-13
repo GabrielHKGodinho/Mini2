@@ -7,12 +7,20 @@
 
 import SwiftUI
 
-struct OvalTextFieldStyle: TextFieldStyle {
-    func _body(configuration: TextField<Self._Label>) -> some View {
-        configuration
-            .padding(10)
-            .background(LinearGradient(gradient: Gradient(colors: [Color.orange, Color.orange]), startPoint: .topLeading, endPoint: .bottomTrailing))
-            .cornerRadius(20)
-            .shadow(color: .gray, radius: 10)
+struct SuperTextField: View {
+    
+    var placeholder: Text
+    @Binding var text: String
+    var editingChanged: (Bool)->() = { _ in }
+    var commit: ()->() = { }
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            if text.isEmpty { placeholder }
+            TextField("", text: $text, onEditingChanged: editingChanged, onCommit: commit)
+                .foregroundColor(.black)
+                .font(Font.custom("Grandstander-Bold", size: 32))
+                .textFieldStyle(CustomTextFieldStyle())
+        }
     }
 }

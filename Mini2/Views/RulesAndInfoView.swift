@@ -22,45 +22,47 @@ struct RulesAndInfoView: View {
             .padding(.horizontal, 36)
             Title2(text: "CONFIRA AS REGRAS")
                 .padding(.horizontal, 36)
-            Spacer()
-            VStack {
+        
+            VStack(spacing: 12) {
                 TabView(selection: $selection) {
                     ForEach(repository.games[repository.selectedGame].instructions.indices, id: \.self) { i in
-                        VStack {
+                        ZStack {
                             RoundedRectangle(cornerRadius: 42)
-                                .fill(.white)
-                                .overlay {
-                                    ZStack {
-                                        VStack {
-                                            Text(repository.games[repository.selectedGame].name)
-                                                .multilineTextAlignment(.center)
-                                                .frame(width: 250)
-                                                .foregroundColor(.black)
-                                                .font(Font.custom("Grandstander-Bold", size: 36))
-                                                .padding(.vertical, 40)
-                                            
-                                            Spacer()
-                                            
-                                            CustomTabViewIndicator(selection: $selection, numberOfTabs: numberOfTabs, darkMode: false)
-                                                .padding(.bottom, 30)
-                                        }
-                                        
-                                        Text(repository.games[repository.selectedGame].instructions[i].0)
-                                            .font(.system(size: 20))
-                                            .multilineTextAlignment(.center)
-                                            .padding(28)
-                                    }
-                                    
-                                }
-                            
+                                .foregroundColor(.white)
+                            VStack(spacing: 0) {
+                                Text(repository.games[repository.selectedGame].name)
+                                    .multilineTextAlignment(.center)
+                                    .frame(width: 250)
+                                    .foregroundColor(.black)
+                                    .font(Font.custom("Grandstander-Bold", size: 36))
+                                    .padding(.top, 32)
+                                
+                                Spacer()
+                                
+                                Image(repository.games[repository.selectedGame].instructions[i].1)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 180)
+                                
+                                Spacer()
+                                
+                                Text(repository.games[repository.selectedGame].instructions[i].0)
+                                    .font(.system(size: 20))
+                                    .multilineTextAlignment(.center)
+                                    .padding(.bottom, 32)
+                                    .padding(.horizontal, 16)
+                            }
+                            .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
+                            .padding(.bottom)
                         }
                         
                         .padding(.horizontal, 36)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
-                .padding(.bottom)
+                
+                CustomTabViewIndicator(selection: $selection, numberOfTabs: 4, darkMode: false)
+                    .padding(.horizontal, 48)
             }
             
             Button {

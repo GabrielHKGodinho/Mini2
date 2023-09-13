@@ -15,12 +15,12 @@ struct EndView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Color(.black)
+            repository.games[repository.selectedGame].color
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 16) {
                 HStack {
-                    ReturnButton(manager: _manager, text: "GAME", path: .GameView)
+                    ReturnButton(manager: _manager, text: "JOGO", path: .GameView)
                     Spacer()
                     Button {
                         showingModal.toggle()
@@ -43,25 +43,26 @@ struct EndView: View {
                 
                 VStack(alignment: .center, spacing: 0) {
                     Button {
-                        manager.currentView = .RulesView
+                        manager.currentView = .SelectKingView
                     } label: {
-                        PrimaryButton(text: "PLAY AGAIN", alt: true)
+                        PrimaryButton(text: "JOGAR DE NOVO", color: repository.games[repository.selectedGame].color, alt: true)
                     }
                     
                     Button {
                         manager.currentView = .GameListView
                     } label: {
-                        PrimaryButton(text: "GIVE ME NEXT")
+                        PrimaryButton(text: "ESCOLHER OUTRO", color: repository.games[repository.selectedGame].color)
                     }
                 }
                 .frame(maxWidth: .infinity)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(32)
+            .padding(.horizontal, 36)
+            .padding(.vertical, 24)
             
             if showingModal {
                 Color(.black)
-                    .opacity(0.3)
+                    .opacity(0.5)
                     .onTapGesture {
                         hideModal = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -69,7 +70,7 @@ struct EndView: View {
                             hideModal = false
                         }
                     }
-                EditPlayerModal(showingModal: $showingModal) {
+                EditPlayerModal(showingModal: $showingModal, color: repository.games[repository.selectedGame].color) {
                     withAnimation(.easeInOut(duration: 0.2)) {
                         hideModal = true
                     }
@@ -77,9 +78,6 @@ struct EndView: View {
                         showingModal = false
                         hideModal = false
                     }
-                }
-                .onAppear {
-                    print("Ok")
                 }
                 .transition(.move(edge: .bottom))
                 .animation(.linear(duration: 0.2))

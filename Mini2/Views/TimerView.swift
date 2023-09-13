@@ -13,6 +13,7 @@ struct TimerView: View {
     @State var countDownTimer = 60
     @State var timerRunning = false
     @Binding var showingTimer: Bool
+    let color: Color
     
     var onCloseButtonTap: () -> Void
     
@@ -21,16 +22,12 @@ struct TimerView: View {
     var body: some View {
         HStack(alignment: .bottom) {
             VStack(spacing: 24) {
-                Spacer()
                 HStack {
                     Spacer()
                     Button {
-                        //dismiss()
-                        //showingTimer = false
                         onCloseButtonTap()
                     } label: {
                         Image(systemName: "xmark.circle")
-                            .fontWeight(.bold)
                             .foregroundColor(.white)
                             .font(.title)
                     }
@@ -109,19 +106,18 @@ struct TimerView: View {
                 } label: {
                     PrimaryButton(text: "Finish Timer")
                 }
-                .padding(42)
             }
             .padding(.horizontal, 24)
-            .padding(.vertical, 8)
-            .background(.green)
-            .frame(height: 400, alignment: .bottom)
+            .padding(.vertical, 24)
+            .background(color)
+            //.frame(height: 400, alignment: .bottom)
         }
     }
 }
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(showingTimer: .constant(false)) {
+        TimerView(showingTimer: .constant(false), color: Color("green")) {
             
         }
     }

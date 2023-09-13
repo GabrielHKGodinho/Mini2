@@ -46,6 +46,7 @@ struct GameListView: View {
                                 .frame(alignment: .center)
                                 Text(repository.games[i].description)
                                     .font(.body)
+                                    .foregroundColor(.black)
                             }
                             .padding(24)
                         }
