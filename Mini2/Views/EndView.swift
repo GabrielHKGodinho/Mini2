@@ -54,13 +54,19 @@ struct EndView: View {
                 
                 VStack(alignment: .center, spacing: 0) {
                     Button {
-                        manager.currentView = .SelectKingView
+                        withAnimation {
+                            manager.animation = .move(edge: .trailing)
+                            manager.currentView = .SelectKingView
+                        }
                     } label: {
                         PrimaryButton(text: "JOGAR DE NOVO", color: repository.games[repository.selectedGame].color, alt: true, type: [2])
                     }
                     
                     Button {
-                        manager.currentView = .GameListView
+                        withAnimation {
+                            manager.animation = .move(edge: .trailing)
+                            manager.currentView = .GameListView
+                        }
                     } label: {
                         PrimaryButton(text: "ESCOLHER OUTRO", color: repository.games[repository.selectedGame].color, type: [2])
                     }

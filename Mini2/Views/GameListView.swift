@@ -51,8 +51,11 @@ struct GameListView: View {
                             .padding(24)
                         }
                         .onTapGesture {
-                            manager.currentView = .RulesView
                             repository.selectedGame = i
+                            withAnimation {
+                                manager.animation = .move(edge: .trailing)
+                                manager.currentView = .RulesView
+                            }
                         }
                     }
                 }

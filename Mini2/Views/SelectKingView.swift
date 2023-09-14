@@ -104,7 +104,10 @@ struct SelectKingView: View {
                 }
                         
             Button {
-                manager.currentView = .GameView
+                withAnimation {
+                    manager.animation = .move(edge: .trailing)
+                    manager.currentView = .GameView
+                }
             } label: {
                 if (playerSelected == -1) {
                     PrimaryButton(text: "TABOM", isActive: false)

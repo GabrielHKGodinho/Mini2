@@ -68,7 +68,14 @@ struct RulesAndInfoView: View {
             }
                 
             Button {
-                manager.currentView = .SelectKingView
+                withAnimation {
+                    manager.animation = .move(edge: .trailing)
+                    if repository.selectedGame != 3 {
+                        manager.currentView = .SelectKingView
+                    } else {
+                        manager.currentView = .GameView
+                    }
+                }
             } label: {
                 PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color, isActive: true, alt: true, type: [1])
             }

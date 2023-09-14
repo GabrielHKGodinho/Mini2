@@ -23,5 +23,5 @@ enum Views {
 
 class SceneManager: ObservableObject {
     @Published var currentView = Views.HomeView
-    @Published var animation = AnyTransition.move(edge: .leading)
+    @Published var animation = AnyTransition.move(edge: .trailing)
 }
