@@ -12,6 +12,8 @@
 		256EA48A2A9E179C00F0F103 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EA4892A9E179C00F0F103 /* GameRepository.swift */; };
 		5412E77A2AB0992F00270CF0 /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412E7792AB0992F00270CF0 /* JsonManager.swift */; };
 		5412E77C2AB0A50100270CF0 /* top10.json in Resources */ = {isa = PBXBuildFile; fileRef = 5412E77B2AB0A50100270CF0 /* top10.json */; };
+		54C79E892AB32AFF0071326D /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 54C79E882AB32AFF0071326D /* RiveRuntime */; };
+		54C79E8C2AB32B280071326D /* open.riv in Resources */ = {isa = PBXBuildFile; fileRef = 54C79E8B2AB32B280071326D /* open.riv */; };
 		54C9D8952A83D8750038968C /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D8942A83D8750038968C /* Mini2App.swift */; };
 		54C9D8992A83D8760038968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D8982A83D8760038968C /* Assets.xcassets */; };
 		54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D89B2A83D8760038968C /* Preview Assets.xcassets */; };
@@ -56,6 +58,7 @@
 		256EA4892A9E179C00F0F103 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		5412E7792AB0992F00270CF0 /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		5412E77B2AB0A50100270CF0 /* top10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = top10.json; sourceTree = "<group>"; };
+		54C79E8B2AB32B280071326D /* open.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = open.riv; sourceTree = "<group>"; };
 		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		54C9D8982A83D8760038968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C79E892AB32AFF0071326D /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,14 @@
 				54E7AD022AB1F18300B54611 /* youHave20s.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		54C79E8A2AB32B090071326D /* Rive */ = {
+			isa = PBXGroup;
+			children = (
+				54C79E8B2AB32B280071326D /* open.riv */,
+			);
+			path = Rive;
 			sourceTree = "<group>";
 		};
 		54C9D8882A83D8750038968C = {
@@ -135,6 +147,7 @@
 		54C9D8932A83D8750038968C /* Mini2 */ = {
 			isa = PBXGroup;
 			children = (
+				54C79E8A2AB32B090071326D /* Rive */,
 				5412E77D2AB0A87300270CF0 /* Resource */,
 				8187ACA02AA76012006E0E1B /* Grandstander-Bold.ttf */,
 				81CFC76A2AA8AB3E003503A9 /* Grandstander-Regular.ttf */,
@@ -228,6 +241,9 @@
 			dependencies = (
 			);
 			name = Mini2;
+			packageProductDependencies = (
+				54C79E882AB32AFF0071326D /* RiveRuntime */,
+			);
 			productName = Mini2;
 			productReference = 54C9D8912A83D8750038968C /* Mini2.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +273,9 @@
 				"pt-BR",
 			);
 			mainGroup = 54C9D8882A83D8750038968C;
+			packageReferences = (
+				54C79E872AB32AFF0071326D /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			productRefGroup = 54C9D8922A83D8750038968C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,6 +293,7 @@
 				5412E77C2AB0A50100270CF0 /* top10.json in Resources */,
 				54E7AD032AB1F18300B54611 /* youHave20s.json in Resources */,
 				81CFC76B2AA8AB3E003503A9 /* Grandstander-Regular.ttf in Resources */,
+				54C79E8C2AB32B280071326D /* open.riv in Resources */,
 				81E6F3662AA7644B00ABFDE0 /* Grandstander-Bold.ttf in Resources */,
 				54C9D89C2A83D8760038968C /* Preview Assets.xcassets in Resources */,
 				54C9D8992A83D8760038968C /* Assets.xcassets in Resources */,
@@ -524,6 +544,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54C79E872AB32AFF0071326D /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54C79E882AB32AFF0071326D /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54C79E872AB32AFF0071326D /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 54C9D8892A83D8750038968C /* Project object */;
 }
