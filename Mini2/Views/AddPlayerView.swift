@@ -108,7 +108,7 @@ struct AddPlayerView: View {
                 if !isFocused {
                     Button {
                         withAnimation {
-                            manager.animation = .move(edge: .trailing)
+                            manager.animation = .push(from: .trailing)
                             manager.currentView = .GameListView
                         }
                     } label: {

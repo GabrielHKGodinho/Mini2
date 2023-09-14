@@ -178,7 +178,7 @@ struct Top10View: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .animation(.linear(duration: 0.15))
+                        //.animation(.linear(duration: 0.15))
                     }
                     
                 }

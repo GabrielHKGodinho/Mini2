@@ -91,7 +91,7 @@ struct HowsYoursView: View {
                                 }
                         }
                         .frame(maxHeight: 280)
-                        .animation(.linear(duration: 0.2))
+                        .animation(.linear(duration: 0.2), value: isFocused)
                     }
                 } else {
                     ZStack {
@@ -125,7 +125,7 @@ struct HowsYoursView: View {
                     withAnimation {
                         Tip(icon: "timer", title: "Timer tip!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
                             .padding(.bottom, 24)
-                            .animation(.linear(duration: 0.15))
+                            //.animation(.linear(duration: 0.15))
                     }
                         
                     HStack(alignment: .center) {
@@ -148,7 +148,7 @@ struct HowsYoursView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .animation(.linear(duration: 0.15))
+                    //.animation(.linear(duration: 0.15))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)

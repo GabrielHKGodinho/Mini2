@@ -17,7 +17,7 @@ struct ReturnButton: View {
     var body: some View {
         Button {
             withAnimation {
-                manager.animation = .move(edge: .leading)
+                manager.animation = .push(from: .leading)
                 manager.currentView = path
             }
         } label: {
