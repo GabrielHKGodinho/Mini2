@@ -59,7 +59,7 @@
 		5412E7792AB0992F00270CF0 /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		5412E77B2AB0A50100270CF0 /* top10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = top10.json; sourceTree = "<group>"; };
 		54C79E8B2AB32B280071326D /* open.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = open.riv; sourceTree = "<group>"; };
-		54C9D8912A83D8750038968C /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C9D8912A83D8750038968C /* Dr!p.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dr!p.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C9D8942A83D8750038968C /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		54C9D8982A83D8760038968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54C9D89B2A83D8760038968C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		54C9D8922A83D8750038968C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				54C9D8912A83D8750038968C /* Mini2.app */,
+				54C9D8912A83D8750038968C /* Dr!p.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,9 +228,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		54C9D8902A83D8750038968C /* Mini2 */ = {
+		54C9D8902A83D8750038968C /* Dr!p */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54C9D89F2A83D8760038968C /* Build configuration list for PBXNativeTarget "Mini2" */;
+			buildConfigurationList = 54C9D89F2A83D8760038968C /* Build configuration list for PBXNativeTarget "Dr!p" */;
 			buildPhases = (
 				54C9D88D2A83D8750038968C /* Sources */,
 				54C9D88E2A83D8750038968C /* Frameworks */,
@@ -240,12 +240,12 @@
 			);
 			dependencies = (
 			);
-			name = Mini2;
+			name = "Dr!p";
 			packageProductDependencies = (
 				54C79E882AB32AFF0071326D /* RiveRuntime */,
 			);
 			productName = Mini2;
-			productReference = 54C9D8912A83D8750038968C /* Mini2.app */;
+			productReference = 54C9D8912A83D8750038968C /* Dr!p.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +263,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 54C9D88C2A83D8750038968C /* Build configuration list for PBXProject "Mini2" */;
+			buildConfigurationList = 54C9D88C2A83D8750038968C /* Build configuration list for PBXProject "Dr!p" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -280,7 +280,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54C9D8902A83D8750038968C /* Mini2 */,
+				54C9D8902A83D8750038968C /* Dr!p */,
 			);
 		};
 /* End PBXProject section */
@@ -525,7 +525,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		54C9D88C2A83D8750038968C /* Build configuration list for PBXProject "Mini2" */ = {
+		54C9D88C2A83D8750038968C /* Build configuration list for PBXProject "Dr!p" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54C9D89D2A83D8760038968C /* Debug */,
@@ -534,7 +534,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54C9D89F2A83D8760038968C /* Build configuration list for PBXNativeTarget "Mini2" */ = {
+		54C9D89F2A83D8760038968C /* Build configuration list for PBXNativeTarget "Dr!p" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54C9D8A02A83D8760038968C /* Debug */,
