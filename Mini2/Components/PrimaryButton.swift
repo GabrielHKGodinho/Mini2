@@ -36,7 +36,22 @@ struct PrimaryButton: View {
                         Image("filledButton2")
                     }
                 } else {
-                    Image("filledButton")
+                    switch type {
+                    case [0]:
+                        Image("filledButton")
+                            .shadow(color: .black.opacity(0.55), radius: 6, x: 1, y: 8)
+                        
+                    case [1]:
+                        Image("filledButton")
+                            .shadow(color: .black.opacity(0.4), radius: 6, x: 1, y: 8)
+                        
+                    case [2]:
+                        Image("filledButton")
+                            .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
+                        
+                    default:
+                        Image("filledButton")
+                    }
                 }
             } else {
                 Image("strokedButton")

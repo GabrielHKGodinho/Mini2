@@ -111,10 +111,9 @@ struct AddPlayerView: View {
                     Button {
                         manager.currentView = .GameListView
                     } label: {
-                        PrimaryButton(text: "PRÓXIMO", color: Color("purple"), isActive: PlayerManager.getNumberOfPlayers() != 0)
+                        PrimaryButton(text: "PRÓXIMO", color: Color("purple"), isActive: PlayerManager.getNumberOfPlayers() != 0, type: [2])
                     }
                     .disabled(PlayerManager.getNumberOfPlayers() == 0)
-                    .shadow(color: .black.opacity(0.12), radius: 6, x: 10, y: 10)
                     .animation(.linear(duration: 0.15))
                 }
             }

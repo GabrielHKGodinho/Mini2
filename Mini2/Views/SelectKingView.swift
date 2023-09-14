@@ -109,7 +109,7 @@ struct SelectKingView: View {
                 if (playerSelected == -1) {
                     PrimaryButton(text: "TABOM", isActive: false)
                 } else {
-                    PrimaryButton(text: "TABOM", color: Color("red"))
+                    PrimaryButton(text: "TABOM", color: Color("red"), type: [2])
                 }
             }
             .disabled(playerSelected == -1)

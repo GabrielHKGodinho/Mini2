@@ -56,13 +56,13 @@ struct EndView: View {
                     Button {
                         manager.currentView = .SelectKingView
                     } label: {
-                        PrimaryButton(text: "JOGAR DE NOVO", color: repository.games[repository.selectedGame].color, alt: true)
+                        PrimaryButton(text: "JOGAR DE NOVO", color: repository.games[repository.selectedGame].color, alt: true, type: [2])
                     }
                     
                     Button {
                         manager.currentView = .GameListView
                     } label: {
-                        PrimaryButton(text: "ESCOLHER OUTRO", color: repository.games[repository.selectedGame].color)
+                        PrimaryButton(text: "ESCOLHER OUTRO", color: repository.games[repository.selectedGame].color, type: [2])
                     }
                 }
                 .frame(maxWidth: .infinity)

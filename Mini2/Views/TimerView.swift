@@ -104,7 +104,7 @@ struct TimerView: View {
                     countDownTimer = 0
                     dismiss()
                 } label: {
-                    PrimaryButton(text: "Finish Timer")
+                    PrimaryButton(text: "Finish Timer",color: color, type: [2])
                 }
             }
             .padding(.horizontal, 24)

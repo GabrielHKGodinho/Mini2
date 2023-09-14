@@ -86,7 +86,7 @@ struct OnboardingView2: View {
             Button {
                 showOnboarding.toggle()
             } label: {
-                PrimaryButton(text: "VAMOS!", color: Color("red"), isActive: true, alt: true)
+                PrimaryButton(text: "VAMOS!", color: Color("red"), isActive: true, alt: true, type: [2])
             }
             .padding(.bottom)
             
