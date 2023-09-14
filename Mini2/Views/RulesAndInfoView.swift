@@ -68,7 +68,7 @@ struct RulesAndInfoView: View {
             Button {
                 manager.currentView = .SelectKingView
             } label: {
-                PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color, isActive: true, alt: true, type: [0])
+                PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color, isActive: true, alt: true, type: [1])
             }
             .padding(.horizontal, 36)
         }

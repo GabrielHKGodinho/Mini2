@@ -152,13 +152,13 @@ struct BeeeengoView: View {
                         Button {
                             manager.currentView = .EndGameView
                         } label: {
-                            PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color)
+                            PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color, type: [2])
                         }
                     } else {
                         Button {
                             hasChosen = true
                         } label: {
-                            PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: numberSelected != nil)
+                            PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: numberSelected != nil, type: [2])
                         }
                         .disabled(numberSelected == nil)
                     }

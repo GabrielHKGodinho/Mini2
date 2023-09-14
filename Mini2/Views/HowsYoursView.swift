@@ -130,13 +130,13 @@ struct HowsYoursView: View {
                             Button {
                                 manager.currentView = .EndGameView
                             } label: {
-                                PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color)
+                                PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color, type: [2])
                             }
                         } else {
                             Button {
                                 hasWritten = true
                             } label: {
-                                PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: !word.isEmpty)
+                                PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: !word.isEmpty, type: [2])
                             }
                             .disabled(word.isEmpty)
                         }
