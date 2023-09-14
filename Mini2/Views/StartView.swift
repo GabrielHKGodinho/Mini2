@@ -13,7 +13,7 @@ struct StartView: View {
     @AppStorage("showOnboarding") private var showOnboarding = true
     
     var body: some View {
-        VStack{
+        VStack {
             Spacer()
             
             Image("logo")
@@ -27,7 +27,6 @@ struct StartView: View {
             } label: {
                 PrimaryButton(text: "COMEÇAR A FESTA", isActive: true, alt: true, type: [2])
             }
-
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.bottom, 40)

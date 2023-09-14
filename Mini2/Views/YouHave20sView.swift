@@ -27,7 +27,7 @@ struct YouHave20sView: View {
                     isFocused = false
                 }
             
-            VStack(spacing: 6) {
+            VStack(spacing: 16) {
                 HStack {
                     Button {
                         manager.currentView = .RulesView
@@ -43,11 +43,7 @@ struct YouHave20sView: View {
                     Button {
                         showingTimer.toggle()
                     } label: {
-                        Image(systemName: "timer")
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .bold()
-                            .frame(width: 30, height: 30)
+                        TimerButtonLabel()
                     }
                     .disabled(isFocused)
                 }

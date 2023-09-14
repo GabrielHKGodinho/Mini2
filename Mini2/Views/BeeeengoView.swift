@@ -39,7 +39,7 @@ struct BeeeengoView: View {
                 }
             
             VStack(alignment: .leading, spacing: 16) {
-                HStack {
+                HStack() {
                     Button {
                         manager.currentView = .SelectKingView
                     } label: {

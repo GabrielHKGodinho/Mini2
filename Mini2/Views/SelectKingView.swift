@@ -114,7 +114,6 @@ struct SelectKingView: View {
             }
             .disabled(playerSelected == -1)
         }
-        //.padding(.horizontal, 36)
         .padding(.vertical, 24)
         .background(Color("red"))
     }
