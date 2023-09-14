@@ -37,7 +37,10 @@ struct Top10View: View {
                 VStack(alignment: .leading, spacing: hasChosen ? 8 : 16) {
                     HStack {
                         Button {
-                            manager.currentView = .SelectKingView
+                            withAnimation {
+                                manager.animation = .move(edge: .leading)
+                                manager.currentView = .SelectKingView
+                            }
                         } label: {
                             Text("< SELEÇÃO DE MESTRE")
                                 .foregroundColor(.white)
@@ -158,7 +161,10 @@ struct Top10View: View {
                         HStack(alignment: .center) {
                             if hasChosen {
                                 Button {
-                                    manager.currentView = .EndGameView
+                                    withAnimation {
+                                        manager.animation = .move(edge: .trailing)
+                                        manager.currentView = .EndGameView
+                                    }
                                 } label: {
                                     PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color, type: [2])
                                 }

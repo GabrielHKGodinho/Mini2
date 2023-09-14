@@ -25,6 +25,8 @@ struct Tip: View {
             }
             Text(description)
                 .font(.footnote)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.leading)
                 .foregroundColor(.white)
         }
         .padding()

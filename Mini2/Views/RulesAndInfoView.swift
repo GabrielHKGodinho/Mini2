@@ -14,15 +14,17 @@ struct RulesAndInfoView: View {
     @State private var numberOfTabs = 1
     
     var body: some View {
-        VStack(alignment: .center, spacing: 32) {
-            HStack {
-                ReturnButton(manager: _manager, text: "GAMES", path: .GameListView)
-                Spacer()
-            }
-            .padding(.horizontal, 36)
-            Title2(text: "CONFIRA AS REGRAS")
+        VStack(spacing: 32) {
+            VStack(alignment: .center, spacing: 16) {
+                HStack {
+                    ReturnButton(manager: _manager, text: "JOGOS", path: .GameListView)
+                    Spacer()
+                }
                 .padding(.horizontal, 36)
-        
+                Title2(text: "CONFIRA AS REGRAS")
+                    .padding(.horizontal, 36)
+            }
+                
             VStack(spacing: 24) {
                 TabView(selection: $selection) {
                     ForEach(repository.games[repository.selectedGame].instructions.indices, id: \.self) { i in
@@ -64,9 +66,16 @@ struct RulesAndInfoView: View {
                 CustomTabViewIndicator(selection: $selection, numberOfTabs: repository.games[repository.selectedGame].instructions.count, darkMode: false)
                     .padding(.horizontal, 48)
             }
-            
+                
             Button {
-                manager.currentView = .SelectKingView
+                withAnimation {
+                    manager.animation = .move(edge: .trailing)
+                    if repository.selectedGame != 3 {
+                        manager.currentView = .SelectKingView
+                    } else {
+                        manager.currentView = .GameView
+                    }
+                }
             } label: {
                 PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color, isActive: true, alt: true, type: [1])
             }

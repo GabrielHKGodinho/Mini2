@@ -36,11 +36,9 @@ struct AddPlayerView: View {
                                 .scaledToFit()
                                 .offset(x: 100, y: 20)
                         }
-                        .animation(.linear(duration: 0.15))
                         .padding(.horizontal, 36)
                     Subtitle(text: "Tudo bem amigão, quem está jogando?")
                         .padding(.horizontal, 36)
-                        .animation(.linear(duration: 0.15))
                 }
                 
                 ScrollView {
@@ -109,12 +107,14 @@ struct AddPlayerView: View {
                 
                 if !isFocused {
                     Button {
-                        manager.currentView = .GameListView
+                        withAnimation {
+                            manager.animation = .move(edge: .trailing)
+                            manager.currentView = .GameListView
+                        }
                     } label: {
                         PrimaryButton(text: "PRÓXIMO", color: Color("purple"), isActive: PlayerManager.getNumberOfPlayers() != 0, type: [2])
                     }
                     .disabled(PlayerManager.getNumberOfPlayers() == 0)
-                    .animation(.linear(duration: 0.15))
                 }
             }
             .padding(.vertical, 24)

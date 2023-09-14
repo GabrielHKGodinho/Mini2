@@ -64,21 +64,20 @@ struct OnboardingView1: View {
             Spacer()
             Spacer()
         }
-        .padding(.horizontal, 40)
+        .padding(.horizontal, 36)
     }
 }
 
 struct OnboardingView2: View {
     @Binding var showOnboarding: Bool
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
 
             Subtitle(text: "Então você pode")
             Title1(text: "ESCOLHER O JOGO")
             Subtitle(text: "e se divertir usando ferramentas para ajudar na sua gameplay")
             
             Tip(icon: "timer", title: "Dica do Timer!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
-            
             Tip(icon: "figure.run.square.stack.fill", title: "Torne seu grupo maior!", description: "Utilize o botão de jogadores para adicionar ou remover jogadores da rodada!")
             
             Spacer()
@@ -91,6 +90,6 @@ struct OnboardingView2: View {
             .padding(.bottom)
             
         }
-        .padding(.horizontal, 40)
+        .padding(.horizontal, 36)
     }
 }

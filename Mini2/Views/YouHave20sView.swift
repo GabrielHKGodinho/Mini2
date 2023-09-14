@@ -27,10 +27,13 @@ struct YouHave20sView: View {
                     isFocused = false
                 }
             
-            VStack(spacing: 6) {
+            VStack(spacing: 16) {
                 HStack {
                     Button {
-                        manager.currentView = .RulesView
+                        withAnimation {
+                            manager.animation = .move(edge: .leading)
+                            manager.currentView = .RulesView
+                        }
                     } label: {
                         Text("< REGRAS")
                             .foregroundColor(.white)
@@ -43,11 +46,7 @@ struct YouHave20sView: View {
                     Button {
                         showingTimer.toggle()
                     } label: {
-                        Image(systemName: "timer")
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .bold()
-                            .frame(width: 30, height: 30)
+                        TimerButtonLabel()
                     }
                     .disabled(isFocused)
                 }
@@ -112,7 +111,10 @@ struct YouHave20sView: View {
                 Spacer()
                 
                 Button {
-                    manager.currentView = .EndGameView
+                    withAnimation {
+                        manager.animation = .move(edge: .trailing)
+                        manager.currentView = .EndGameView
+                    }
                 } label: {
                     PrimaryButton(text: "TERMINAMOS", color: Color("cyan"), isActive: true, alt: true, type: [2])
                 }
