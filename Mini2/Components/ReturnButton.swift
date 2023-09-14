@@ -16,7 +16,9 @@ struct ReturnButton: View {
     
     var body: some View {
         Button {
-            manager.currentView = path
+            withAnimation {
+                manager.currentView = path
+            }
         } label: {
             Text("< \(text)")
                 .foregroundColor(.white)

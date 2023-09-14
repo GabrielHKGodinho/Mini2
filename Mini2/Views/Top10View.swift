@@ -158,7 +158,9 @@ struct Top10View: View {
                         HStack(alignment: .center) {
                             if hasChosen {
                                 Button {
-                                    manager.currentView = .EndGameView
+                                    withAnimation {
+                                        manager.currentView = .EndGameView
+                                    }
                                 } label: {
                                     PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color, type: [2])
                                 }
@@ -202,7 +204,7 @@ struct Top10View: View {
                         }
                     }
                     .transition(.move(edge: .bottom))
-                    .animation(.linear(duration: 0.2))
+//                    .animation(.linear(duration: 0.2))
                     .offset(y: hideTimer ? UIScreen.main.bounds.height : 0)
                 }
             }

@@ -51,7 +51,9 @@ struct GameListView: View {
                             .padding(24)
                         }
                         .onTapGesture {
-                            manager.currentView = .RulesView
+                            withAnimation {
+                                manager.currentView = .RulesView
+                            }
                             repository.selectedGame = i
                         }
                     }
@@ -59,6 +61,7 @@ struct GameListView: View {
             }
             .scrollIndicators(.never)
         }
+//        .animation(.linear(duration: 0.15))
         .padding(.horizontal, 36)
         .padding(.vertical, 24)
         .background(Color("blue"))

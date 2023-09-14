@@ -112,7 +112,9 @@ struct YouHave20sView: View {
                 Spacer()
                 
                 Button {
-                    manager.currentView = .EndGameView
+                    withAnimation {
+                        manager.currentView = .EndGameView
+                    }
                 } label: {
                     PrimaryButton(text: "TERMINAMOS", color: Color("cyan"), isActive: true, alt: true, type: [2])
                 }

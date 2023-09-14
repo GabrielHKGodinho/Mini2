@@ -122,13 +122,15 @@ struct HowsYoursView: View {
                     withAnimation {
                         Tip(icon: "timer", title: "Timer tip!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
                             .padding(.bottom, 24)
-                            .animation(.linear(duration: 0.15))
+//                            .animation(.linear(duration: 0.15))
                     }
                         
                     HStack(alignment: .center) {
                         if hasWritten {
                             Button {
-                                manager.currentView = .EndGameView
+                                withAnimation {
+                                    manager.currentView = .EndGameView
+                                }
                             } label: {
                                 PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color, type: [2])
                             }
@@ -142,7 +144,7 @@ struct HowsYoursView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .animation(.linear(duration: 0.15))
+//                    .animation(.linear(duration: 0.15))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)

@@ -60,7 +60,9 @@ struct EndView: View {
                     }
                     
                     Button {
-                        manager.currentView = .GameListView
+                        withAnimation {
+                            manager.currentView = .GameListView
+                        }
                     } label: {
                         PrimaryButton(text: "ESCOLHER OUTRO", color: repository.games[repository.selectedGame].color, type: [2])
                     }

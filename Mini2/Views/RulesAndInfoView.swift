@@ -66,7 +66,9 @@ struct RulesAndInfoView: View {
             }
             
             Button {
-                manager.currentView = .SelectKingView
+                withAnimation {
+                    manager.currentView = .SelectKingView
+                }
             } label: {
                 PrimaryButton(text: "LET'S PLAY", color: repository.games[repository.selectedGame].color, isActive: true, alt: true, type: [1])
             }
@@ -75,6 +77,7 @@ struct RulesAndInfoView: View {
         .onAppear {
             numberOfTabs = repository.games[repository.selectedGame].instructions.count
         }
+//        .animation(.linear(duration: 0.15))
         .padding(.vertical, 24)
         .background(repository.games[repository.selectedGame].color)
     }

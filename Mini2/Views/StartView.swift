@@ -23,7 +23,10 @@ struct StartView: View {
             Spacer()
             
             Button {
-                manager.currentView = .AddPlayerView
+                withAnimation {
+                    manager.currentView = .AddPlayerView
+                }
+                
             } label: {
                 PrimaryButton(text: "COMEÇAR A FESTA", isActive: true, alt: true, type: [2])
             }
