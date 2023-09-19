@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SceneManagerView: View {
-    @StateObject var manager = SceneManager()
+    @StateObject var manager = Manager()
     @StateObject var repository = GameRepository()
     
     var body: some View {

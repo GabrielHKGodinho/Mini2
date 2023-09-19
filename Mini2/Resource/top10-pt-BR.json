@@ -1,0 +1,287 @@
+[
+  {
+    "theme": "Filmes de todos os tempos",
+    "items": [
+      "O Poderoso Chefão",
+      "O Poderoso Chefão - Parte II",
+      "Um Sonho de Liberdade",
+      "O Senhor dos Anéis: O Retorno do Rei",
+      "A Lista de Schindler",
+      "Pulp Fiction: Tempo de Violência",
+      "O Império Contra-Ataca",
+      "O Rei Leão",
+      "Forrest Gump",
+      "Titanic"
+    ]
+  },
+  {
+    "theme": "Times de futebol brasileiros",
+    "items": [
+      "Flamengo",
+      "Corinthians",
+      "Palmeiras",
+      "São Paulo",
+      "Santos",
+      "Cruzeiro",
+      "Grêmio",
+      "Internacional",
+      "Vasco",
+      "Fluminense"
+    ]
+  },
+  {
+    "theme": "Bandas de rock de todos os tempos",
+    "items": [
+      "The Beatles",
+      "Led Zeppelin",
+      "Pink Floyd",
+      "Queen",
+      "Rolling Stones",
+      "The Who",
+      "U2",
+      "Nirvana",
+      "The Doors",
+      "Guns N' Roses"
+    ]
+  },
+  {
+    "theme": "Comidas brasileiras",
+    "items": [
+      "Feijoada",
+      "Acarajé",
+      "Coxinha",
+      "Moqueca",
+      "Bobó de Camarão",
+      "Pão de Queijo",
+      "Feijão-Tropeiro",
+      "Vatapá",
+      "Tapioca",
+      "Churrasco"
+    ]
+  },
+  {
+    "theme": "Países mais visitados do mundo",
+    "items": [
+      "França",
+      "Espanha",
+      "Estados Unidos",
+      "China",
+      "Itália",
+      "Turquia",
+      "México",
+      "Alemanha",
+      "Tailândia",
+      "Malásia"
+    ]
+  },
+  {
+    "theme": "Séries mais assistidas da Netflix",
+    "items": [
+      "Stranger Things",
+      "The Witcher",
+      "Bridgerton",
+      "La Casa de Papel",
+      "Narcos",
+      "The Umbrella Academy",
+      "The Crown",
+      "Lucifer",
+      "Wandinha",
+      "Dark"
+    ]
+  },
+  {
+    "theme": "Heróis da DC mais famosos",
+    "items": [
+      "Superman",
+      "Batman",
+      "Mulher-Maravilha",
+      "Flash",
+      "Lanterna Verde",
+      "Aquaman",
+      "Cyborg",
+      "Shazam",
+      "Arqueiro Verde",
+      "Supergirl"
+    ]
+  },
+  {
+    "theme": "Heróis mais conhecidos da marvel",
+    "items": [
+      "Homem-Aranha",
+      "Homem de Ferro",
+      "Capitão América",
+      "Thor",
+      "Hulk",
+      "Viúva Negra",
+      "Pantera Negra",
+      "Doutor Estranho",
+      "Homem-Formiga",
+      "Capitã Marvel"
+    ]
+  },
+  {
+    "theme": "Animais mais conhecidos do mundo",
+    "items": [
+      "Cachorro",
+      "Gato",
+      "Elefante",
+      "Leão",
+      "Tigre",
+      "Urso Panda",
+      "Baleia",
+      "Golfinho",
+      "Águia",
+      "Macaco"
+    ]
+  },
+  {
+    "theme": "Desenhos animados mais famosos",
+    "items": [
+      "Popeye",
+      "Mickey",
+      "Scooby-Doo",
+      "Os Simpsons",
+      "Tom e Jerry",
+      "Pernalonga",
+      "Pokémon",
+      "Bob Esponja",
+      "Dragon Ball Z",
+      "Hora de Aventura"
+    ]
+  },
+  {
+    "theme": "Frutas mais conhecidas",
+    "items": [
+      "Maçã",
+      "Banana",
+      "Laranja",
+      "Morango",
+      "Uva",
+      "Manga",
+      "Abacate",
+      "Pêssego",
+      "Pera",
+      "Cereja"
+    ]
+  },
+  {
+    "theme": "Maiores paises em área",
+    "items": [
+      "Rússia",
+      "Canadá",
+      "China",
+      "Estados Unidos",
+      "Brasil",
+      "Austrália",
+      "Índia",
+      "Argentina",
+      "Cazaquistão",
+      "Argélia"
+    ]
+  },
+  {
+    "theme": "Cidades mais populosas do mundo",
+    "items": [
+      "Tóquio, Japão",
+      "Délhi, Índia",
+      "Xangai, China",
+      "São Paulo, Brasil",
+      "Mumbai (Bombaim), Índia",
+      "Pequim, China",
+      "Cidade do México, México",
+      "Osaka, Japão",
+      "Cairo, Egito",
+      "Daca, Bangladesh"
+    ]
+  },
+  {
+    "theme": "Marcas mais famosas do mundo",
+    "items": [
+      "Apple",
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Coca-Cola",
+      "McDonald's",
+      "Facebook",
+      "Samsung",
+      "Toyota",
+      "Nike"
+    ]
+  },
+  {
+    "theme": "Pontos turisticos do mundo",
+    "items": [
+      "A Grande Muralha da China",
+      "Torre Eiffel ",
+      "Coliseu",
+      "Machu Picchu",
+      "Pirâmide de Gizé",
+      "Estátua da Liberdade",
+      "Taj Mahal",
+      "Cristo Redentor",
+      "Palácio de Buckingham",
+      "Parque Nacional de Yellowstone"
+    ]
+  },
+  {
+    "theme": "Filmes da Pixar",
+    "items": [
+      "Toy Story",
+      "Procurando Nemo",
+      "Os Incríveis",
+      "Ratatouille",
+      "Wall-E",
+      "Up - Altas Aventuras",
+      "Encanto",
+      "Valente",
+      "Frozen",
+      "Divertida Mente"
+    ]
+  },
+  {
+    "theme": "Esportes mais famosos do mundo",
+    "items": [
+      "Futebol",
+      "Críquete",
+      "Basquete",
+      "Tênis",
+      "Golfe",
+      "Rugby",
+      "Hóquei no Gelo",
+      "Atletismo",
+      "Natação",
+      "Beisebol"
+    ]
+  },
+  {
+    "theme": "Redes fast food mais famosas",
+    "items": [
+      "McDonald's",
+      "Subway",
+      "KFC",
+      "Pizza Hut",
+      "Burger King",
+      "Starbucks",
+      "Dunkin' Donuts",
+      "Domino's Pizza",
+      "Taco Bell",
+      "Wendy's"
+    ]
+  },
+  {
+    "theme": "Nomes de menino mais usados do Brasil",
+    "items": [
+      "Miguel",
+      "Arthur",
+      "Davi",
+      "Gabriel",
+      "Pedro",
+      "Enzo",
+      "Lucas",
+      "Matheus",
+      "Rafael",
+      "Heitor"
+    ]
+  }
+]

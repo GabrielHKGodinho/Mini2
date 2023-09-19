@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  Dr!p
+
+  Created by Eduardo Stefanel Paludo on 18/09/23.
+  
+*/
+
+// EndView
+"Make the party bigger!" = "Torne seu grupo maior!";
+"Use the player button to add or remove friends from the round." = "Utilize o botão de jogadores para adicionar ou retirar amigos da rodada!";
+"PLAY AGAIN" = "JOGAR DE NOVO";
+"CHOOSE ANOTHER" = "ESCOLHER OUTRO";
+
+// TimerView
+"TIMER" = "TIMER";
+"FINISH TIMER" = "ENCERRAR TIMER";
+
+// EditPlayerModal
+"Player" = "Jogador";
+"GATHER BUDDIES" = "JUNTE A GALERA";
+"add a buddy" = "adicionar amigo";
+
+// AddPlayerView
+"Alright dude, who is playing?" = "Tudo bem amigão, quem está jogando?";
+"NEXT" = "PRÓXIMO";
+
+// ReturnButton
+"LEADER SELECTION" = "SELEÇÃO DE LÍDER";
+"PLAYERS" = "JOGADORES";
+"RULES" = "REGRAS";
+"GAMES" = "JOGOS";
+"GAME" = "JOGO";
+
+// Top10View
+"LET'S CHOOSE THE THEME" = "BORA ESCOLHER A CATEGORIA";
+"NEW THEME" = "NOVA CATEGORIA";
+"Hold to reveal" = "Segure para revelar";
+"WE'VE FINISHED" = "TERMINAMOS";
+"START GAME" = "COMEÇAR O JOGO";
+
+// BeeeengoView
+"WHAT'S MY NUMBER?" = "QUAL MEU NÚMERO?";
+"NEW NUMBER" = "NOVO NÚMERO";
+
+// Tips
+"Timer tip!" = "Dica do timer!";
+"Use the timer for the final answer and let the nerves run high!" = "Use o timer para a resposta final e deixe os nervos à flor-da-pele!";
+"Tap to write the chosen word" = "Toque para digitar a palavra escolhida";
+
+// GameListView
+"TIME TO PLAY" = "APERTE O PLAY";
+"Choose a game!" = "Hora de escolher!";
+
+// RulesView
+"CHECK THE RULES" = "CONFIRA AS REGRAS";
+"LET'S PLAY" = "BORA JOGAR";
+
+// SelectKingView
+"WHO'S GONNA BE THE (UN)LUCKY?" = "QUEM SERÁ O \"SORTUDO\"?";
+"You can choose a (un)lucky one or leave it to us!" = "Você pode escolher o \"sortudo\" ou deixar com a gente!";
+"random" = "aleatório";
+"WE APPROVE IT" = "TABOM";
+
+// StartView
+"START THE PARTY" = "COMEÇAR A FESTA";
+"First of all" = "Primeiro";
+"GET YOUR FRIENDS TOGETHER" = "REÚNA SEUS AMIGOS";
+
+// Onboarding
+"Then you can" = "Então você pode";
+"SELECT THE GAME" = "ESCOLHER O JOGO";
+"and have fun using tools to help your gameplay" = "e se divertir usando ferramentas para ajudar na sua gameplay";
+"LET'S GO!" = "VAMOS!";

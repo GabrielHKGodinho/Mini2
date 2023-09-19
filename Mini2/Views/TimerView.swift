@@ -33,7 +33,7 @@ struct TimerView: View {
                     }
                 }
                 
-                Text("TIMER")
+                Text("TIMER".localized())
                     .foregroundColor(.white)
                     .font(Font.custom("Grandstander-Bold", size: 64))
                 
@@ -104,7 +104,7 @@ struct TimerView: View {
                     countDownTimer = 0
                     dismiss()
                 } label: {
-                    PrimaryButton(text: "Finish Timer",color: color, type: [2])
+                    PrimaryButton(text: "FINISH TIMER".localized(), color: color, type: [2])
                 }
             }
             .padding(.horizontal, 24)

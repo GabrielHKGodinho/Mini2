@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectKingView: View {
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     @EnvironmentObject var repository: GameRepository
     
     @State var players = PlayerManager.getPlayers()
@@ -19,11 +19,18 @@ struct SelectKingView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             VStack(alignment: .leading, spacing: 16) {
-                ReturnButton(manager: _manager, text: "REGRAS", path: .RulesView)
-                Title2(text: "QUEM SERÁ O \"SORTUDO\"?")
+                Button {
+                    withAnimation {
+                        manager.animation = .move(edge: .leading)
+                        manager.currentView = .RulesView
+                    }
+                } label: {
+                    ReturnButtonLabel(text: "RULES")
+                }
+                Title2(text: "WHO'S GONNA BE THE (UN)LUCKY?")
                     .fixedSize(horizontal: false, vertical: true)
                     .baselineOffset(-6)
-                Subtitle(text: "Você pode escolher o \"sortudo\" ou deixar com a gente!")
+                Subtitle(text: "You can choose a (un)lucky one or leave it to us!")
                     .fixedSize(horizontal: false, vertical: true)
             }
             .padding(.horizontal, 36)
@@ -89,7 +96,7 @@ struct SelectKingView: View {
                             .font(.body)
                             .foregroundColor(Color("red"))
                             .bold()
-                        Text("aleatório")
+                        Text("random".localized())
                             .font(.body)
                             .foregroundColor(Color("red"))
                             .bold()
@@ -110,9 +117,9 @@ struct SelectKingView: View {
                 }
             } label: {
                 if (playerSelected == -1) {
-                    PrimaryButton(text: "TABOM", isActive: false)
+                    PrimaryButton(text: "WE APPROVE IT", isActive: false)
                 } else {
-                    PrimaryButton(text: "TABOM", color: Color("red"), type: [2])
+                    PrimaryButton(text: "WE APPROVE IT", color: Color("red"), type: [2])
                 }
             }
             .disabled(playerSelected == -1)

@@ -56,7 +56,7 @@ struct PrimaryButton: View {
             } else {
                 Image("strokedButton")
             }
-            Text(text)
+            Text(text.localized())
                 .baselineOffset(-3)
                 .font(Font.custom("Grandstander-Bold", size: 29))
                 .foregroundColor(isActive ? (color ?? .black) : .white)

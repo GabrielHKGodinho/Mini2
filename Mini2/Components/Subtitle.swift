@@ -11,7 +11,7 @@ struct Subtitle: View {
     var text: String = ""
     
     var body: some View {
-        Text(text)
+        Text(text.localized())
             .frame(maxWidth: .infinity, alignment: .leading)
             .multilineTextAlignment(.leading)
             .font(.system(size: 24))

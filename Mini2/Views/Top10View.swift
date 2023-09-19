@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Top10View: View {
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     @EnvironmentObject var repository: GameRepository
     @State private var showingTimer = false
     @State private var hideTimer = false
@@ -42,9 +42,7 @@ struct Top10View: View {
                                 manager.currentView = .SelectKingView
                             }
                         } label: {
-                            Text("< SELEÇÃO DE MESTRE")
-                                .foregroundColor(.white)
-                                .font(Font.custom("Grandstander-regular", size: 24))
+                            ReturnButtonLabel(text: "LEADER SELECTION")
                         }
                         .disabled(isFocused)
                         
@@ -68,7 +66,7 @@ struct Top10View: View {
                                 .foregroundColor(.white)
                             
                             VStack {
-                                Text("BORA ESCOLHER A CATEGORIA")
+                                Text("LET'S CHOOSE THE THEME".localized())
                                     .font(Font.custom("Grandstander-Bold", size: 32))
                                     .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
@@ -91,7 +89,7 @@ struct Top10View: View {
                                             .foregroundColor(.white)
                                             .bold()
                                         
-                                        Text("SORTEAR CATEGORIA")
+                                        Text("NEW THEME".localized())
                                             .bold()
                                             .font(.system(size: 18))
                                             .foregroundColor(.white)
@@ -143,7 +141,7 @@ struct Top10View: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 120)
-                                    Text("Segure para revelar")
+                                    Text("Hold to reveal".localized())
                                         .font(.system(size: 24))
                                         .foregroundColor(.black)
                                 }
@@ -166,13 +164,13 @@ struct Top10View: View {
                                         manager.currentView = .EndGameView
                                     }
                                 } label: {
-                                    PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color, type: [2])
+                                    PrimaryButton(text: "WE'VE FINISHED", color: repository.games[repository.selectedGame].color, type: [2])
                                 }
                             } else {
                                 Button {
                                     hasChosen = true
                                 } label: {
-                                    PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: generatedTheme, type: [2])
+                                    PrimaryButton(text: "START GAME", color: repository.games[repository.selectedGame].color, isActive: generatedTheme, type: [2])
                                 }
                                 .disabled(!generatedTheme)
                             }

@@ -1,5 +1,5 @@
 //
-//  SceneManager.swift
+//  Manager.swift
 //  Mini2
 //
 //  Created by Eduardo Stefanel Paludo on 29/08/23.
@@ -21,7 +21,8 @@ enum Views {
     case EndGameView
 }
 
-class SceneManager: ObservableObject {
+class Manager: ObservableObject {
     @Published var currentView = Views.HomeView
     @Published var animation = AnyTransition.move(edge: .trailing)
+    @Published var language = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String]
 }

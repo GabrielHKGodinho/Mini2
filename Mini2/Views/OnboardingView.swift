@@ -47,8 +47,8 @@ struct OnboardingView1: View {
             
             
             VStack(alignment: .leading) {
-                Subtitle(text: "Primeiro")
-                Title1(text: "REÚNA SEUS AMIGOS")
+                Subtitle(text: "First of all")
+                Title1(text: "GET YOUR FRIENDS TOGETHER")
                     .frame(maxWidth: 280)
                     .baselineOffset(-8)
                     .overlay {
@@ -72,20 +72,19 @@ struct OnboardingView2: View {
     @Binding var showOnboarding: Bool
     var body: some View {
         VStack(spacing: 16) {
-
-            Subtitle(text: "Então você pode")
-            Title1(text: "ESCOLHER O JOGO")
-            Subtitle(text: "e se divertir usando ferramentas para ajudar na sua gameplay")
+            Subtitle(text: "Then you can")
+            Title1(text: "SELECT THE GAME")
+            Subtitle(text: "and have fun using tools to help your gameplay")
             
-            Tip(icon: "timer", title: "Dica do Timer!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
-            Tip(icon: "figure.run.square.stack.fill", title: "Torne seu grupo maior!", description: "Utilize o botão de jogadores para adicionar ou remover jogadores da rodada!")
+            Tip(icon: "timer", title: "Timer tip!", description: "Use the timer for the final answer and let the nerves run high!")
+            Tip(icon: "figure.run.square.stack.fill", title: "Make the party bigger!", description: "Use the player button to add or remove friends from the round.")
             
             Spacer()
             
             Button {
                 showOnboarding.toggle()
             } label: {
-                PrimaryButton(text: "VAMOS!", color: Color("red"), isActive: true, alt: true, type: [2])
+                PrimaryButton(text: "LET'S GO!", color: Color("red"), isActive: true, alt: true, type: [2])
             }
             .padding(.bottom)
             

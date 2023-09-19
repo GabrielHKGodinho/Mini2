@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  Dr!p
+
+  Created by Eduardo Stefanel Paludo on 18/09/23.
+  
+*/
+
+// EndView
+"Make the party bigger!" = "Make the party bigger!";
+"Use the player button to add or remove friends from the round." = "Use the player button to add or remove friends from the round!";
+"PLAY AGAIN" = "PLAY AGAIN";
+"CHOOSE ANOTHER" = "CHOOSE ANOTHER";
+
+// TimerView
+"TIMER" = "TIMER";
+"FINISH TIMER" = "FINISH TIMER";
+
+// EditPlayerModal
+"Player" = "Player";
+"GATHER BUDDIES" = "GATHER BUDDIES";
+"add a buddy" = "add a buddy";
+
+// AddPlayerView
+"Alright dude, who is playing?" = "Alright dude, who is playing?";
+"NEXT" = "NEXT";
+
+// ReturnButton
+"LEADER SELECTION" = "LEADER SELECTION";
+"PLAYERS" = "PLAYERS";
+"RULES" = "RULES";
+"GAMES" = "GAMES";
+"GAME" = "GAME";
+
+// Top10View
+"LET'S CHOOSE THE THEME" = "LET'S CHOOSE THE THEME";
+"NEW THEME" = "NEW THEME";
+"Hold to reveal" = "Hold to reveal";
+"WE'VE FINISHED" = "WE'VE FINISHED";
+"START GAME" = "START GAME";
+
+// BeeeengoView
+"WHAT'S MY NUMBER?" = "WHAT'S MY NUMBER?";
+"NEW NUMBER" = "NEW NUMBER";
+
+// Tips
+"Timer tip!" = "Timer tip!";
+"Use the timer for the final answer and let the nerves run high!" = "Use the timer for the final answer and let the nerves run high!";
+"Tap to write the chosen word" = "Tap to write the chosen word";
+
+// GameListView
+"TIME TO PLAY" = "TIME TO PLAY";
+"Choose a game!" = "Choose a game!";
+
+// RulesView
+"CHECK THE RULES" = "CHECK THE RULES";
+"LET'S PLAY" = "LET'S PLAY";
+
+// SelectKingView
+"WHO'S GONNA BE THE (UN)LUCKY?" = "WHO'S GONNA BE THE (UN)LUCKY?";
+"You can choose a (un)lucky one or leave it to us!" = "You can choose a (un)lucky one or leave it to us!";
+"random" = "random";
+"WE APPROVE IT" = "WE APPROVE IT";
+
+// StartView
+"START THE PARTY" = "START THE PARTY";
+"First of all" = "First of all";
+"GET YOUR FRIENDS TOGETHER" = "GET YOUR FRIENDS TOGETHER";
+
+// Onboarding
+"Then you can" = "Then you can";
+"SELECT THE GAME" = "SELECT THE GAME";
+"and have fun using tools to help your gameplay" = "and have fun using tools to help your gameplay";
+"LET'S GO!" = "LET'S GO!";

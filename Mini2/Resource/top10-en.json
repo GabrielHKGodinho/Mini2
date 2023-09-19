@@ -1,0 +1,242 @@
+[
+  {
+    "theme": "All-time movies",
+    "items": [
+      "The Godfather",
+      "The Godfather - Part II",
+      "The Shawshank Redemption",
+      "The Lord of the Rings: The Return of the King",
+      "Schindler's List",
+      "Pulp Fiction",
+      "The Empire Strikes Back",
+      "The Lion King",
+      "Forrest Gump",
+      "Titanic"
+    ]
+  },
+  {
+    "theme": "All-time rock bands",
+    "items": [
+      "The Beatles",
+      "Led Zeppelin",
+      "Pink Floyd",
+      "Queen",
+      "Rolling Stones",
+      "The Who",
+      "U2",
+      "Nirvana",
+      "The Doors",
+      "Guns N' Roses"
+    ]
+  },
+  {
+    "theme": "Most visited countries in the world",
+    "items": [
+      "France",
+      "Spain",
+      "United States",
+      "China",
+      "Italy",
+      "Turkey",
+      "Mexico",
+      "Germany",
+      "Thailand",
+      "Malaysia"
+    ]
+  },
+  {
+    "theme": "Most watched Netflix series",
+    "items": [
+      "Stranger Things",
+      "The Witcher",
+      "Bridgerton",
+      "Money Heist (La Casa de Papel)",
+      "Narcos",
+      "The Umbrella Academy",
+      "The Crown",
+      "Lucifer",
+      "The Witching",
+      "Dark"
+    ]
+  },
+  {
+    "theme": "Most well-known DC heroes",
+    "items": [
+      "Superman",
+      "Batman",
+      "Wonder Woman",
+      "The Flash",
+      "Green Lantern",
+      "Aquaman",
+      "Cyborg",
+      "Shazam",
+      "Green Arrow",
+      "Supergirl"
+    ]
+  },
+  {
+    "theme": "Most well-known Marvel heroes",
+    "items": [
+      "Spider-Man",
+      "Iron Man",
+      "Captain America",
+      "Thor",
+      "Hulk",
+      "Black Widow",
+      "Black Panther",
+      "Doctor Strange",
+      "Ant-Man",
+      "Captain Marvel"
+    ]
+  },
+  {
+    "theme": "Most well-known animals in the world",
+    "items": [
+      "Dog",
+      "Cat",
+      "Elephant",
+      "Lion",
+      "Tiger",
+      "Panda Bear",
+      "Whale",
+      "Dolphin",
+      "Eagle",
+      "Monkey"
+    ]
+  },
+  {
+    "theme": "Most famous cartoons",
+    "items": [
+      "Popeye",
+      "Mickey Mouse",
+      "Scooby-Doo",
+      "The Simpsons",
+      "Tom and Jerry",
+      "Bugs Bunny",
+      "Pokémon",
+      "SpongeBob SquarePants",
+      "Dragon Ball Z",
+      "Adventure Time"
+    ]
+  },
+  {
+    "theme": "Most well-known fruits",
+    "items": [
+      "Apple",
+      "Banana",
+      "Orange",
+      "Strawberry",
+      "Grape",
+      "Mango",
+      "Avocado",
+      "Peach",
+      "Pear",
+      "Cherry"
+    ]
+  },
+  {
+    "theme": "Largest countries by area",
+    "items": [
+      "Russia",
+      "Canada",
+      "China",
+      "United States",
+      "Brazil",
+      "Australia",
+      "India",
+      "Argentina",
+      "Kazakhstan",
+      "Algeria"
+    ]
+  },
+  {
+    "theme": "Most populous cities in the world",
+    "items": [
+      "Tokyo, Japan",
+      "Delhi, India",
+      "Shanghai, China",
+      "São Paulo, Brazil",
+      "Mumbai (Bombay), India",
+      "Beijing, China",
+      "Mexico City, Mexico",
+      "Osaka, Japan",
+      "Cairo, Egypt",
+      "Dhaka, Bangladesh"
+    ]
+  },
+  {
+    "theme": "Most famous brands in the world",
+    "items": [
+      "Apple",
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Coca-Cola",
+      "McDonald's",
+      "Facebook",
+      "Samsung",
+      "Toyota",
+      "Nike"
+    ]
+  },
+  {
+    "theme": "Tourist attractions in the world",
+    "items": [
+      "The Great Wall of China",
+      "Eiffel Tower",
+      "Colosseum",
+      "Machu Picchu",
+      "Pyramids of Giza",
+      "Statue of Liberty",
+      "Taj Mahal",
+      "Christ the Redeemer",
+      "Buckingham Palace",
+      "Yellowstone National Park"
+    ]
+  },
+  {
+    "theme": "Pixar movies",
+    "items": [
+      "Toy Story",
+      "Finding Nemo",
+      "The Incredibles",
+      "Ratatouille",
+      "Wall-E",
+      "Up",
+      "Encanto",
+      "Brave",
+      "Frozen",
+      "Inside Out"
+    ]
+  },
+  {
+    "theme": "Most famous sports in the world",
+    "items": [
+      "Socker (football)",
+      "Cricket",
+      "Basketball",
+      "Tennis",
+      "Golf",
+      "Rugby",
+      "Ice Hockey",
+      "Athletics (Track and Field)",
+      "Swimming",
+      "Baseball"
+    ]
+  },
+  {
+    "theme": "Most famous fast food chains",
+    "items": [
+      "McDonald's",
+      "Subway",
+      "KFC",
+      "Pizza Hut",
+      "Burger King",
+      "Starbucks",
+      "Dunkin' Donuts",
+      "Domino's Pizza",
+      "Taco Bell",
+      "Wendy's"
+    ]
+  }
+]

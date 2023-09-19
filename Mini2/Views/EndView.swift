@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EndView: View {
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     @EnvironmentObject var repository: GameRepository
     @State private var showingModal = false
     @State private var hideModal = false
@@ -20,7 +20,14 @@ struct EndView: View {
             
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
-                    ReturnButton(manager: _manager, text: "JOGO", path: .GameView)
+                    Button {
+                        withAnimation {
+                            manager.animation = .move(edge: .leading)
+                            manager.currentView = .GameView
+                        }
+                    } label: {
+                        ReturnButtonLabel(text: "GAME")
+                    }
                     Spacer()
                     Button {
                         showingModal.toggle()
@@ -32,13 +39,11 @@ struct EndView: View {
                     }
                 }
                 
-                Text(repository.games[repository.selectedGame].name.uppercased())
-                    .foregroundColor(.white)
-                    .font(Font.custom("Grandstander-Bold", size: 64))
-                    .padding(.bottom, -8)
-                    .baselineOffset(-8)
+                Title1(text: repository.games[repository.selectedGame].name.uppercased())
+                    .fixedSize(horizontal: false, vertical: true)
+                    .baselineOffset(-10)
                 
-                Tip(icon: "figure.run.square.stack.fill", title: "Torne seu grupo maior!", description: "Utilize o botão de jogadores para adicionar ou retirar amigos da rodada!")
+                Tip(icon: "figure.run.square.stack.fill", title: "Make the party bigger!".localized(), description: "Use the player button to add or remove friends from the round.".localized())
                 
                 Spacer()
                 
@@ -59,7 +64,7 @@ struct EndView: View {
                             manager.currentView = .SelectKingView
                         }
                     } label: {
-                        PrimaryButton(text: "JOGAR DE NOVO", color: repository.games[repository.selectedGame].color, alt: true, type: [2])
+                        PrimaryButton(text: "PLAY AGAIN".localized(), color: repository.games[repository.selectedGame].color, alt: true, type: [2])
                     }
                     
                     Button {
@@ -68,7 +73,7 @@ struct EndView: View {
                             manager.currentView = .GameListView
                         }
                     } label: {
-                        PrimaryButton(text: "ESCOLHER OUTRO", color: repository.games[repository.selectedGame].color, type: [2])
+                        PrimaryButton(text: "CHOOSE ANOTHER".localized(), color: repository.games[repository.selectedGame].color, type: [2])
                     }
                 }
                 .frame(maxWidth: .infinity)
