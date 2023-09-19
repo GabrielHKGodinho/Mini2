@@ -73,9 +73,6 @@ struct GameListView: View {
         .padding(.vertical, 24)
         .background(Color("blue"))
         .ignoresSafeArea(edges: .bottom)
-        .onAppear {
-            print(manager.language?.first ?? "")
-        }
     }
 }
 

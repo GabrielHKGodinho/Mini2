@@ -72,3 +72,29 @@
 "SELECT THE GAME" = "ESCOLHER O JOGO";
 "and have fun using tools to help your gameplay" = "e se divertir usando ferramentas para ajudar na sua gameplay";
 "LET'S GO!" = "VAMOS!";
+
+// Game Repository
+"How's yours?" = "Como é o seu?";
+"One selected player will have to find what is common between the players asking them \"How's yours?\"" = "Nesse jogo uma pessoa precisará descobrir o que os outros têm em comum perguntando \"Como é o seu?\"";
+"The player chosen will need to leave or cover their ears to not hear the other players discussion" = "O mestre escolhido deve se retirar do local ou tampar os ouvidos de modo a não ouvir a conversa dos outros jogadores";
+"The others players will have some time to decide something they have in common" = "Os outros jogadores terão de 1 a 2 minutos para decidir algo que todos têm em comum";
+"When decided, the selected player will have to ask to other players \"How’s yours?\"" = "Quando tiverem decidido, o jogador selecionado volta, e precisa fazer a pergunta “Como é o seu?” para cada jogador";
+"After all players have answered, the selected player must try to guess which word was chosen" = "Após todos os jogadores tiverem respondido, o player sorteado deve tentar adivinhar qual palavra foi escolhida";
+
+"Top 10" = "Top 10";
+"Say what you think is part of the Top 10 while doubting your friends" = "Diga o que acha fazer parte do Top 10 enquanto duvida das respostas de seus amigos";
+"A player will be selected as master and will have access to a list with the Top 10 about some topic" = "O jogador selecionado terá acesso a uma lista de Top 10 de algum tema específico";
+"Each player will have to say something that they think will be on the list" = "Cada jogador deverá falar algum item que ele acredita estar na lista";
+"The other players can doubt whether the word said is on the list or not. If it is, the player that doubted leaves the game. If not, the player that was challenged leaves the game." = "Os outros jogadores podem duvidar se esse item está na lista ou não. Caso esteja, o jogador que duvidou é eliminado. Caso contrário, o jogador que foi desafiado é eliminado";
+
+"Beeeengo!" = "Beeeengo!";
+"The master will get a number out of 0 to 10, and the others players must find out which number it is through some questions" = "O número sorteado para o jogador escolhido deverá ser descoberto pelos outros players a partir de perguntas";
+"The selected player will receive a random number from 0 to 10" = "O jogador sorteado receberá uma nota de 0 a 10";
+"The other players' mission is to discover this note by asking questions to the leader" = "A missão dos demais jogadores é descobrir essa nota a partir de perguntas";
+"Each player can ask the master a question, e.g.: “A food” and must be answered with a food that represents the number drawn" = "Cada jogador pode fazer uma pergunta para o mestre, ex?: \"Uma comida brasileira\" e deverá ser respondido com uma comida que represente a nota sorteada";
+
+"You have 20s" = "Você tem 20s";
+"Test your skills and check if you have the ability to say in 20 seconds the maximum number of word related to a theme" = "Teste sua capacidade e veja se você tem a habilidade de dizer em 20 segundos o máximo de palavras referente a um tema específico";
+"A theme will be drawn and the players will have say how many words about the topic they can quote in 20 seconds" = "Um tema será sorteado e cada jogador diz quantas palavras do tema consegue falar em 20 segundos";
+"If the theme is \"soccer teams\", each player say \"I can say 5 teams\", \"I can say 8 teams\", always increasing the number" = "Se o tema for \"times de futebol”, cada jogador começa a falar \"eu falo 5 times”, \"eu falo 8”, sempre aumentando os números";
+"When no one else wants to increase the number, the person who said the most starts to say the words. If they say less words than the agreed, they lose." = "Quando ninguém mais quiser aumentar o número, a pessoa que falou o maior inicia o timer e começa a falar as palavras. Se ela falar menos do que ela se propôs, ela perde";

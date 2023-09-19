@@ -24,5 +24,9 @@ enum Views {
 class Manager: ObservableObject {
     @Published var currentView = Views.HomeView
     @Published var animation = AnyTransition.move(edge: .trailing)
-    @Published var language = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String]
+    
+    let language = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String]
+    var lang: String {
+        return language?.first ?? "en"
+    }
 }
