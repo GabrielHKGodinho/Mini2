@@ -9,13 +9,20 @@ import SwiftUI
 
 struct GameListView: View {
     @EnvironmentObject var repository: GameRepository
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             VStack(alignment: .leading, spacing: 16) {
-                ReturnButton(manager: _manager, text: "JOGADORES", path: .AddPlayerView)
-                Title1(text: "APERTE O PLAY")
+                Button {
+                    withAnimation {
+                        manager.animation = .move(edge: .leading)
+                        manager.currentView = .AddPlayerView
+                    }
+                } label: {
+                    ReturnButtonLabel(text: "PLAYERS")
+                }
+                Title1(text: "TIME TO PLAY")
                     .background {
                         Image("hand")
                             .resizable()
@@ -23,7 +30,7 @@ struct GameListView: View {
                             .frame(width: 160)
                             .offset(x: 120, y: 20)
                     }
-                Subtitle(text: "Hora de escolher!")
+                Subtitle(text: "Choose a game!")
             }
             
             ScrollView {

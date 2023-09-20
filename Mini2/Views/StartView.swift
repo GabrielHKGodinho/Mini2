@@ -9,7 +9,7 @@ import SwiftUI
 import RiveRuntime
 
 struct StartView: View {
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     @State var showButton = false
     
     @AppStorage("showOnboarding") private var showOnboarding = true
@@ -31,7 +31,7 @@ struct StartView: View {
                         manager.currentView = .AddPlayerView
                     }
                 } label: {
-                    PrimaryButton(text: "COMEÇAR A FESTA",color: Color("red"), isActive: true, alt: true, type: [2])
+                    PrimaryButton(text: "START THE PARTY", color: Color("red"), isActive: true, alt: true, type: [2])
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -39,7 +39,8 @@ struct StartView: View {
             .background(Color("red"))
             
             if(!showOnboarding && !showButton){
-                RiveViewModel(fileName: "open").view()
+                RiveViewModel(fileName: "open")
+                    .view()
                     .scaledToFill()
                     .ignoresSafeArea()
                     .onAppear(){

@@ -59,7 +59,7 @@ struct SecondaryButton: View {
                         .font(.title2)
                         .foregroundColor(.white)
                 }
-                Text(text)
+                Text(text.localized())
                     .foregroundColor(.white)
                     .font(.title2)
             }

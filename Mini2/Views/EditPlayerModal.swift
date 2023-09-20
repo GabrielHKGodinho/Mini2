@@ -10,7 +10,7 @@ import SwiftUI
 struct EditPlayerModal: View {
     @State var players = PlayerManager.getPlayers()
     @State var playersNames: [String] = PlayerManager.getPlayersNames()
-    @State var name: String = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
+    @State var name: String = "Player".localized() + " \(PlayerManager.getNumberOfPlayers() + 1)"
     
     @Binding var showingModal: Bool
     let color: Color
@@ -32,7 +32,7 @@ struct EditPlayerModal: View {
                 }
                 .padding(.horizontal, 36)
                 
-                Title2(text: "JUNTE A GALERA")
+                Title2(text: "GATHER BUDDIES".localized())
                     .padding(.horizontal, 36)
                 
                 Spacer()
@@ -64,7 +64,7 @@ struct EditPlayerModal: View {
                                             PlayerManager.removePlayer(index: index)
                                             playersNames.remove(at: index)
                                             players = PlayerManager.getPlayers()
-                                            name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
+                                            name = "Player".localized() + " \(PlayerManager.getNumberOfPlayers() + 1)"
                                         } label: {
                                             Image(systemName: "x.circle.fill")
                                                 .foregroundColor(.white)
@@ -86,11 +86,11 @@ struct EditPlayerModal: View {
                 .scrollIndicators(.never)
                 
                 Button {
-                    PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Player \(PlayerManager.getNumberOfPlayers() + 1)"))
+                    PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Player".localized() + " \(PlayerManager.getNumberOfPlayers() + 1)"))
                     playersNames.append(PlayerManager.getLastPlayerName())
                     players = PlayerManager.getPlayers()
                 } label: {
-                    SecondaryButton(icon: "plus", text: "adicionar amigo")
+                    SecondaryButton(icon: "plus", text: "add a buddy".localized())
                         .padding(.horizontal, 28)
                 }
                 .onDisappear {

@@ -18,12 +18,12 @@ class Game: Identifiable {
     let instructions: [(String, String)]
     
     init(name: String, icon: String = "shuffle.circle.fill", color: Color = .black, endImage: String, description: String, instructions: [(String, String)]) {
-        self.name = name
-        self.description = description
+        self.name = name.localized()
+        self.description = description.localized()
         self.icon = icon
         self.color = color
         self.endImage = endImage
-        self.instructions = instructions
+        self.instructions = instructions.map { ($0.0.localized(), $0.1) }
     }
     
     // static var todasJogos = Game.populateJogos()

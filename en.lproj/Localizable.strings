@@ -1,0 +1,100 @@
+/* 
+  Localizable.strings
+  Dr!p
+
+  Created by Eduardo Stefanel Paludo on 18/09/23.
+  
+*/
+
+// EndView
+"Make the party bigger!" = "Make the party bigger!";
+"Use the player button to add or remove friends from the round." = "Use the player button to add or remove friends from the round!";
+"PLAY AGAIN" = "PLAY AGAIN";
+"CHOOSE ANOTHER" = "CHOOSE ANOTHER";
+
+// TimerView
+"TIMER" = "TIMER";
+"FINISH TIMER" = "FINISH TIMER";
+
+// EditPlayerModal
+"Player" = "Player";
+"GATHER BUDDIES" = "GATHER BUDDIES";
+"add a buddy" = "add a buddy";
+
+// AddPlayerView
+"Alright dude, who is playing?" = "Alright dude, who is playing?";
+"NEXT" = "NEXT";
+
+// ReturnButton
+"LEADER SELECTION" = "LEADER SELECTION";
+"PLAYERS" = "PLAYERS";
+"RULES" = "RULES";
+"GAMES" = "GAMES";
+"GAME" = "GAME";
+
+// Top10View
+"LET'S CHOOSE THE THEME" = "LET'S CHOOSE THE THEME";
+"NEW THEME" = "NEW THEME";
+"Hold to reveal" = "Hold to reveal";
+"WE'VE FINISHED" = "WE'VE FINISHED";
+"START GAME" = "START GAME";
+
+// BeeeengoView
+"WHAT'S MY NUMBER?" = "WHAT'S MY NUMBER?";
+"NEW NUMBER" = "NEW NUMBER";
+
+// Tips
+"Timer tip!" = "Timer tip!";
+"Use the timer for the final answer and let the nerves run high!" = "Use the timer for the final answer and let the nerves run high!";
+"Tap to write the chosen word" = "Tap to write the chosen word";
+
+// GameListView
+"TIME TO PLAY" = "TIME TO PLAY";
+"Choose a game!" = "Choose a game!";
+
+// RulesView
+"CHECK THE RULES" = "CHECK THE RULES";
+"LET'S PLAY" = "LET'S PLAY";
+
+// SelectKingView
+"WHO'S GONNA BE THE (UN)LUCKY?" = "WHO'S GONNA BE THE (UN)LUCKY?";
+"You can choose a (un)lucky one or leave it to us!" = "You can choose a (un)lucky one or leave it to us!";
+"random" = "random";
+"WE APPROVE IT" = "WE APPROVE IT";
+
+// StartView
+"START THE PARTY" = "START THE PARTY";
+"First of all" = "First of all";
+"GET YOUR FRIENDS TOGETHER" = "GET YOUR FRIENDS TOGETHER";
+
+// Onboarding
+"Then you can" = "Then you can";
+"SELECT THE GAME" = "SELECT THE GAME";
+"and have fun using tools to help your gameplay" = "and have fun using tools to help your gameplay";
+"LET'S GO!" = "LET'S GO!";
+
+// GameRepository
+"How's yours?" = "How's yours?";
+"One selected player will have to find what is common between the players asking them \"How's yours?\"" = "One selected player will have to find what is common between the players asking them \"How's yours?\"";
+"The player chosen will need to leave or cover their ears to not hear the other players' discussion" = "The player chosen will need to leave or cover their ears to not hear the other players' discussion";
+"The others players will have some time to decide something they have in common" = "The others players will have some time to decide something they have in common";
+"When decided, the selected player will have to ask other players \"How’s yours?\"" = "When decided, the selected player will have to ask other players \"How’s yours?\"";
+"After all players have answered, the selected player must try to guess which word was chosen" = "After all players have answered, the selected player must try to guess which word was chosen";
+
+"Top 10" = "Top 10";
+"Say what you think is part of the Top 10 while doubting your friends" = "Say what you think is part of the Top 10 while doubting your friends";
+"A player will be selected as master and will have access to a list with the Top 10 about some topic" = "A player will be selected as master and will have access to a list with the Top 10 about some topic";
+"Each player will have to say something that they think will be on the list" = "Each player will have to say something that they think will be on the list";
+"The other players can doubt whether the word said is on the list or not. If it is, the player that doubted leaves the game. If not, the player that was challenged leaves the game." = "The other players can doubt whether the word said is on the list or not. If it is, the player that doubted leaves the game. If not, the player that was challenged leaves the game";
+
+"Beeeengo!" = "Beeeengo!";
+"The master will get a number out of 0 to 10, and the others players must find out which number it is through some questions" = "The master will get a number out of 0 to 10, and the others players must find out which number it is through some questions";
+"The selected player will receive a random number from 0 to 10" = "The selected player will receive a random number from 0 to 10";
+"The other players' mission is to discover this note by asking questions to the leader" = "The other players' mission is to discover this note by asking questions to the leader";
+"Each player can ask the master a question, e.g.: “A food” and must be answered with a food that represents the number drawn" = "Each player can ask the master a question, e.g.: “A food” and must be answered with a food that represents the number drawn";
+
+"You have 20s" = "You have 20s";
+"Test your skills and check if you have the ability to say in 20 seconds the maximum number of words related to a theme" = "Test your skills and check if you have the ability to say in 20 seconds the maximum number of words related to a theme";
+"A theme will be drawn and the players will have to say how many words about the topic they can quote in 20 seconds" = "A theme will be drawn and the players will have to say how many words about the topic they can quote in 20 seconds";
+"If the theme is \"soccer teams\", each player says \"I can say 5 teams\", \"I can say 8 teams\", always increasing the number" = "If the theme is \"soccer teams\", each player says \"I can say 5 teams\", \"I can say 8 teams\", always increasing the number";
+"When no one else wants to increase the number, the person who said the most starts to say the words. If they say fewer words than agreed, they lose." = "When no one else wants to increase the number, the person who said the most starts to say the words. If they say fewer words than agreed, they lose.";

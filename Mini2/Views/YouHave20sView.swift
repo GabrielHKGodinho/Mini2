@@ -9,7 +9,7 @@ import SwiftUI
 
 struct YouHave20sView: View {
     
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     @EnvironmentObject var repository: GameRepository
     @State private var showingTimer = false
     @State private var hideTimer = false
@@ -35,9 +35,7 @@ struct YouHave20sView: View {
                             manager.currentView = .RulesView
                         }
                     } label: {
-                        Text("< REGRAS")
-                            .foregroundColor(.white)
-                            .font(Font.custom("Grandstander-regular", size: 24))
+                        ReturnButtonLabel(text: "RULES")
                     }
                     .disabled(isFocused)
                     
@@ -54,59 +52,48 @@ struct YouHave20sView: View {
                 Title1(text: repository.games[repository.selectedGame].name.uppercased())
                     .fixedSize(horizontal: false, vertical: true)
                     .baselineOffset(-10)
-                    .padding(.bottom, 8)
                 
-                RoundedRectangle(cornerRadius: 42)
-                    .frame(height: 380)
-                    .foregroundColor(.white)
-                    .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
-                    .overlay {
-                        VStack {
-                            Text("BORA ESCOLHER A CATEGORIA")
-                                .multilineTextAlignment(.center)
-                                .frame(width: 250, height: 80)
-                                .foregroundColor(.black)
-                                .font(Font.custom("Grandstander-Bold", size: 35))
-                                .padding(.top)
-                            
-                            
-                            Text("\(categoria20s)")
-                                .multilineTextAlignment(.center)
-                                .font(Font.custom("Grandstander-Bold", size: 30))
-                                .foregroundColor(.black)
-                                .multilineTextAlignment(.center)
-                                .frame(width: 250, height: 80)
-                                .padding(.top, 24)
-                            
-                            Spacer()
-                            
-                            
-                            Button {
-                                aux = categoria20s
-                                while categoria20s == aux {
-                                    categoria20s = file20s.randomElement()!
-                                }
-                                
-                            } label: {
-                                VStack {
-                                    
-                                    Spacer()
-                                    
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 100)
-                                            .frame(width: 260, height: 55)
-                                            .foregroundColor(Color("cyan"))
-                                        Text("NOVA CATEGORIA")
-                                            .foregroundColor(.white)
-                                            .font(Font.custom("Grandstander-regular", size: 20))
-                                    }
-                                }
+                Spacer()
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 30)
+                        .foregroundColor(.white)
+                        .shadow(color: .black.opacity(0.2), radius: 6, x: 1, y: 8)
+                    VStack {
+                        Text("LET'S CHOOSE THE THEME")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.black)
+                            .font(Font.custom("Grandstander-Bold", size: 36))
+                        
+                        Spacer()
+                        
+                        Text("\(categoria20s)")
+                            .font(Font.custom("Grandstander-Bold", size: 28))
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                        
+                        Spacer()
+                        
+                        Button {
+                            aux = categoria20s
+                            while categoria20s == aux {
+                                categoria20s = file20s.randomElement()!
+                            }
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 30)
+                                    .foregroundColor(repository.games[repository.selectedGame].color)
+                                    .frame(height: 60)
+                                Text("NEW THEME".localized())
+                                    .font(.custom("Grandstander-Regular", size: 24))
+                                    .foregroundColor(.white)
+                                    .baselineOffset(-4)
                             }
                         }
-                        .padding(.vertical, 40)
-                        
                     }
-                    .padding(.vertical, 6)
+                    .padding(.horizontal, 28)
+                    .padding(.vertical, 36)
+                }
                 
                 Spacer()
                 
@@ -116,7 +103,7 @@ struct YouHave20sView: View {
                         manager.currentView = .EndGameView
                     }
                 } label: {
-                    PrimaryButton(text: "TERMINAMOS", color: Color("cyan"), isActive: true, alt: true, type: [2])
+                    PrimaryButton(text: "WE'VE FINISHED", color: Color("cyan"), isActive: true, alt: true, type: [2])
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)

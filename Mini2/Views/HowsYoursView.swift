@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HowsYoursView: View {
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     @EnvironmentObject var repository: GameRepository
     @State private var showingTimer = false
     @State private var hideTimer = false
@@ -42,9 +42,7 @@ struct HowsYoursView: View {
                             manager.currentView = .SelectKingView
                         }
                     } label: {
-                        Text("< SELEÇÃO DE MESTRE")
-                            .foregroundColor(.white)
-                            .font(Font.custom("Grandstander-regular", size: 24))
+                        ReturnButtonLabel(text: "LEADER SELECTION")
                     }
                     .disabled(isFocused)
                     
@@ -69,7 +67,7 @@ struct HowsYoursView: View {
                             RoundedRectangle(cornerRadius: 30)
                                 .foregroundColor(.white)
                             if word.isEmpty && !isFocused {
-                                Text("Toque para digitar a palavra escolhida")
+                                Text("Tap to write the chosen word".localized())
                                     .font(.system(size: 24))
                                     .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
@@ -109,7 +107,7 @@ struct HowsYoursView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 120)
-                                Text("Segure para revelar")
+                                Text("Hold to reveal".localized())
                                     .font(.system(size: 24))
                                     .foregroundColor(.black)
                             }
@@ -123,7 +121,7 @@ struct HowsYoursView: View {
                 
                 if (!isFocused) {
                     withAnimation {
-                        Tip(icon: "timer", title: "Timer tip!", description: "Use o timer para a resposta final e deixe os nervos à flor-da-pele!")
+                        Tip(icon: "timer", title: "Timer tip!", description: "Use the timer for the final answer and let the nerves run high!")
                             .padding(.bottom, 24)
                             .animation(.linear(duration: 0.15))
                     }
@@ -136,13 +134,13 @@ struct HowsYoursView: View {
                                     manager.currentView = .EndGameView
                                 }
                             } label: {
-                                PrimaryButton(text: "TERMINAMOS", color: repository.games[repository.selectedGame].color, type: [2])
+                                PrimaryButton(text: "WE'VE FINISHED", color: repository.games[repository.selectedGame].color, type: [2])
                             }
                         } else {
                             Button {
                                 hasWritten = true
                             } label: {
-                                PrimaryButton(text: "COMEÇAR O JOGO", color: repository.games[repository.selectedGame].color, isActive: !word.isEmpty, type: [2])
+                                PrimaryButton(text: "START GAME", color: repository.games[repository.selectedGame].color, isActive: !word.isEmpty, type: [2])
                             }
                             .disabled(word.isEmpty)
                         }

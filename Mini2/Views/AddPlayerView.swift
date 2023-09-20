@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct AddPlayerView: View {
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     
     @State var players = PlayerManager.getPlayers()
     @State var playersNames : [String] = PlayerManager.getPlayersNames()
     
-    @State var name: String = "Jogador \(PlayerManager.getNumberOfPlayers() + 1)"
+    @State var name: String = "Player".localized() + "  \(PlayerManager.getNumberOfPlayers() + 1)"
     @State var fieldText: String = ""
     
     @FocusState var isFocused: Bool
@@ -28,7 +28,7 @@ struct AddPlayerView: View {
             
             VStack(alignment: .center, spacing: 16) {
                 if !isFocused {
-                    Title1(text: "JUNTE A GALERA")
+                    Title1(text: "GATHER BUDDIES".localized())
                         .background {
                             Image("mouth")
                                 .resizable()
@@ -37,7 +37,7 @@ struct AddPlayerView: View {
                                 .offset(x: 100, y: 20)
                         }
                         .padding(.horizontal, 36)
-                    Subtitle(text: "Tudo bem amigão, quem está jogando?")
+                    Subtitle(text: "Alright dude, who is playing?".localized())
                         .padding(.horizontal, 36)
                 }
                 
@@ -68,7 +68,7 @@ struct AddPlayerView: View {
                                         PlayerManager.removePlayer(index: index)
                                         playersNames.remove(at: index)
                                         players = PlayerManager.getPlayers()
-                                        name = "Player \(PlayerManager.getNumberOfPlayers() + 1)"
+                                        name = "Player".localized() + "  \(PlayerManager.getNumberOfPlayers() + 1)"
                                     } label: {
                                         Image(systemName: "x.circle.fill")
                                             .foregroundColor(.white)
@@ -89,11 +89,11 @@ struct AddPlayerView: View {
                 .scrollIndicators(.never)
                 
                 Button {
-                    PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Jogador \(PlayerManager.getNumberOfPlayers() + 1)"))
+                    PlayerManager.addPlayer(player: Player(icon: PlayerManager.getRandomIcon(), name: "Player".localized() + " \(PlayerManager.getNumberOfPlayers() + 1)"))
                     playersNames.append(PlayerManager.getLastPlayerName())
                     players = PlayerManager.getPlayers()
                 } label: {
-                    SecondaryButton(icon: "plus", text: "adicionar amigo")
+                    SecondaryButton(icon: "plus", text: "add a buddy".localized())
                         .padding(.horizontal, 28)
                 }
                 .onDisappear {
@@ -112,7 +112,7 @@ struct AddPlayerView: View {
                             manager.currentView = .GameListView
                         }
                     } label: {
-                        PrimaryButton(text: "PRÓXIMO", color: Color("purple"), isActive: PlayerManager.getNumberOfPlayers() != 0, type: [2])
+                        PrimaryButton(text: "NEXT".localized(), color: Color("purple"), isActive: PlayerManager.getNumberOfPlayers() != 0, type: [2])
                     }
                     .disabled(PlayerManager.getNumberOfPlayers() == 0)
                 }

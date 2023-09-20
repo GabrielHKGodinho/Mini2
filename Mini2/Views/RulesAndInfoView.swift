@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RulesAndInfoView: View {
-    @EnvironmentObject var manager: SceneManager
+    @EnvironmentObject var manager: Manager
     @EnvironmentObject var repository: GameRepository
     @State private var selection = 0
     @State private var numberOfTabs = 1
@@ -17,11 +17,18 @@ struct RulesAndInfoView: View {
         VStack(spacing: 32) {
             VStack(alignment: .center, spacing: 16) {
                 HStack {
-                    ReturnButton(manager: _manager, text: "JOGOS", path: .GameListView)
+                    Button {
+                        withAnimation {
+                            manager.animation = .move(edge: .leading)
+                            manager.currentView = .GameListView
+                        }
+                    } label: {
+                        ReturnButtonLabel(text: "GAMES")
+                    }
                     Spacer()
                 }
                 .padding(.horizontal, 36)
-                Title2(text: "CONFIRA AS REGRAS")
+                Title2(text: "CHECK THE RULES")
                     .padding(.horizontal, 36)
             }
                 
@@ -91,7 +98,7 @@ struct RulesAndInfoView: View {
 
 struct RulesAndInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        let manager = SceneManager()
+        let manager = Manager()
         let repository = GameRepository()
         RulesAndInfoView()
             .environmentObject(manager)
