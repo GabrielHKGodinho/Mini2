@@ -25,8 +25,17 @@ class Manager: ObservableObject {
     @Published var currentView = Views.HomeView
     @Published var animation = AnyTransition.move(edge: .trailing)
     
-    let language = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String]
-    var lang: String {
-        return language?.first ?? "en"
+    init() {
+        print(UserDefaults.standard.string(forKey: "language"))
+        print(Bundle.main.preferredLocalizations.first)
+        print(UserDefaults.standard.object(forKey: "AppleLanguages"))
+        if UserDefaults.standard.string(forKey: "language") != nil {
+            lang = UserDefaults.standard.string(forKey: "language")!
+        } else {
+            let language = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String]
+            lang = language?.first ?? "en"
+        }
     }
+    
+    @Published var lang: String = "en"
 }

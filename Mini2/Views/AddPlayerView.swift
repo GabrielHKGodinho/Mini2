@@ -27,6 +27,21 @@ struct AddPlayerView: View {
                 }
             
             VStack(alignment: .center, spacing: 16) {
+                HStack {
+                    Button {
+                        withAnimation {
+                            manager.animation = .move(edge: .leading)
+                            manager.currentView = .HomeView
+                        }
+                    } label: {
+                        ReturnButtonLabel(text: "START")
+                    }
+                    .disabled(isFocused)
+                    
+                    Spacer()
+                }
+                .padding(.horizontal, 36)
+                
                 if !isFocused {
                     Title1(text: "GATHER BUDDIES".localized())
                         .background {

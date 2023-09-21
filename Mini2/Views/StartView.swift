@@ -11,12 +11,31 @@ import RiveRuntime
 struct StartView: View {
     @EnvironmentObject var manager: Manager
     @State var showButton = false
+    @State var showingModal = false
+    @State var hideModal = false
     
     @AppStorage("showOnboarding") private var showOnboarding = true
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        Task {
+                            await openSettings()
+                        }
+                    } label: {
+                        Image("translate")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32)
+                            .bold()
+                    }
+                }
+                .padding(.horizontal, 36)
+                .padding(.top, 24)
+                
                 Spacer()
                 
                 Image("logo")
@@ -38,24 +57,33 @@ struct StartView: View {
             .padding(.bottom, 40)
             .background(Color("red"))
             
-            if(!showOnboarding && !showButton){
-                RiveViewModel(fileName: "open")
-                    .view()
-                    .scaledToFill()
-                    .ignoresSafeArea()
-                    .onAppear(){
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            showButton = true
-                        }
-                    }
-            }
-            
+//            if(!showOnboarding && !showButton) {
+//                RiveViewModel(fileName: "open")
+//                    .view()
+//                    .scaledToFill()
+//                    .ignoresSafeArea()
+//                    .onAppear(){
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                            showButton = true
+//                        }
+//                    }
+//            }
         }
         .fullScreenCover(isPresented: $showOnboarding) {
             ZStack {
                 OnboardingView(showOnboarding: $showOnboarding)
             }
             
+        }
+    }
+    
+    func openSettings() async {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            do {
+                try await UIApplication.shared.open(url)
+            } catch {
+                print("Error opening settings: \(error)")
+            }
         }
     }
 }

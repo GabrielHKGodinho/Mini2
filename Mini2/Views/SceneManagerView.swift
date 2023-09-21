@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
 struct SceneManagerView: View {
     @StateObject var manager = Manager()
@@ -19,6 +20,7 @@ struct SceneManagerView: View {
                     //.transition(manager.animation)
             case .GameListView:
                 GameListView()
+                    .environment(\.locale, .init(identifier: "en"))
                     //.transition(manager.animation)
             case .AddPlayerView:
                 AddPlayerView()
@@ -49,6 +51,12 @@ struct SceneManagerView: View {
         .environmentObject(manager)
         .environmentObject(repository)
         .preferredColorScheme(.dark)
+        .onAppear {
+            RiveViewModel(fileName: "open")
+                .view()
+                .scaledToFill()
+                .ignoresSafeArea()
+        }
     }
 }
 

@@ -12,6 +12,12 @@
 "PLAY AGAIN" = "JOGAR DE NOVO";
 "CHOOSE ANOTHER" = "ESCOLHER OUTRO";
 
+// ChangeLanguageModal
+"SET THE LANGUAGE" = "SELECIONE UM IDIOMA";
+"START" = "INÍCIO";
+"Portuguese" = "Português";
+"English" = "Inglês";
+
 // TimerView
 "TIMER" = "TIMER";
 "FINISH TIMER" = "ENCERRAR TIMER";

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "54C9D8902A83D8750038968C"
-               BuildableName = "Dr!p.app"
-               BlueprintName = "Dr!p"
-               ReferencedContainer = "container:Dr!p.xcodeproj">
+               BuildableName = "DRIP.app"
+               BlueprintName = "DRIP"
+               ReferencedContainer = "container:DRIP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "54C9D8902A83D8750038968C"
-            BuildableName = "Dr!p.app"
-            BlueprintName = "Dr!p"
-            ReferencedContainer = "container:Dr!p.xcodeproj">
+            BuildableName = "DRIP.app"
+            BlueprintName = "DRIP"
+            ReferencedContainer = "container:DRIP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "54C9D8902A83D8750038968C"
-            BuildableName = "Dr!p.app"
-            BlueprintName = "Dr!p"
-            ReferencedContainer = "container:Dr!p.xcodeproj">
+            BuildableName = "DRIP.app"
+            BlueprintName = "DRIP"
+            ReferencedContainer = "container:DRIP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
