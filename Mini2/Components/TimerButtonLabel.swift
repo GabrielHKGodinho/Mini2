@@ -12,9 +12,12 @@ struct TimerButtonLabel: View {
     
     var body: some View {
         Image(systemName: "timer")
+            .resizable()
+            .scaledToFit()
+            .frame(height: 28)
             .foregroundColor(.white)
-            .font(.title)
             .bold()
+            .foregroundColor(.white)
             .scaleEffect(animationAmount)
             .animation(
                 .linear(duration: 1)

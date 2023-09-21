@@ -14,6 +14,7 @@ struct ReturnButtonLabel: View {
     var body: some View {
         Text("< \(text.localized())")
             .foregroundColor(.white)
+            .padding(.bottom, -4)
             .font(Font.custom("Grandstander-regular", size: 24))
     }
     

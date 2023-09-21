@@ -35,7 +35,7 @@ struct HowsYoursView: View {
                 }
             
             VStack(alignment: .leading, spacing: 16) {
-                HStack {
+                HStack(alignment: .center) {
                     Button {
                         withAnimation {
                             manager.animation = .move(edge: .leading)
@@ -55,6 +55,7 @@ struct HowsYoursView: View {
                     }
                     .disabled(isFocused)
                 }
+                .frame(height: 28)
                 
                 Title1(text: repository.games[repository.selectedGame].name.uppercased())
                     .baselineOffset(-8)

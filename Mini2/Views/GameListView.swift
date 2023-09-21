@@ -14,14 +14,17 @@ struct GameListView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             VStack(alignment: .leading, spacing: 16) {
-                Button {
-                    withAnimation {
-                        manager.animation = .move(edge: .leading)
-                        manager.currentView = .AddPlayerView
+                HStack(alignment: .center) {
+                    Button {
+                        withAnimation {
+                            manager.animation = .move(edge: .leading)
+                            manager.currentView = .AddPlayerView
+                        }
+                    } label: {
+                        ReturnButtonLabel(text: "PLAYERS")
                     }
-                } label: {
-                    ReturnButtonLabel(text: "PLAYERS")
                 }
+                .frame(height: 28)
                 Title1(text: "TIME TO PLAY")
                     .background {
                         Image("hand")

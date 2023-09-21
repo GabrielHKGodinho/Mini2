@@ -28,7 +28,7 @@ struct YouHave20sView: View {
                 }
             
             VStack(spacing: 16) {
-                HStack {
+                HStack(alignment: .center) {
                     Button {
                         withAnimation {
                             manager.animation = .move(edge: .leading)
@@ -48,6 +48,7 @@ struct YouHave20sView: View {
                     }
                     .disabled(isFocused)
                 }
+                .frame(height: 28)
                 
                 Title1(text: repository.games[repository.selectedGame].name.uppercased())
                     .fixedSize(horizontal: false, vertical: true)

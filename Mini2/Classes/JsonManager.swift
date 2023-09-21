@@ -9,18 +9,12 @@ import Foundation
 
 class JsonManager: ObservableObject {
     static let instance = JsonManager()
-    
-    static let languageArray = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String]
-    
+    static let language = Bundle.main.preferredLocalizations.first
+
     private init(){}
 
     static func fillTop10() -> [Top10]{
-        var language = languageArray?.first ?? "en"
-        if (language != "pt-BR") {
-            language = "en"
-        }
-
-        guard let sourcesURL = Bundle.main.url(forResource: "top10-\(language)", withExtension: "json") else {
+        guard let sourcesURL = Bundle.main.url(forResource: "top10-\(language ?? "en")", withExtension: "json") else {
             fatalError("Could not find top10.json\n")
         }
         
@@ -37,13 +31,7 @@ class JsonManager: ObservableObject {
     }
     
     static func fill20sec() -> [String]{
-        var language = languageArray?.first ?? "en"
-        
-        if (language != "pt-BR") {
-            language = "en"
-        }
-
-        guard let sourcesURL = Bundle.main.url(forResource: "youHave20s-\(language)", withExtension: "json") else {
+        guard let sourcesURL = Bundle.main.url(forResource: "youHave20s-\(language ?? "en")", withExtension: "json") else {
             fatalError("Could not find top10.json\n")
         }
         

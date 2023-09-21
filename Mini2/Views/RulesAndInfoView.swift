@@ -16,7 +16,7 @@ struct RulesAndInfoView: View {
     var body: some View {
         VStack(spacing: 32) {
             VStack(alignment: .center, spacing: 16) {
-                HStack {
+                HStack(alignment: .center) {
                     Button {
                         withAnimation {
                             manager.animation = .move(edge: .leading)
@@ -27,6 +27,7 @@ struct RulesAndInfoView: View {
                     }
                     Spacer()
                 }
+                .frame(height: 28)
                 .padding(.horizontal, 36)
                 Title2(text: "CHECK THE RULES")
                     .padding(.horizontal, 36)

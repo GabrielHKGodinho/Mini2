@@ -27,19 +27,20 @@ struct AddPlayerView: View {
                 }
             
             VStack(alignment: .center, spacing: 16) {
-                HStack {
+                HStack(alignment: .center) {
                     Button {
                         withAnimation {
                             manager.animation = .move(edge: .leading)
                             manager.currentView = .HomeView
                         }
                     } label: {
-                        ReturnButtonLabel(text: "START")
+                        ReturnButtonLabel(text: "HOME")
                     }
                     .disabled(isFocused)
                     
                     Spacer()
                 }
+                .frame(height: 28)
                 .padding(.horizontal, 36)
                 
                 if !isFocused {

@@ -77,7 +77,7 @@ struct OnboardingView2: View {
             Subtitle(text: "and have fun using tools to help your gameplay")
             
             Tip(icon: "timer", title: "Timer tip!", description: "Use the timer for the final answer and let the nerves run high!")
-            Tip(icon: "figure.run.square.stack.fill", title: "Make the party bigger!", description: "Use the player button to add or remove friends from the round.")
+            Tip(icon: "person.crop.circle.fill.badge.plus", title: "Make the party bigger!", description: "Use the player button to add or remove friends from the round.")
             
             Spacer()
             

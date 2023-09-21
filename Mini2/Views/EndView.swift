@@ -19,7 +19,7 @@ struct EndView: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .leading, spacing: 16) {
-                HStack {
+                HStack(alignment: .center) {
                     Button {
                         withAnimation {
                             manager.animation = .move(edge: .leading)
@@ -32,18 +32,21 @@ struct EndView: View {
                     Button {
                         showingModal.toggle()
                     } label: {
-                        Image(systemName: "figure.run.square.stack.fill")
+                        Image(systemName: "person.crop.circle.fill.badge.plus")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 28)
                             .foregroundColor(.white)
-                            .font(.title)
                             .bold()
                     }
                 }
+                .frame(height: 28)
                 
                 Title1(text: repository.games[repository.selectedGame].name.uppercased())
                     .fixedSize(horizontal: false, vertical: true)
                     .baselineOffset(-10)
                 
-                Tip(icon: "figure.run.square.stack.fill", title: "Make the party bigger!".localized(), description: "Use the player button to add or remove friends from the round.".localized())
+                Tip(icon: "person.crop.circle.fill.badge.plus", title: "Make the party bigger!".localized(), description: "Use the player button to add or remove friends from the round.".localized())
                 
                 Spacer()
                 

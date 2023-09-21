@@ -29,7 +29,7 @@ struct StartView: View {
                         Image("translate")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 32)
+                            .frame(height: 28)
                             .bold()
                     }
                 }

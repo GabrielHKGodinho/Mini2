@@ -19,14 +19,17 @@ struct SelectKingView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             VStack(alignment: .leading, spacing: 16) {
-                Button {
-                    withAnimation {
-                        manager.animation = .move(edge: .leading)
-                        manager.currentView = .RulesView
+                HStack(alignment: .center) {
+                    Button {
+                        withAnimation {
+                            manager.animation = .move(edge: .leading)
+                            manager.currentView = .RulesView
+                        }
+                    } label: {
+                        ReturnButtonLabel(text: "RULES")
                     }
-                } label: {
-                    ReturnButtonLabel(text: "RULES")
                 }
+                .frame(height: 28)
                 Title2(text: "WHO'S GONNA BE THE (UN)LUCKY?")
                     .fixedSize(horizontal: false, vertical: true)
                     .baselineOffset(-6)
